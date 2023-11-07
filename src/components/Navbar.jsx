@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 
 const Navbar = () => {
+  //state for tracking if menuOut className is toggle (used in mobile widths)
   const [toggleMenu, setToggleMenu] = useState(false);
+  //changes the state to its current opposite
   const menuToggle = (e) => {
     setToggleMenu(!toggleMenu);
   };
@@ -16,6 +18,7 @@ const Navbar = () => {
           <img src="/src/assets/icons/menu.svg" />{" "}
         </button>
       </nav>
+      {/* nav links */}
       <div className="ul-wrapper">
         <ul className={`nav-ul ${toggleMenu ? "" : "menuOut"}`}>
           <hr />
