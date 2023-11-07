@@ -1,0 +1,6 @@
+@import "/src/styles/Navbar.scss";
+body{
+    box-sizing: border-box;
+    background-color: #504e4e;
+    color: white;
+}
