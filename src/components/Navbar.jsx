@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const Navbar = () => {
-  //state for tracking if menuOut className is toggle (used in mobile widths)
+  //state for tracking if menuOut className is toggle (used in mobile)
   const [toggleMenu, setToggleMenu] = useState(false);
   //changes the state to its current opposite
   const menuToggle = (e) => {

@@ -1,4 +1,5 @@
 @import "/src/styles/Navbar.scss";
+@import "/src/styles/Welcome.scss";
 body{
     box-sizing: border-box;
     background-color: #504e4e;
