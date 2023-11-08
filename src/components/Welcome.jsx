@@ -1,6 +1,7 @@
 import React,{useState, useEffect} from 'react'
 
 const Welcome = () => {
+    //a state and effect that on load changes the state once, from false to true, and since this happens when the page loads, this state basically tells if the page finished loading
     const [pageLoaded, setPageLoaded] = useState(false);
     useEffect(() =>{
         setPageLoaded(true)

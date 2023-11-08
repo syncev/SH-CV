@@ -4,6 +4,7 @@ $navBgColor: #808080;
 header {
   position: fixed;
   width: 100%;
+  z-index: 2;
   
   .nav {
     display: flex;
@@ -13,7 +14,7 @@ header {
     background-color: $navBgColor;
     position: relative;
     /*index so its shown above the mobile menu*/
-    z-index: 2;
+    z-index: 3;
     .site-logo {
       font-size: 1.6rem;
       color: white;
@@ -42,10 +43,11 @@ header {
   .ul-wrapper {
     display: flex;
     justify-content: center;
+    
     .nav-ul {
       transition: all 0.3s;
-      z-index: 1;
-      background-color: #808080;
+      z-index: 2;
+      background-color: $navBgColor;
       border-radius: 0 0 10px 10px;
       font-size: 1.5rem;
       width: 70%;
@@ -54,6 +56,7 @@ header {
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      
       hr {
         margin: 0;
         width: 70%;
@@ -81,7 +84,7 @@ header {
         display: flex;
         .nav{
             width: 30%;
-            z-index: 1;
+            z-index: 2;
             .btn-menu{
                 display: none;
             }
@@ -92,7 +95,7 @@ header {
                 flex-direction: row;
                 justify-content: space-evenly;
                 border-radius: 0;
-                z-index: 2;
+                z-index: 3;
                 width: 100%;
                 hr{
                     display: none;
