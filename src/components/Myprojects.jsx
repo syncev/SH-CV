@@ -1,18 +1,21 @@
 import React from "react";
+import img1 from '/src/assets/cat1.png'
+import img2 from '/src/assets/cat2.jpg'
+import img3 from '/src/assets/cat3.jpg'
 //this needs to be properly destructuring by using the {}
 const Myprojects = ({counter}) => {
   const projectsArr = [
     {
       index: 1,
-      link: "/src/assets/cat1.png",
+      link: img1,
     },
     {
       index: 2,
-      link: "/src/assets/cat2.jpg",
+      link: img2,
     },
     {
       index: 3,
-      link: "/src/assets/cat3.jpg",
+      link: img3,
     },
   ];
   //whatever i put as projects doesnt matter, the important thing is that i have .link afterwards in the src so it looks for the key "link".

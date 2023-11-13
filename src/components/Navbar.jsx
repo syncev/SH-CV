@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import buttonImg from '/src/assets/icons/menu.svg'
 
 const Navbar = () => {
   //state for tracking if menuOut className is toggle (used in mobile)
@@ -15,7 +16,7 @@ const Navbar = () => {
           S. Hernandez WebDev
         </a>
         <button className={`btn-menu ${toggleMenu ? "btnOut": ""} `} onClick={menuToggle}>
-          <img src="/src/assets/icons/menu.svg" />{" "}
+          <img src={buttonImg} />{" "}
         </button>
       </nav>
       {/* nav links */}
