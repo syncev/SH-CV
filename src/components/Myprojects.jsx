@@ -2,7 +2,6 @@ import React from "react";
 import toDoNew from "/src/assets/To Do List New.png";
 import italRest from "/src/assets/Italian Restaurant LP.jpeg";
 import crippa from "/src/assets/Crippa Service.jpeg";
-import toDoOld from "/src/assets/To Do List Old.jpeg";
 import colorPicker from "/src/assets/Color Picker.jpeg";
 
 //this needs to be properly destructuring by using the {}
@@ -25,11 +24,6 @@ const Myprojects = ({ counter, setListLength }) => {
     },
     {
       index: 4,
-      link: "https://to-do-list-old.vercel.app/",
-      cover: toDoOld,
-    },
-    {
-      index: 5,
       link: "https://color-picker-five-tau.vercel.app/",
       cover: colorPicker,
     },
