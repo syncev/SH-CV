@@ -1,7 +1,6 @@
 import { useEffect } from "preact/hooks";
 import React, { useState } from "react";
 import Myprojects from "./Myprojects";
-import {getProjectsArrLength} from "./Myprojects"
 
 
 const Appgallery = () => {
@@ -23,9 +22,8 @@ const Appgallery = () => {
   const handlerRightBtn = () => {
     const slideWidth = items.clientWidth;
     list.scrollLeft += slideWidth;
-    if (itemCounter < listLength) {
+    if (itemCounter < listLength-1) {
       setItemCounter(itemCounter + 1);
-      console.log(getProjectsArrLength)
     }
   };
   //left button

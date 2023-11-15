@@ -1,9 +1,13 @@
 @import "/src/styles/Navbar.scss";
 @import "/src/styles/Welcome.scss";
 @import "/src/styles/Appgallery.scss";
+
+$primary-color: #504e4e;
+/* $breakpoint-tablet: 768px; */
+
 body{
     min-width: 300px;
     box-sizing: border-box;
-    background-color: #504e4e;
+    background-color: $primary-color;
     color: white;
 }
