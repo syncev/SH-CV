@@ -1,43 +1,59 @@
 import React from "react";
-import img1 from '/src/assets/cat1.png'
-import img2 from '/src/assets/cat2.jpg'
-import img3 from '/src/assets/cat3.jpg'
+import toDoNew from "/src/assets/To Do List New.png";
+import italRest from "/src/assets/Italian Restaurant LP.jpeg";
+import crippa from "/src/assets/Crippa Service.jpeg";
+import toDoOld from "/src/assets/To Do List Old.jpeg";
+import colorPicker from "/src/assets/Color Picker.jpeg";
+
 //this needs to be properly destructuring by using the {}
-const Myprojects = ({counter}) => {
+const Myprojects = ({ counter, setListLength }) => {
   const projectsArr = [
     {
       index: 1,
-      link: img1,
+      link: "https://lista-tareas-five.vercel.app/",
+      cover: toDoNew,
     },
     {
       index: 2,
-      link: img2,
+      link: "https://il-matterello.vercel.app/",
+      cover: italRest,
     },
     {
       index: 3,
-      link: img3,
+      link: "https://crippa-service.vercel.app/",
+      cover: crippa,
+    },
+    {
+      index: 4,
+      link: "https://to-do-list-old.vercel.app/",
+      cover: toDoOld,
+    },
+    {
+      index: 5,
+      link: "https://color-picker-five-tau.vercel.app/",
+      cover: colorPicker,
     },
   ];
+  //set the list length for Appgallery to know the limit of the list
+  setListLength(projectsArr.length);
+  
   //whatever i put as projects doesnt matter, the important thing is that i have .link afterwards in the src so it looks for the key "link".
-  //i Dont need to pass the counter props here, it has access with or without it 
+  //i Dont need to pass the counter props here, it has access with or without it
   const listCreator = () => {
     return projectsArr.map((projects, index) => (
       <li
         key={index}
-        className={`app-item ${
-          index  === counter ? "currentScroll" : ""
-        }`}
+        className={`app-item ${index === counter ? "currentScroll" : ""}`}
       >
-        <img src={projects.link} alt="" />
+        <a href={projects.link}>
+          <img src={projects.cover} alt="" />
+        </a>
       </li>
-    ))
-
-  }
-  return (
-    <ul className="apps-list">
-      {listCreator(counter)}
-    </ul>
-  );
+    ));
+  };
+  return <ul className="apps-list">{listCreator(counter)}</ul>;
 };
-
+export const getProjectsArrLength = (projectsArr) => {
+  return projectsArr.length;
+};
 export default Myprojects;

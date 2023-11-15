@@ -1,6 +1,8 @@
 import { useEffect } from "preact/hooks";
 import React, { useState } from "react";
-import Myprojects  from "./Myprojects";
+import Myprojects from "./Myprojects";
+import {getProjectsArrLength} from "./Myprojects"
+
 
 const Appgallery = () => {
   
@@ -14,13 +16,16 @@ const Appgallery = () => {
   }, [items]);
   //counter for knowing the focused element;
   const [itemCounter, setItemCounter] = useState(0);
+  //projecs length;
+  const[listLength ,setListLength] = useState(1)
   
   //right button
   const handlerRightBtn = () => {
     const slideWidth = items.clientWidth;
     list.scrollLeft += slideWidth;
-    if (itemCounter < 2) {
+    if (itemCounter < listLength) {
       setItemCounter(itemCounter + 1);
+      console.log(getProjectsArrLength)
     }
   };
   //left button
@@ -36,14 +41,13 @@ const Appgallery = () => {
 
   return (
     <div className="apps-list-wrapper">
-      <button className="btn-left" onClick={handlerLeftBtn}>
-        L
-      </button>
-      <Myprojects counter={itemCounter}/>
+      <button className="btn-left" onClick={handlerLeftBtn}>&lt;</button>
       
-      <button className="btn-right" onClick={handlerRightBtn}>
-        R
-      </button>
+      <Myprojects counter={itemCounter} setListLength={setListLength}/>
+      
+      <button className="btn-right" onClick={handlerRightBtn}>&gt;</button>
+      
+
     </div>
   );
 };

@@ -1,19 +1,28 @@
+/*-------carousel box------*/
 .apps-list-wrapper {
-  /* width and height of the carrousel */
   width: 95%;
-  height: 50vh;
-  background-color: #504E4E;
-  color: black;
+  height: 60vh;
+  background-color: #504e4e;
   margin-top: 100px;
-
   margin-left: auto;
   margin-right: auto;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  /* overflow: hidden; */
+
+  /*------left and right btns------*/
+  .btn-right, .btn-left{
+    width: 50px;
+    height: 50px;
+    font-size: 3rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+/*-------list-------*/
   .apps-list {
-    /* width and height of the carrousel windows */
+    // width and height of the carrousel windows 
     display: flex;
     width: 90%;
     height: 80%;
@@ -21,43 +30,52 @@
     overflow: scroll;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
-
-    //if i want to change GAP, change the jsx SLIDEWIDTH calculation
+    align-items: center;
     gap: 3rem;
 
     /*hides scrollbars but keeps functionality (not all browsers have it hidden i think)*/
     &::-webkit-scrollbar {
       display: none;
     }
-    //the first item will get a margin left
+
+    /*--------item container-------*/
     .app-item {
+      justify-content: center;
       display: flex;
-      /* this makes each item display in the full width of the carousel window if at 0 0 100% */
-      flex: 0 0 50%;
-      height: 100%;
+      flex: 0 0 40%;
+      height: 90%;
       //regular transition for when not selected
       scale: 1;
       transition: all 0.5s;
       //sets the scrolling to the center of the item
       scroll-snap-align: center;
-      //changes on the first and last child item
+      //makes the border rounded and limits the overflow so that it wont scape the border thus makeing the img round
+      border-radius: 15%;
+      overflow: hidden;
       &:first-child {
-        //make space to the left of the frist item so its centered
         margin-left: 50%;
       }
       &:last-child {
-        //make space to the right of the last item so its centered
         margin-right: 50%;
       }
-      //the height and width of the img make the difference with the cards transition!
-      img {
-        align-self: center;
-        height: 250px;
-        width: 100%;
-        object-fit:cover;
-        
+      //the height and width of the img make the difference with the cards transition!!
+      /*-------link to app-------*/
+      a {
+        height: 100%;
+        width: auto;
+        //necesary to get the pic in the middle
+        display: flex;
+        align-items: center;
+        /*---------img of the app-------*/
+        img {
+          height: 100%;
+          width: auto;
+
+          object-fit: contain;
+        }
       }
     }
+    
     .currentScroll {
       transition: all 1s ease-in-out;
       scale: 1.1;
