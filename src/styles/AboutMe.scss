@@ -1,0 +1,21 @@
+.about-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .about-header{
+        font-size: 2rem;
+        
+    }
+    .about-main, .about-main-cuote{
+        font-size: 1.4rem;
+        text-align: center;
+        padding: 20px;
+    }
+    .about-main-cuote{
+        font-style: italic;
+    }
+    .about-img{
+        border-radius: 155px;
+    }
+}

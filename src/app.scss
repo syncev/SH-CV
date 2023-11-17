@@ -1,7 +1,15 @@
 @import "/src/styles/Navbar.scss";
 @import "/src/styles/Welcome.scss";
 @import "/src/styles/Appgallery.scss";
+@import "/src/styles/AboutMe.scss";
+@import "/src/styles/Contact.scss";
 
+strong{
+    font-weight:bold;
+}
+em{
+    font-style: italic;
+}
 $primary-color: #504e4e;
 $breakpoint-tablet: 768px; 
 
