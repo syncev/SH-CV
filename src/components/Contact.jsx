@@ -3,7 +3,8 @@ import React from "react";
 const Contact = () => {
   return (
     <div className="contact-wrapper">
-        Contact Me
+        <h2 className="contact-header">Contact Me
+          </h2>
       <ul className="contact-list">
         <li className="contact-item linkedin">
           <a href="www.linkedin.com/in/san-hernandez">

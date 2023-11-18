@@ -4,12 +4,6 @@
 @import "/src/styles/AboutMe.scss";
 @import "/src/styles/Contact.scss";
 
-strong{
-    font-weight:bold;
-}
-em{
-    font-style: italic;
-}
 $primary-color: #504e4e;
 $breakpoint-tablet: 768px; 
 
@@ -18,4 +12,11 @@ body{
     box-sizing: border-box;
     background-color: $primary-color;
     color: white;
+    zoom: normal;
+    strong{
+        font-weight:bold;
+    }
+    em{
+        font-style: italic;
+    }
 }
