@@ -3,7 +3,12 @@
     flex-direction: column;
     align-items: center;
     margin-top: 5vh;
-    margin-bottom: 5vh;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    margin-bottom: 0;
+    background-color: #3a3939;
+
+    
     .contact-header{
         font-size: 2rem;
     }
@@ -11,10 +16,10 @@
         display: inherit;
         width: 90vw;
         justify-content: space-evenly;
-        margin-top: 4vh;
+        margin-top: 3vh;
     }
     .contact-item img{
-        width: 50px;
+        width: 90px;
 }
     
 }

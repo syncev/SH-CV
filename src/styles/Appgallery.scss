@@ -1,77 +1,72 @@
 /*-------carousel box------*/
 .apps-list-wrapper {
   width: 95%;
-  height: 60vh;
+  height: 50vh;
   background-color: #504e4e;
-  margin-top: 90px;
+  margin-top: 1vh;
   margin-left: auto;
   margin-right: auto;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
-
   opacity: 0;
-  animation: fadeIn 2.5s  forwards;
-
+  animation: fadeIn 2.5s forwards;
   @keyframes fadeIn {
-    0%{
+    0% {
       opacity: 0;
     }
-    50%{
+    50% {
       opacity: 0;
     }
-    100%{
+    100% {
       opacity: 1;
     }
   }
-
+  @media (min-width: 765px) {
+  }
   /*------left and right btns------*/
-  .btn-right, .btn-left{
-    width: 50px;
-    height: 50px;
+  .btn-right,
+  .btn-left {
+    width: 20%;
     font-size: 3rem;
     background-color: transparent;
     border: none;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
-    &:hover{
+    &:hover {
       scale: 1.1;
       transition: all 0.2 ease-in-out;
     }
   }
-
-/*-------list-------*/
+  /*-------list-------*/
   .apps-list {
-    // width and height of the carrousel windows 
+    // width and height of the carrousel windows
     display: flex;
-    width: 90%;
-    height: 80%;
+    width: 80%;
+    height: 100%;
     list-style: none;
     overflow: scroll;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
     align-items: center;
     gap: 3rem;
-    
     /*hides scrollbars but keeps functionality (not all browsers have it hidden i think)*/
     &::-webkit-scrollbar {
       display: none;
     }
-    
     /*--------item container-------*/
     .app-item {
-      min-width: 250px;
       justify-content: center;
       display: flex;
-      flex: 0 0 40%;
-      height: 90%;
+      flex: 0 0 80%;
+      height: 80%;
       //regular transition for when not selected
       scale: 1;
       transition: all 0.5s;
       //sets the scrolling to the center of the item
       scroll-snap-align: center;
       //makes the border rounded and limits the overflow so that it wont scape the border thus makeing the img round
-      border-radius: 15%;
+      border-radius: 5%;
       overflow: hidden;
       &:first-child {
         margin-left: 50%;
@@ -79,27 +74,24 @@
       &:last-child {
         margin-right: 50%;
       }
-      @media screen and (min-width: 765px){
-          min-width: 550px;
-      }
-      @media screen and (min-width: 1023px){
-          min-width: 650px;
+      @media screen and (min-width: 1023px) {
+        min-width: 650px;
       }
       //the height and width of the img make the difference with the cards transition!!
       /*-------link to app-------*/
       a {
         height: auto;
         width: auto;
-        
+
         //necesary to get the pic in the middle
         display: flex;
         align-items: center;
         /*---------img of the app-------*/
         img {
-          @media screen and (min-width: 1023px){
+          @media screen and (min-width: 1023px) {
             height: auto;
             width: 100%;
-        }
+          }
           height: 100%;
           width: auto;
 
@@ -107,11 +99,10 @@
         }
       }
     }
-    
+
     .currentScroll {
       transition: all 1s ease-in-out;
       scale: 1.1;
     }
   }
 }
-

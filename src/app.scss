@@ -8,11 +8,10 @@ $primary-color: #504e4e;
 $breakpoint-tablet: 768px; 
 
 body{
-    min-width: 300px;
+    min-width: 320px;
     box-sizing: border-box;
     background-color: $primary-color;
     color: white;
-    zoom: normal;
     strong{
         font-weight:bold;
     }

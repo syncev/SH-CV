@@ -18,7 +18,7 @@ const Appgallery = () => {
   //projecs length;
   const[listLength ,setListLength] = useState(1)
   
-  //right button
+  //-----------right button----------
   const handlerRightBtn = () => {
     const slideWidth = items.clientWidth;
     list.scrollLeft += slideWidth;
@@ -26,7 +26,7 @@ const Appgallery = () => {
       setItemCounter(itemCounter + 1);
     }
   };
-  //left button
+  //----------left button----------
   const handlerLeftBtn = () => {
     const slideWidth = items.clientWidth;
     list.scrollLeft -= slideWidth;
