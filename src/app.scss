@@ -1,11 +1,16 @@
+$breakpoint-tablet: 768px; 
+$breakpoint-pc: 1023px;
+$primary-color: #504e4e;
+$btnHover: #72c43c;
+$homeHover: #c0b021;
+$navBgColor: #808080;
+
 @import "/src/styles/Navbar.scss";
 @import "/src/styles/Welcome.scss";
 @import "/src/styles/Appgallery.scss";
 @import "/src/styles/AboutMe.scss";
 @import "/src/styles/Contact.scss";
 
-$primary-color: #504e4e;
-$breakpoint-tablet: 768px; 
 
 body{
     min-width: 320px;

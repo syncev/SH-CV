@@ -1,8 +1,8 @@
 /*-------carousel box------*/
 .apps-list-wrapper {
   width: 95%;
-  height: 50vh;
-  background-color: #504e4e;
+  height: 55vh;
+  background-color: $primary-color;
   margin-top: 1vh;
   margin-left: auto;
   margin-right: auto;
@@ -22,8 +22,7 @@
       opacity: 1;
     }
   }
-  @media (min-width: 765px) {
-  }
+  
   /*------left and right btns------*/
   .btn-right,
   .btn-left {
@@ -68,14 +67,15 @@
       //makes the border rounded and limits the overflow so that it wont scape the border thus makeing the img round
       border-radius: 5%;
       overflow: hidden;
+
+     
+      
+
       &:first-child {
         margin-left: 50%;
       }
       &:last-child {
         margin-right: 50%;
-      }
-      @media screen and (min-width: 1023px) {
-        min-width: 650px;
       }
       //the height and width of the img make the difference with the cards transition!!
       /*-------link to app-------*/
@@ -88,13 +88,8 @@
         align-items: center;
         /*---------img of the app-------*/
         img {
-          @media screen and (min-width: 1023px) {
-            height: auto;
-            width: 100%;
-          }
           height: 100%;
           width: auto;
-
           object-fit: contain;
         }
       }
@@ -103,6 +98,36 @@
     .currentScroll {
       transition: all 1s ease-in-out;
       scale: 1.1;
+    }
+  }
+  
+}
+@media (min-width: $breakpoint-tablet) {
+  .apps-list-wrapper{
+    height: 58vh;
+    .apps-list{
+      .app-item{
+        //wider projects previews
+        flex: 0 0 70%;
+      }
+    }
+  }
+}
+@media (min-width: $breakpoint-pc){
+  .apps-list-wrapper{
+    .apps-list{
+      width: 100%;
+      .app-item{
+        a{
+          height: auto;
+          width: 100%;
+          
+          img{
+            height: auto;
+            width: 100%;
+          }
+        }
+      }
     }
   }
 }

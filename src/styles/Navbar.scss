@@ -5,7 +5,6 @@ header {
   position: fixed;
   width: 100%;
   z-index: 2;
-  
   .nav {
     display: flex;
     align-items: center;
@@ -13,15 +12,16 @@ header {
     padding: 0.5rem 1.5rem;
     background-color: $navBgColor;
     position: relative;
+    height: 7vh;
     /*index so its shown above the mobile menu*/
     z-index: 3;
     .site-logo {
       font-size: 1.6rem;
       color: white;
       text-decoration: none;
-      padding: 1rem;
+      padding-left: 1rem;
       transition: all 0.3s;
-      &:hover{
+      &:hover {
         border-radius: 5px;
         background-color: $homeHover;
       }
@@ -43,7 +43,7 @@ header {
   .ul-wrapper {
     display: flex;
     justify-content: center;
-    
+
     .nav-ul {
       transition: all 0.3s;
       z-index: 2;
@@ -56,7 +56,7 @@ header {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      
+
       hr {
         margin: 0;
         width: 70%;
@@ -67,12 +67,11 @@ header {
         a {
           color: white;
           text-decoration: none;
-          
         }
-        &:hover{
-            background-color: $btnHover;
-            border-radius: 10px;
-            transition: background-color 0.3s;
+        &:hover {
+          background-color: $btnHover;
+          border-radius: 10px;
+          transition: background-color 0.3s;
         }
       }
     }
@@ -81,32 +80,34 @@ header {
     }
   }
 }
-@media screen and (min-width: 1023px){
-    header{
-        display: flex;
-        .nav{
-            width: 30%;
-            z-index: 2;
-            .btn-menu{
-                display: none;
-            }
-        }
-        .ul-wrapper{
-            width: 70%;
-            .nav-ul{
-                flex-direction: row;
-                justify-content: space-evenly;
-                border-radius: 0;
-                z-index: 3;
-                width: 100%;
-                hr{
-                    display: none;
-                }
-            }
-            .menuOut{
-                transform: none;
-            }
-        }
-    }
-}
+@media (min-width: $breakpoint-pc) {
+  header {
+    display: flex;
     
+    height: 10vh;
+    .nav {
+      width: 30%;
+      z-index: 2;
+      height: auto;
+      .btn-menu {
+        display: none;
+      }
+    }
+    .ul-wrapper {
+      width: 70%;
+      .nav-ul {
+        flex-direction: row;
+        justify-content: space-evenly;
+        border-radius: 0;
+        z-index: 3;
+        width: 100%;
+        hr {
+          display: none;
+        }
+      }
+      .menuOut {
+        transform: none;
+      }
+    }
+  }
+}
