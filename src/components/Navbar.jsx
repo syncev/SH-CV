@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import buttonImg from '/src/assets/icons/menu.svg'
+import {Link} from "react-router-dom"
 
 const Navbar = () => {
   //state for tracking if menuOut className is toggle (used in mobile)
@@ -12,9 +13,9 @@ const Navbar = () => {
   return (
     <header>
       <nav className="nav">
-        <a href="" className="site-logo">
+        <Link to="/SH-CV/" className="site-logo">
           S. Hernandez WebDev
-        </a>
+        </Link>
         <button className={`btn-menu ${toggleMenu ? "btnOut": ""} `} onClick={menuToggle}>
           <img src={buttonImg} />{" "}
         </button>
@@ -24,15 +25,15 @@ const Navbar = () => {
         <ul className={`nav-ul ${toggleMenu ? "" : "menuOut"}`}>
           <hr />
           <li>
-            <a href="">My Projects</a>
+            <Link to="/SH-CV/projects">My Projects</Link>
           </li>
           <hr />
           <li>
-            <a href="">About Me</a>
+            <Link to="/about">About Me</Link>
           </li>
           <hr />
           <li>
-            <a href="">Contact</a>
+            <Link to="/contact">Contact</Link>
           </li>
         </ul>
       </div>

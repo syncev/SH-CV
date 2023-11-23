@@ -5,7 +5,10 @@ import Myprojects from "./Myprojects";
 
 const Appgallery = () => {
   
-  //for telling it you want in to move
+  const deviceWidth = window.innerWidth;
+  const tabletWidth = 768;
+
+  //for telling it you want it to move
   let list = document.querySelector(".apps-list");
   
   /* declare items to be any element with the class app-item, all the li, but do so when page finishes loading */
@@ -13,8 +16,10 @@ const Appgallery = () => {
   useEffect(() => {
     setItems(document.querySelector(".app-item"));
   }, [items]);
+
   //counter for knowing the focused element;
   const [itemCounter, setItemCounter] = useState(0);
+
   //projecs length;
   const[listLength ,setListLength] = useState(1)
   
@@ -38,15 +43,31 @@ const Appgallery = () => {
   
 
   return (
-    <div className="apps-list-wrapper">
-      <button className="btn-left" onClick={handlerLeftBtn}>&lt;</button>
+    <>
+      
+      {deviceWidth < tabletWidth ? (
+        <div className="apps-list-wrapper">
       
       <Myprojects counter={itemCounter} setListLength={setListLength}/>
+        
+      </div>
+      )
+      : (
+        <div className="apps-list-wrapper">
+        <button className="btn-left" onClick={handlerLeftBtn}>&lt;</button>
+        
+        <Myprojects counter={itemCounter} setListLength={setListLength}/>
+        
+        <button className="btn-right" onClick={handlerRightBtn}>&gt;</button>
+        </div>
+      )
+
       
-      <button className="btn-right" onClick={handlerRightBtn}>&gt;</button>
+        
+      }
       
 
-    </div>
+    </>
   );
 };
 

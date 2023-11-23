@@ -31,7 +31,7 @@ const Myprojects = ({ counter, setListLength }) => {
   //set the list length for Appgallery to know the limit of the list
   setListLength(projectsArr.length);
   
-  //whatever i put as projects doesnt matter, the important thing is that i have .link afterwards in the src so it looks for the key "link".
+  //whatever i put as projects dont matter, the important thing is that i have .link afterwards in the src so it looks for the key "link".
   //i Dont need to pass the counter props here, it has access with or without it
   const listCreator = () => {
     return projectsArr.map((projects, index) => (

@@ -9,8 +9,9 @@ const Welcome = () => {
   return (
     <div className='welcome-wrapper'>
         <section className={`welcome-section `}>
-            <h1 className={`welcome-greetings ${pageLoaded ? "fadeIn" : ""}`}>Hi! Welcome to my Portfolio.</h1>
-            <p className={`welcome-description ${pageLoaded ? "fadeIn" : ""}`}>Here you will find all my projects</p>
+            <h1 className={`welcome-greetings ${pageLoaded ? "fadeIn" : ""}`}>Hi! I'm Santiago Hernandez, welcome to my Portfolio.</h1>
+            <p className={`welcome-description ${pageLoaded ? "fadeIn" : ""}`}>I created this website, where you can explore my other <em>projects</em>, learn more <em>about me</em>, and find details on how to <em>get in touch</em>.</p>
+            <p className={`welcome-instruction ${pageLoaded ? "fadeIn" : ""}`}>Please navigate to the desired section from the <strong>menu</strong>.</p>
         </section>
     </div>
   )

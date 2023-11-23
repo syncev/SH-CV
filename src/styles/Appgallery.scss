@@ -1,23 +1,23 @@
 /*-------carousel box------*/
 .apps-list-wrapper {
   width: 95%;
-  height: 55vh;
+  height: 70vh;
   background-color: $primary-color;
-  margin-top: 1vh;
+  margin-top: 15vh;
   margin-left: auto;
   margin-right: auto;
   display: flex;
   justify-content: space-around;
   align-items: center;
+
+
   opacity: 0;
-  animation: fadeIn 2.5s forwards;
+  animation: fadeIn 1.5s forwards;
   @keyframes fadeIn {
     0% {
       opacity: 0;
     }
-    50% {
-      opacity: 0;
-    }
+    
     100% {
       opacity: 1;
     }
@@ -48,7 +48,7 @@
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
     align-items: center;
-    gap: 3rem;
+    gap: 1rem;
     /*hides scrollbars but keeps functionality (not all browsers have it hidden i think)*/
     &::-webkit-scrollbar {
       display: none;
@@ -57,7 +57,7 @@
     .app-item {
       justify-content: center;
       display: flex;
-      flex: 0 0 80%;
+      flex: 0 0 70%;
       height: 80%;
       //regular transition for when not selected
       scale: 1;
