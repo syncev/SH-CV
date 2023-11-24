@@ -3,24 +3,28 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 5vh;
-    padding-top: 3vh;
+    
+    margin-top: 15vh;
     padding-bottom: 3vh;
-    margin-bottom: 0;
+    height: auto;
     background-color: #3a3939;
-
+    
     
     .contact-header{
+        padding-top: 5vh;
         font-size: 2rem;
     }
     .contact-list{
         display: inherit;
-        width: 90vw;
+        width: 80vw;
+        align-items: center;
         justify-content: space-evenly;
         margin-top: 3vh;
     }
-    .contact-item img{
-        width: 70px;
-}
+    .contact-item{
+        img{
+            width: 70px;
+    }
+    }
     
 }

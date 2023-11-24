@@ -13,8 +13,8 @@ export function App() {
       <Routes>
         <Route path="/SH-CV/" element={<Welcome/>} />
         <Route path="/SH-CV/projects" element={<Appgallery/>} />
-        <Route path="/about" element={<AboutMe/>} />
-        <Route path="/contact" element={<Contact/>} />
+        <Route path="/SH-CV/about" element={<AboutMe/>} />
+        <Route path="/SH-CV/contact" element={<Contact/>} />
         
       
       </Routes>

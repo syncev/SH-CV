@@ -1,9 +1,26 @@
 /*-------carousel box------*/
+.projects-header{
+  color: white;
+  margin-top: 15vh;
+  display: flex;
+  justify-content: center;
+
+  opacity: 0;
+  animation: fadeIn 0.3s forwards;
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    
+    100% {
+      opacity: 1;
+    }
+  }
+}
 .apps-list-wrapper {
   width: 95%;
   height: 70vh;
   background-color: $primary-color;
-  margin-top: 15vh;
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -12,7 +29,7 @@
 
 
   opacity: 0;
-  animation: fadeIn 1.5s forwards;
+  animation: fadeIn 0.5s forwards;
   @keyframes fadeIn {
     0% {
       opacity: 0;
@@ -48,7 +65,7 @@
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
     align-items: center;
-    gap: 1rem;
+    gap: 5vw;
     /*hides scrollbars but keeps functionality (not all browsers have it hidden i think)*/
     &::-webkit-scrollbar {
       display: none;
@@ -95,23 +112,28 @@
       }
     }
 
-    .currentScroll {
-      transition: all 1s ease-in-out;
-      scale: 1.1;
-    }
+   
   }
   
 }
 @media (min-width: $breakpoint-tablet) {
   .apps-list-wrapper{
     height: 58vh;
+    
     .apps-list{
+      .currentScroll {
+        transition: all 1s ease-in-out;
+        scale: 1.1;
+      }
       .app-item{
         //wider projects previews
         flex: 0 0 70%;
+        gap: 1;
       }
     }
+
   }
+
 }
 @media (min-width: $breakpoint-pc){
   .apps-list-wrapper{

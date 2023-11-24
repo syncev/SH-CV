@@ -12,7 +12,7 @@ const Contact = () => {
           </h2>
       <ul className="contact-list">
         <li className="contact-item linkedin">
-          <a href="www.linkedin.com/in/san-hernandez">
+          <a href="https://www.linkedin.com/in/san-hernandez">
             <img src={linkedin} alt="" />
           </a>
         </li>
@@ -27,8 +27,8 @@ const Contact = () => {
             </a>
         </li>
         <li className="contact-item instagram">
-            <img src={instagram} alt="" />
             <a href="http://instagram.com/saintyago_hernandez">
+            <img src={instagram} alt="" />
             </a>
         </li>
       </ul>

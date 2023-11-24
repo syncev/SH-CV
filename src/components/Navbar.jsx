@@ -29,11 +29,11 @@ const Navbar = () => {
           </li>
           <hr />
           <li>
-            <Link to="/about">About Me</Link>
+            <Link to="/SH-CV/about">About Me</Link>
           </li>
           <hr />
           <li>
-            <Link to="/contact">Contact</Link>
+            <Link to="/SH-CV/contact">Contact</Link>
           </li>
         </ul>
       </div>

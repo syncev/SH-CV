@@ -4,15 +4,14 @@
   justify-content: space-evenly;
   align-items: center;
   width: 90vw;
-  height: 90vh;
+  height: 87vh;
   margin-left: auto;
   margin-right: auto;
-  animation: fadeIn 3.5s forwards;
+  margin-top: 8vh;
+  animation: fadeIn 0.5s forwards;
+  
   @keyframes fadeIn {
     0% {
-      opacity: 0;
-    }
-    50% {
       opacity: 0;
     }
     100% {
@@ -27,13 +26,15 @@
   .about-main-cuote {
     font-size: 1.4rem;
     text-align: center;
-    margin-top: 3vh;
+    margin-top: 2vh;
   }
   .about-main-cuote {
     font-style: italic;
   }
   .about-img {
     border-radius: 155px;
-    margin-top: 5vh;
+    
   }
+
+  
 }

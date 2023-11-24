@@ -8,22 +8,19 @@ import colorPicker from "/src/assets/Color Picker.jpeg";
 const Myprojects = ({ counter, setListLength }) => {
   const projectsArr = [
     {
-      index: 1,
-      link: "https://lista-tareas-five.vercel.app/",
-      cover: toDoNew,
-    },
-    {
-      index: 2,
       link: "https://il-matterello.vercel.app/",
       cover: italRest,
     },
     {
-      index: 3,
       link: "https://crippa-service.vercel.app/",
       cover: crippa,
     },
     {
-      index: 4,
+      link: "https://lista-tareas-five.vercel.app/",
+      cover: toDoNew,
+    },
+    {
+      
       link: "https://color-picker-five-tau.vercel.app/",
       cover: colorPicker,
     },
