@@ -4,7 +4,7 @@ import Myprojects from "./Myprojects";
 
 const Appgallery = () => {
   const deviceWidth = window.innerWidth;
-  const tabletWidth = 768;
+  const tabletWidth = 481;
 
   //for telling it you want it to move
   let list = document.querySelector(".apps-list");
@@ -39,16 +39,7 @@ const Appgallery = () => {
     }
   };
 
-  /*   const slideWidth = items.clientWidth;
-    list.scrollLeft += slideWidth;
-    if (itemCounter < listLength - 1) {
-      setItemCounter(itemCounter + 1);
-    }
-    list.scrollRight -= slideWidth;
-
-    if (itemCounter > 0) {
-      setItemCounter(itemCounter - 1);
-    } */
+  
 
   return (
     <>

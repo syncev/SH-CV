@@ -8,8 +8,7 @@ const Contact = () => {
   return (
     <div className="contact-wrapper">
       
-        <h2 className="contact-header">Contact Me
-          </h2>
+        <h2 className="contact-header">Let`s create something extraordinary together</h2>
       <ul className="contact-list">
         <li className="contact-item linkedin">
           <a href="https://www.linkedin.com/in/san-hernandez">
