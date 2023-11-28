@@ -21,6 +21,10 @@ const Appgallery = () => {
   //projecs length;
   const [listLength, setListLength] = useState(1);
 
+  /* const {scrollPosition, setScrollPosition} = useState(list.scrollX);
+  useEffect(() => {
+    scrollPosition < list.scrollX ? setItemCounter(itemCounter +1) : scrollPosition > list.scrollX ? setItemCounter(itemCounter - 1) : setItemCounter(itemCounter)
+  },[list.scrollX]) */
   //-----------right button----------
   const handlerRightBtn = () => {
     const slideWidth = items.clientWidth;
