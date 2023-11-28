@@ -3,8 +3,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-
     margin-top: 15vh;
     padding-bottom: 3vh;
     height: 60vh;
@@ -25,8 +23,9 @@
 
     
     .contact-header{
-        padding-top: 5vh;
+        margin-top: 4vh;
         font-size: 2rem;
+        text-align: center;
     }
     .contact-list{
         display: inherit;

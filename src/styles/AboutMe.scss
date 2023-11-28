@@ -4,12 +4,13 @@
   justify-content: space-evenly;
   align-items: center;
   width: 90vw;
-  height: 87vh;
+  height: auto;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 8vh;
+  margin-top: 15vh;
+
+  //----------animation
   animation: fadeIn 0.5s forwards;
-  
   @keyframes fadeIn {
     0% {
       opacity: 0;
@@ -22,19 +23,17 @@
   .about-header {
     font-size: 2rem;
   }
-  .about-main,
-  .about-main-cuote {
-    font-size: 1.4rem;
-    text-align: center;
-    margin-top: 2vh;
-  }
-  .about-main-cuote {
-    font-style: italic;
+  .about-main{
+
+    .text {
+      font-size: 1.4rem;
+      text-align: center;
+      margin-top: 2vh;
+      font-style: italic;
+    }
   }
   .about-img {
+    margin-top: 2vh;
     border-radius: 155px;
-    
   }
-
-  
 }

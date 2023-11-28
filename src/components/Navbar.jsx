@@ -10,6 +10,9 @@ const Navbar = () => {
     setToggleMenu(!toggleMenu);
   };
 
+  const btnHandler = () => {
+    setToggleMenu(!toggleMenu)
+  }
   return (
     <header>
       <nav className="nav">
@@ -25,15 +28,15 @@ const Navbar = () => {
         <ul className={`nav-ul ${toggleMenu ? "" : "menuOut"}`}>
           <hr />
           <li>
-            <Link to="/SH-CV/projects">My Projects</Link>
+            <Link to="/SH-CV/projects" onClick={btnHandler}>My Projects</Link>
           </li>
           <hr />
           <li>
-            <Link to="/SH-CV/about">About Me</Link>
+            <Link to="/SH-CV/about" onClick={btnHandler}>About Me</Link>
           </li>
           <hr />
           <li>
-            <Link to="/SH-CV/contact">Contact</Link>
+            <Link to="/SH-CV/contact" onClick={btnHandler}>Contact</Link>
           </li>
         </ul>
       </div>
