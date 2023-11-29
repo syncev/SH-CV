@@ -54,13 +54,13 @@ const Appgallery = () => {
         </div>
       ) : (
         <div className="apps-list-wrapper">
-          <button className="btn-left" onClick={handlerLeftBtn}>
+          <button className={`btn-left ${itemCounter === 0 ? "btnGray" : ""}`} onClick={handlerLeftBtn}>
             &lt;
           </button>
 
           <Myprojects counter={itemCounter} setListLength={setListLength} />
 
-          <button className="btn-right" onClick={handlerRightBtn}>
+          <button className={`btn-right ${itemCounter === listLength -1 ? "btnGray" : ""}`} onClick={handlerRightBtn}>
             &gt;
           </button>
         </div>
