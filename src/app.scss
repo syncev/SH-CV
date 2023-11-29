@@ -1,9 +1,10 @@
 $breakpoint-tablet: 481px; 
 $breakpoint-pc: 1023px;
-$primary-color: #504e4e;
-$btnHover: #72c43c;
-$homeHover: #c0b021;
-$navBgColor: #808080;
+$primary-color: #001c24;
+$btnHover: #00B3E6;
+$homeHover: #E63300;
+$navBgColor: #001c24;
+$contactBgColor: #000000;
 
 @import "/src/styles/Navbar.scss";
 @import "/src/styles/Welcome.scss";
