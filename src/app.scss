@@ -2,9 +2,12 @@ $breakpoint-tablet: 481px;
 $breakpoint-pc: 1023px;
 $primary-color: #001c24;
 $btnHover: #00B3E6;
-$homeHover: #E63300;
-$navBgColor: #001c24;
-$contactBgColor: #000000;
+$homeHover: #FB8B5D;
+$navBorder: #FB8B5D;
+$navBgColor: #001318;
+$projectsScrollBtn: #FB8B5D;
+$contactBgColor: #02332b;
+$fontColor: white;
 
 @import "/src/styles/Navbar.scss";
 @import "/src/styles/Welcome.scss";
@@ -17,7 +20,7 @@ body{
     min-width: 320px;
     box-sizing: border-box;
     background-color: $primary-color;
-    color: white;
+    color: $fontColor;
     strong{
         font-weight:bold;
     }

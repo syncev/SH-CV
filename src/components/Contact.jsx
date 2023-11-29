@@ -8,7 +8,9 @@ const Contact = () => {
   return (
     <div className="contact-wrapper">
       <h2 className="contact-header">
-        Let`s create something extraordinary together
+        <em>
+        Let`s get in touch
+        </em>
       </h2>
       <ul className="contact-list">
         <li className="contact-item linkedin">

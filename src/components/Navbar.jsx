@@ -26,7 +26,7 @@ const Navbar = () => {
       {/* nav links */}
       <div className="ul-wrapper">
         <ul className={`nav-ul ${toggleMenu ? "" : "menuOut"}`}>
-          <hr />
+          
           <li>
             <Link to="/SH-CV/projects" onClick={btnHandler}>My Projects</Link>
           </li>

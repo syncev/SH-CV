@@ -47,7 +47,7 @@ const Appgallery = () => {
 
   return (
     <>
-      <h1 className="projects-header">This are my projects so far:</h1>
+      <h1 className="projects-header"> <em> This are my projects so far:</em></h1>
       {deviceWidth < tabletWidth ? (
         <div className="apps-list-wrapper">
           <Myprojects counter={itemCounter} setListLength={setListLength} />
