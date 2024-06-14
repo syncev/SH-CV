@@ -3,11 +3,11 @@ import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
 import MyProjectsBtn from "./MyProjectsBtn";
 
-import logo from "../assets/logo.png";
-import fbIcon from "../assets/icons/fbIcon.png";
-import linkedinIcon from "../assets/icons/linkedin-icon.png";
-import igIcon from "../assets/icons/ig-icon.png";
-import mailIcon from "../assets/icons/mail-icon.png";
+import logo from "/src/assets/logo.png";
+import fbIcon from "/src/assets/icons/fbIcon.png";
+import linkedinIcon from "/src/assets/icons/linkedin-icon.png";
+import igIcon from "/src/assets/icons/ig-icon.png";
+import mailIcon from "/src/assets/icons/mail-icon.png";
 
 const Welcome = () => {
   const deviceWidth = window.innerWidth;
