@@ -1,3 +1,3 @@
 
 This UNFINISHED project is my own CV, where you can see the rest of my projects listed inside.
-syncev.github.io/SH-CV/
+https://syncev.github.io/SH-CV/
