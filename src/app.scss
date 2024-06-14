@@ -7,19 +7,21 @@ $navBorder: #FB8B5D;
 $navBgColor: #001318;
 $projectsScrollBtn: #FB8B5D;
 $contactBgColor: #02332b;
-$fontColor: white;
+$fontColor: #EDE6E7;
+$logoNameColor: #343327;
 
 @import "/src/styles/Navbar.scss";
 @import "/src/styles/Welcome.scss";
 @import "/src/styles/Appgallery.scss";
 @import "/src/styles/AboutMe.scss";
 @import "/src/styles/Contact.scss";
+@import "/src/styles/MyProjectsBtn.scss";
 
 
 body{
     min-width: 320px;
     box-sizing: border-box;
-    background-color: $primary-color;
+    // background-color: $primary-color;
     color: $fontColor;
     strong{
         font-weight:bold;

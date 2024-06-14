@@ -1,66 +1,82 @@
-.welcome-wrapper{
-    overflow: hidden;
-    .welcome-section{
-        margin-top: 15vh;
+.welcome-wrapper::before {
+  background-image: url("../assets/bg.jpg");
+  filter: blur(5px);
+  z-index: -1;
+  position: absolute; /* Position it absolutely */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  content: "";
+}
+.welcome-wrapper {
+  overflow: hidden;
+  .welcome-section {
+    background-image: url("../assets/bg.jpg");
+    background-size: 100% 100%; /* Maintain aspect ratio */
+    background-position: center ;
+    background-repeat: no-repeat;
+    margin: 0 auto; /* Center the content horizontally */
+    width: 70vw; /* Adjust width as needed */
+    height: 70vh; /* Adjust height as needed */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    z-index: 0;
+    
+    margin-top: 15vh;
+    .greetings-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 7vh;
+      .logo-wrapper {
+        margin-left: 5vw;
+        display: inherit;
+        align-items: center;
+        .logo-name {
+          font-size: 2rem;
+          height: 10vh;
+          align-content: center;
+          color: $logoNameColor;
+        }
+        .logo-img {
+          height: 8vh;
+        }
+      }
+      .social-wrapper {
         display: flex;
-        flex-direction: column;
-        gap: 10vh;
-        height: 80vh;
-        text-align: center;
-        margin-left: 20%;
-        margin-right: 20%;
-        z-index: 0;
-        /* border: 1px solid red; */
-        
-        .welcome-greetings{
-            font-size: 2.2rem;
-            transform: translateX(-100%);
-            
+        align-items: center;
+        margin-right: 5vw;
+        .socialBtn1 {
+          height: 4vh;
         }
-        .welcome-description{
-            font-size: 1.6rem;
-            transform: translateX(100%);
+        .socialBtn2 {
+          height: 5vh;
         }
-        .welcome-instruction{
-            font-size: 1.4rem;
-            transform: translateY(850%);
-            font-style: italic;
-            font-weight: 100;
+        .socialBtn3 {
+          height: 5vh;
         }
-
-
-        .welcome-greetings, .welcome-description, .welcome-instruction{
-            opacity: 0; 
-            transition: all 0.7s ease-in-out;
+        .socialBtn4 {
+          height: 2vh;
+          padding: 1vh;
         }
-        .fadeIn{
-            opacity: 1;
-            transform: translateX(0px);
-        }
+      }
     }
-    @media (min-width: $breakpoint-tablet) {
-        .welcome-section{
-            
-            .welcome-greetings{
-                font-size: 3rem;
-            }
-            .welcome-description{
-                font-size: 2.2rem;
-            }
-        }
-    }
-    @media (min-width: $breakpoint-pc) {
-        
+    .description-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
 
-        .welcome-section{
-            margin-top: 20vh;
-            height: 75vh;
-            .welcome-greetings{
-                font-size: 3rem;
-            }
-            .welcome-description{
-                font-size: 2.2rem;
-            }
-        }
+      height: 30vh;
+      justify-content: space-around;
+      margin-right: 5vw;
+
+      .welcome-description {
+        font-size: 1.5rem;
+        text-align: right;
+        line-height: 5vh;
+      }
     }
+  }
 }

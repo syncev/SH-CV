@@ -1,0 +1,22 @@
+#MyProjectsBtn {
+  color: white; /* Set text color to white */
+  border: 2px solid white; /* Set border to solid white */
+  background-color: rgba(128, 128, 128, 0.6); /* Gray background with 60% opacity */
+  padding: 10px 20px; /* Add some padding */
+  text-decoration: none; /* Remove default link underline */
+  display: inline-block; /* Display as inline-block to apply padding and margin */
+  border-radius: 5px; /* Optional: rounded corners */
+  text-align: center; /* Center the text */
+  font-size: 16px; /* Font size */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+#MyProjectsBtn .arrow {
+  margin-left: 10px; /* Space between text and arrow */
+  font-size: 1.2em; /* Optional: adjust size of the arrow */
+}
+
+#MyProjectsBtn:hover {
+  background-color: rgba(128, 128, 128, 0.8); /* Change background color on hover */
+  border-color: #ccc; /* Optional: change border color on hover */
+}
