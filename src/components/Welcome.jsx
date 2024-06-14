@@ -31,7 +31,7 @@ const Welcome = () => {
               <img className="logo-img" src="./src/assets/logo.png" alt="" />
             </div>
             <div className="social-wrapper">
-              <img className="socialBtn1" src="/src/assets/fbIcon.png" alt="" />
+              <img className="socialBtn1" src="/src/assets/icons/fbIcon.png" alt="" />
               <img className="socialBtn2" src="/src/assets/linkedin-icon.png" alt="" />
               <img className="socialBtn3" src="/src/assets/ig-icon.png" alt="" />
               <img className="socialBtn4" src="/src/assets/mail-icon.png" alt="" />
