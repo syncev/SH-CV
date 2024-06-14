@@ -3,6 +3,12 @@ import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
 import MyProjectsBtn from "./MyProjectsBtn";
 
+import logo from "../assets/logo.png";
+import fbIcon from "../assets/icons/fbIcon.png";
+import linkedinIcon from "../assets/icons/linkedin-icon.png";
+import igIcon from "../assets/icons/ig-icon.png";
+import mailIcon from "../assets/icons/mail-icon.png";
+
 const Welcome = () => {
   const deviceWidth = window.innerWidth;
   const tabletWidth = 768;
@@ -28,13 +34,13 @@ const Welcome = () => {
           <div className="greetings-wrapper">
             <div className="logo-wrapper">
               <h1 className={`logo-name`}>S. HERNANDEZ</h1>
-              <img className="logo-img" src="./src/assets/logo.png" alt="" />
+              <img className="logo-img" src={logo} alt="Logo" />
             </div>
             <div className="social-wrapper">
-              <img className="socialBtn1" src="/src/assets/icons/fbIcon.png" alt="" />
-              <img className="socialBtn2" src="/src/assets/linkedin-icon.png" alt="" />
-              <img className="socialBtn3" src="/src/assets/ig-icon.png" alt="" />
-              <img className="socialBtn4" src="/src/assets/mail-icon.png" alt="" />
+            <img className="socialBtn1" src={fbIcon} alt="Facebook" />
+              <img className="socialBtn2" src={linkedinIcon} alt="LinkedIn" />
+              <img className="socialBtn3" src={igIcon} alt="Instagram" />
+              <img className="socialBtn4" src={mailIcon} alt="Email" />
             </div>
           </div>
 
