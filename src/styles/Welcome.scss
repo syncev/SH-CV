@@ -7,13 +7,13 @@
   z-index: -1;
   position: absolute; /* Position it absolutely */
   width: 100%; /* Full width */
-  min-width: 1440px;
+  min-width: 1000px;
   height: 100%; /* Full height */
   content: "";
 }
 .welcome-wrapper {
   overflow: hidden;
-  min-width: 1440px;
+  min-width: 1000px;
   .welcome-section {
     background-size: 100% 100%; /* Maintain aspect ratio */
     background-image: url("../assets/bg.jpg");
