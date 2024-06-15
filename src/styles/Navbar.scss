@@ -15,6 +15,8 @@ header {
     width: 50%;
     z-index: 2;
     height: auto;
+    border: 1px solid rgb(145, 255, 0);
+
 
     .site-logo {
       font-size: 1.6rem;
@@ -39,6 +41,7 @@ header {
       height: 40px;
       border-radius: 5px;
       transition: all 0.3s;
+      
       &:hover {
         cursor: pointer;
       }
@@ -53,8 +56,7 @@ header {
   .ul-wrapper {
     display: flex;
     justify-content: center;
-    width: 70%;
-
+    width: 100%;
     .nav-ul {
       transition: all 0.3s;
       z-index: 3;
@@ -74,18 +76,36 @@ header {
         margin: 0;
         width: 70%;
         border: 1px solid $navBorder;
-      }
 
+      }
+      
+      .navSeparator{
+        margin-bottom: 70px;
+        display: flex;
+        align-items: center;
+
+        p{
+          font-size: 65px;
+          font-weight: 200;
+
+        }
+      }
       li {
         height: 8vh;
         transition: all 0.3s;
         border: 1px solid transparent;
-        &:hover {
+        
+        .tecIcons{
+          height: 100%;
+          width: 100%;
+          
+        }
+        
+        &.navBtnLi:hover {
           border: 1px solid $btnHover;
           border-radius: 10px;
           transition: border 0.3s;
         }
-
         a {
           display: flex;
           align-items: center;
@@ -94,6 +114,9 @@ header {
           height: 100%;
           color: $fontColor;
           text-decoration: none;
+          font-size: 18px;
+          font-weight: 800;
+          font-family: 'Garet', sans-serif;
         }
       }
     }

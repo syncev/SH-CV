@@ -7,8 +7,8 @@ $navBorder: #FB8B5D;
 $navBgColor: #001318;
 $projectsScrollBtn: #FB8B5D;
 $contactBgColor: #02332b;
-$fontColor: #EDE6E7;
-$logoNameColor: #343327;
+$fontColor: #FCFBFF;
+$logoNameColor: #36362e;
 
 @import "/src/styles/Navbar.scss";
 @import "/src/styles/Welcome.scss";
@@ -16,6 +16,14 @@ $logoNameColor: #343327;
 @import "/src/styles/AboutMe.scss";
 @import "/src/styles/Contact.scss";
 @import "/src/styles/MyProjectsBtn.scss";
+@font-face {
+    font-family: 'Garet';
+    src: url('./assets/fonts/Garet\ Book\ 300.ttf');
+}
+@font-face {
+    font-family: 'Garet Heavy';
+    src: url('./assets/fonts/Garet\ Heavy\ 850.ttf');
+}
 
 
 body{
@@ -23,6 +31,16 @@ body{
     box-sizing: border-box;
     // background-color: $primary-color;
     color: $fontColor;
+    .mainFont{
+        font-family: 'Garet';
+    }
+    .titleFont{
+        font-family: 'Garet Heavy';
+    }
+    .boldFont{
+        font-weight: 600;
+        
+      }
     strong{
         font-weight:bold;
     }

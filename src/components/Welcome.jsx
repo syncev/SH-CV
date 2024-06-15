@@ -33,7 +33,7 @@ const Welcome = () => {
         <section className={`welcome-section `}>
           <div className="greetings-wrapper">
             <div className="logo-wrapper">
-              <h1 className={`logo-name`}>S. HERNANDEZ</h1>
+              <h1 className={`logo-name mainFont boldFont`}>S. HERNANDEZ</h1>
               <img className="logo-img" src={logo} alt="Logo" />
             </div>
             <div className="social-wrapper">
@@ -45,9 +45,10 @@ const Welcome = () => {
           </div>
 
           <div className="description-wrapper">
-            <p className={`welcome-description`}>
+            <p className={` mainFont thinFont`}>
               Front End Dev.
-              <br />
+              </p>
+              <p className="mainFont boldFont">
               USER-CENTRIC DESIGN
               <br />
               INTERACTIVE WEB SOLUTIONS

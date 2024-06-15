@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import buttonImg from '/src/assets/icons/menu.svg'
 import {Link} from "react-router-dom"
 import MyProjectsBtn from './MyProjectsBtn';
+import tecIcons from "/src/assets/icons/tecIcons.png";
 
 const Navbar = () => {
   //state for tracking if menuOut className is toggle (used in mobile)
@@ -16,20 +17,22 @@ const Navbar = () => {
   }
   return (
     <header>
-      <nav className="nav">
-        
-        <button className={`btn-menu ${toggleMenu ? "btnOut": ""} `} onClick={menuToggle}>
-          <img src={buttonImg} />{" "}
-        </button>
-      </nav>
-      {/* nav links */}
+      
       <div className="ul-wrapper">
         <ul className={`nav-ul ${toggleMenu ? "" : "menuOut"}`}>
           <li>
+          <img className="tecIcons" src={tecIcons} alt="" />
+          </li>
+          <hr />
+          <li className="navSeparator">
+            <p >_</p>
+          </li>
+          <hr />
+          <li className="navBtnLi">
             <Link to="/SH-CV/about" onClick={btnHandler}>About Me</Link>
           </li>
           <hr />
-          <li>
+          <li className="navBtnLi">
             <Link to="/SH-CV/contact" onClick={btnHandler}>Let`s work together</Link>
           </li>
         </ul>
