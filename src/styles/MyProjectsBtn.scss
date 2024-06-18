@@ -9,7 +9,7 @@
   text-align: center; /* Center the text */
   font-size: 16px; /* Font size */
   margin-top: 25px;
-  transition: background-color 0.3s ease; /* Smooth transition for background color */
+  transition: all 0.3s ease; /* Smooth transition for background color */
 }
 
 #MyProjectsBtn .arrow {
@@ -21,4 +21,5 @@
 #MyProjectsBtn:hover {
   background-color: rgba(128, 128, 128, 0.8); /* Change background color on hover */
   border-color: #ccc; /* Optional: change border color on hover */
+  transform: scale(1.2);
 }

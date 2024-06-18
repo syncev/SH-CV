@@ -2,12 +2,13 @@ import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
 import MyProjectsBtn from "./MyProjectsBtn";
+import Contact from "./Contact";
 
 import logo from "/src/assets/logo.png";
-import fbIcon from "/src/assets/icons/fbIcon.png";
-import linkedinIcon from "/src/assets/icons/linkedin-icon.png";
-import igIcon from "/src/assets/icons/ig-icon.png";
-import mailIcon from "/src/assets/icons/mail-icon.png";
+// import fbIcon from "/src/assets/icons/fbIcon.png";
+// import linkedinIcon from "/src/assets/icons/linkedin-icon.png";
+// import igIcon from "/src/assets/icons/ig-icon.png";
+// import mailIcon from "/src/assets/icons/mail-icon.png";
 
 const Welcome = () => {
   const deviceWidth = window.innerWidth;
@@ -36,19 +37,18 @@ const Welcome = () => {
               <h1 className={`logo-name mainFont boldFont`}>S. HERNANDEZ</h1>
               <img className="logo-img" src={logo} alt="Logo" />
             </div>
-            <div className="social-wrapper">
-            <img className="socialBtn1" src={fbIcon} alt="Facebook" />
+            <Contact />
+            {/* <div className="social-wrapper">
+              <img className="socialBtn1" src={fbIcon} alt="Facebook" />
               <img className="socialBtn2" src={linkedinIcon} alt="LinkedIn" />
               <img className="socialBtn3" src={igIcon} alt="Instagram" />
               <img className="socialBtn4" src={mailIcon} alt="Email" />
-            </div>
+            </div> */}
           </div>
 
           <div className="description-wrapper">
-            <p className={` mainFont thinFont`}>
-              Front End Dev.
-              </p>
-              <p className="mainFont boldFont">
+            <p className={` mainFont thinFont`}>Front End Dev.</p>
+            <p className="mainFont boldFont">
               USER-CENTRIC DESIGN
               <br />
               INTERACTIVE WEB SOLUTIONS

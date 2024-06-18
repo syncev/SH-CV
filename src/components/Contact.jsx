@@ -1,40 +1,34 @@
 import React from "react";
-import linkedin from "/src/assets/icons/linkedin.png";
-import manzana from "/src/assets/icons/manzana.png";
-import facebook from "/src/assets/icons/facebook.png";
-import instagram from "/src/assets/icons/instagram.png";
+import fbIcon from "/src/assets/icons/fbIcon.png";
+import linkedinIcon from "/src/assets/icons/linkedin-icon.png";
+import igIcon from "/src/assets/icons/ig-icon.png";
+import mailIcon from "/src/assets/icons/mail-icon.png";
 
 const Contact = () => {
   return (
-    <div className="contact-wrapper">
-      <h2 className="contact-header">
-        <em>
-        Let`s get in touch
-        </em>
-      </h2>
-      <ul className="contact-list">
+    
+      <ul className="contact-wrapper">
         <li className="contact-item linkedin">
           <a href="https://www.linkedin.com/in/san-hernandez">
-            <img src={linkedin} alt="" />
+          <img className="socialBtn1" src={linkedinIcon} alt="LinkedIn" />
           </a>
         </li>
         <li className="contact-item email">
           <a href="mailto: santiago.n.hernandez@gmail.com">
-            <img src={manzana} alt="" />
+          <img className="socialBtn2" src={mailIcon} alt="Email" />
           </a>
         </li>
         <li className="contact-item facebook">
           <a href="https://www.facebook.com/santiago.n.hernandez/">
-            <img src={facebook} alt="" />
+          <img className="socialBtn3" src={fbIcon} alt="Facebook" />
           </a>
         </li>
         <li className="contact-item instagram">
           <a href="http://instagram.com/saintyago_hernandez">
-            <img src={instagram} alt="" />
+          <img className="socialBtn4" src={igIcon} alt="Instagram" />
           </a>
         </li>
       </ul>
-    </div>
   );
 };
 
