@@ -42,7 +42,7 @@ header {
     justify-content: center;
     width: 100%;
     .nav-ul {
-      transition: all 0.3s;
+      // transition: all 0.3s;
       z-index: 3;
       background-color: rgba(128, 128, 128, 0.6);
       backdrop-filter: blur(10px);
@@ -54,7 +54,7 @@ header {
       justify-content: space-evenly;
       align-items: center;
       border-radius: 0;
-
+      
       hr {
         display: none;
         margin: 0;
@@ -85,13 +85,16 @@ header {
           
         }
         
-        &.navBtnLi:hover {
-          border: 1px solid $btnHover;
+        &.navBtnLi {
           border-radius: 10px;
-          transition: transform 0.2s ease, border 0.8s ease;
-          transform: scale(1.2);
-
+          transition: transform 0.2s ease-in-out, border 0.8s ease-in-out; /* Apply transition to the default state */
+          transform: scale(1); /* Ensure the default scale is 1 */
+      
+          &:hover {
+            border: 1px solid $btnHover;
+            transform: scale(1.2);
         }
+      }
         a {
           display: flex;
           align-items: center;

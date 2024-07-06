@@ -1,50 +1,166 @@
-import React from "react";
-import toDoNew from "/src/assets/To Do List New.png";
-import italRest from "/src/assets/Italian Restaurant LP.jpeg";
-import crippa from "/src/assets/Crippa Service.jpeg";
-import colorPicker from "/src/assets/Color Picker.jpeg";
+import { useEffect } from "preact/hooks";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import logo from "/src/assets/logo.png";
+import arrow from "/src/assets/icons/backarrow-nb.png";
+import goBtn from "/src/assets/icons/go-no-bg.png";
+// import Myprojects from "./Myprojects";
 
-//this needs to be properly destructuring by using the {}
-const Myprojects = ({ counter, setListLength }) => {
-  const projectsArr = [
-    {
-      link: "https://il-matterello.vercel.app/",
-      cover: italRest,
-    },
-    {
-      link: "https://crippa-service.vercel.app/",
-      cover: crippa,
-    },
-    {
-      link: "https://lista-tareas-five.vercel.app/",
-      cover: toDoNew,
-    },
-    {
-      
-      link: "https://color-picker-five-tau.vercel.app/",
-      cover: colorPicker,
-    },
-  ];
-  //set the list length for Appgallery to know the limit of the list
-  setListLength(projectsArr.length);
-  
-  //whatever i put as projects dont matter, the important thing is that i have .link afterwards in the src so it looks for the key "link".
-  //i Dont need to pass the counter props here, it has access with or without it
-  const listCreator = () => {
-    return projectsArr.map((projects, index) => (
-      <li
-        key={index}
-        className={`app-item ${index === counter ? "currentScroll" : ""}`}
-      >
-        <a href={projects.link}>
-          <img src={projects.cover} alt="" />
-        </a>
-      </li>
-    ));
-  };
-  return <ul className="apps-list">{listCreator(counter)}</ul>;
+const MyProjects = () => {
+  const [reposByDate, setReposByDate] = useState([]);
+  const [reposByUpdate, setReposByUpdate] = useState([]);
+  const username = "syncev";
+
+  useEffect(() => {
+    const fetchRepos = async () => {
+      const response = await fetch(
+        `https://api.github.com/users/${username}/repos`,
+       
+      );
+      const data = await response.json();
+      //filter and sort by date created
+      const filteredReposByDate = data
+        .filter(
+          (repo) =>
+            repo.homepage && repo.homepage !== "" && repo.name !== "SH-CV"
+        )
+        .sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+
+      setReposByDate(filteredReposByDate);
+
+      //filter so the most recent project created is not on the list and sort by date updated
+      const filteredReposByUpdate = filteredReposByDate
+
+        .filter(
+          (repo, index) =>
+            repo.homepage &&
+            repo.homepage !== "" &&
+            repo.name !== "SH-CV" &&
+            index !== 0
+        )
+        .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+
+      setReposByUpdate(filteredReposByUpdate);
+    };
+
+    fetchRepos();
+  }, [username]);
+
+  const firstRepo = reposByDate[0]; //to ensure i find the first repo for the latest repo part
+
+  return (
+    <div className="repo-wrapper">
+      <div className="hero">
+        <div className="hero-shade"></div>
+        <div className="projects-nav">
+          <Link className="projects-back-btn" to="/SH-CV/">
+            <img src={arrow} alt="" />
+          </Link>
+          <h1 className="projects-name mainFont boldFont">S. HERNANDEZ</h1>
+          <img className="projects-logo" src={logo} alt="" />
+        </div>
+
+        <h2 className="projects-header pageTitleFont">PORTFOLIO</h2>
+        {firstRepo ? (
+          <div className="latest-repo">
+            <div key={firstRepo.id} className="projectWrapper">
+              <div className="iframe-container">
+                <div className="latest-repo-gradient">
+                  <h3 className="projectTitlesFont">
+                    {firstRepo.name || "Nada"}
+                  </h3>
+                </div>
+                <div className="latest-project-tag pageTitleFont">
+                  LATEST PROJECT
+                </div>
+                <iframe src={firstRepo.homepage} title={firstRepo.name} />
+              </div>
+              <div className="info-container">
+                <p className="projectInfo">
+                  {firstRepo.description || "No description provided"}
+                </p>
+                <a
+                  className="goBtn"
+                  href={firstRepo.homepage}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={goBtn} alt="" />
+                </a>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <p>Loading...</p>
+        )}
+      </div>
+
+      <div className="repo">
+        {reposByUpdate.map((repo, index) =>
+          repo !== firstRepo ? (
+            <div key={repo.id} className={` projectWrapper`}>
+              <a href={repo.homepage}
+                
+                  className={`${
+                    index % 2 === 0
+                      ? index + " leftIframe"
+                      : index + " rightIframe"
+                  } iframe-container `}
+                >
+                  <iframe src={repo.homepage} title={repo.name} />
+                
+              </a>
+              <div
+                className={`${
+                  index % 2 === 0
+                    ? index + " leftProject"
+                    : index + " rightProject"
+                } info-container`}
+              >
+                <h3 className="projectTitle projectTitlesFont">
+                  {repo.name || "Nada"}
+                </h3>
+                <p className="projectInfo ">
+                  {repo.description || "No description provided"}
+                </p>
+                <a
+                  className="goBtn projectInfo"
+                  href={repo.homepage}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Project <span className="project-arrow">&#8594;</span>
+                </a>
+              </div>
+            </div>
+          ) : (
+            <div></div>
+          )
+        )}
+      </div>
+    </div>
+  );
 };
-export const getProjectsArrLength = (projectsArr) => {
-  return projectsArr.length;
-};
-export default Myprojects;
+
+{
+}
+
+{
+  /* {repos.map((repo, index) => (
+    <div key={repo.id} className={index === 0 ? "repo latestProject" : "repo"}>
+    <div className="iframe-container ">
+    <iframe
+    src={repo.homepage}
+    title={repo.name}
+            />
+          </div>
+          
+            <h2>{repo.name || 'Nada'}</h2>
+            <p>{repo.description || 'No description provided'}</p>
+            <a href={repo.homepage} target="_blank" rel="noopener noreferrer"> View Project</a>
+          </div>
+        ))
+      } */
+}
+
+export default MyProjects;

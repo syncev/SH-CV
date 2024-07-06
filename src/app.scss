@@ -9,6 +9,9 @@ $projectsScrollBtn: #FB8B5D;
 $contactBgColor: #02332b;
 $fontColor: #FCFBFF;
 $logoNameColor: #36362e;
+$portfolioBgColor: #0E2532;
+$portfolioOverlapColor: #0B1D27;
+$portfolioFontColor: #FFEB9B;
 
 @import "/src/styles/Navbar.scss";
 @import "/src/styles/Welcome.scss";
@@ -24,7 +27,14 @@ $logoNameColor: #36362e;
     font-family: 'Garet Heavy';
     src: url('./assets/fonts/Garet\ Heavy\ 850.ttf');
 }
-
+@font-face {
+    font-family: 'OpenSans';
+    src: url('./assets/fonts/OpenSans-Bold.ttf');
+}
+@font-face {
+    font-family: 'Anton';
+    src: url('./assets/fonts/Anton-Regular.ttf');
+}
 
 body{
     
@@ -34,12 +44,17 @@ body{
     .mainFont{
         font-family: 'Garet';
     }
+    .pageTitleFont{
+        font-family: 'OpenSans';
+    }
     .titleFont{
         font-family: 'Garet Heavy';
     }
+    .projectTitlesFont{
+        font-family: 'Anton';
+    }
     .boldFont{
         font-weight: 600;
-        
       }
     strong{
         font-weight:bold;
