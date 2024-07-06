@@ -100,7 +100,8 @@ const MyProjects = () => {
           repo !== firstRepo ? (
             <div key={repo.id} className={` projectWrapper`}>
               <a href={repo.homepage}
-                
+                target="_blank"
+                rel="noopener noreferrer"
                   className={`${
                     index % 2 === 0
                       ? index + " leftIframe"
