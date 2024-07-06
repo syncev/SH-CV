@@ -5,10 +5,7 @@ import MyProjectsBtn from "./MyProjectsBtn";
 import Contact from "./Contact";
 
 import logo from "/src/assets/logo.png";
-// import fbIcon from "/src/assets/icons/fbIcon.png";
-// import linkedinIcon from "/src/assets/icons/linkedin-icon.png";
-// import igIcon from "/src/assets/icons/ig-icon.png";
-// import mailIcon from "/src/assets/icons/mail-icon.png";
+
 
 const Welcome = () => {
   const deviceWidth = window.innerWidth;
