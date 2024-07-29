@@ -1,6 +1,6 @@
 import { useEffect } from "preact/hooks";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 import logo from "/src/assets/logo.png";
 import arrow from "/src/assets/icons/backarrow-nb.png";
 import goBtn from "/src/assets/icons/go-no-bg.png";
@@ -9,13 +9,14 @@ import goBtn from "/src/assets/icons/go-no-bg.png";
 const MyProjects = () => {
   const [reposByDate, setReposByDate] = useState([]);
   const [reposByUpdate, setReposByUpdate] = useState([]);
+  const [atTop, setAtTop] = useState(true);
+  const navigate = useNavigate()
   const username = "syncev";
 
   useEffect(() => {
     const fetchRepos = async () => {
       const response = await fetch(
-        `https://api.github.com/users/${username}/repos`,
-       
+        `https://api.github.com/users/${username}/repos`
       );
       const data = await response.json();
       //filter and sort by date created
@@ -44,20 +45,41 @@ const MyProjects = () => {
     };
 
     fetchRepos();
-  }, [username]);
 
+    const handleScroll = () => {
+      setAtTop(window.scrollY <= 12);
+    }
+    window.addEventListener('scroll',handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+    
+  }, [username]);
+  const handleBackBtn= () => {
+    if(!atTop){
+      window.scrollTo({
+        top: 0,
+      behavior: "smooth"})
+    } else {
+      navigate('/SH-CV/')
+    }
+  }
+  
   const firstRepo = reposByDate[0]; //to ensure i find the first repo for the latest repo part
 
+  
   return (
     <div className="repo-wrapper">
       <div className="hero">
         <div className="hero-shade"></div>
         <div className="projects-nav">
-          <Link className="projects-back-btn" to="/SH-CV/">
+          <button className="projects-back-btn" onClick={handleBackBtn} >
             <img src={arrow} alt="" />
-          </Link>
-          <h1 className="projects-name mainFont boldFont">S. HERNANDEZ</h1>
-          <img className="projects-logo" src={logo} alt="" />
+          </button>
+          <div className="logo-name-container">
+            <h1 className="projects-name mainFont boldFont">S. HERNANDEZ</h1>
+            <img className="projects-logo" src={logo} alt="" />
+          </div>
         </div>
 
         <h2 className="projects-header pageTitleFont">PORTFOLIO</h2>
@@ -99,17 +121,17 @@ const MyProjects = () => {
         {reposByUpdate.map((repo, index) =>
           repo !== firstRepo ? (
             <div key={repo.id} className={` projectWrapper`}>
-              <a href={repo.homepage}
+              <a
+                href={repo.homepage}
                 target="_blank"
                 rel="noopener noreferrer"
-                  className={`${
-                    index % 2 === 0
-                      ? index + " leftIframe"
-                      : index + " rightIframe"
-                  } iframe-container `}
-                >
-                  <iframe src={repo.homepage} title={repo.name} />
-                
+                className={`${
+                  index % 2 === 0
+                    ? index + " leftIframe"
+                    : index + " rightIframe"
+                } iframe-container `}
+              >
+                <iframe src={repo.homepage} title={repo.name} />
               </a>
               <div
                 className={`${

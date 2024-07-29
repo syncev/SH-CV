@@ -42,23 +42,34 @@ body {
       padding: 10px 15px;
       margin-top: 3vh;
       .projects-back-btn {
-        font-size: 46px;
-        font-weight: 800;
+        display: flex;
+        position: fixed;
+        justify-self: start;
         padding-right: 10px;
         text-decoration: none;
         transition: all 0.3s ease;
         color: $logoNameColor;
+        background: none;
+        border: none;
+        z-index: 5;
         &:hover {
           transform: scale(1.2);
         }
-        display: flex;
+        img{
+          width: 65px;
+        }
       }
-      .projects-name {
-        font-size: 26px;
-        color: $logoNameColor;
-      }
-      .projects-logo {
-        height: 45px;
+      .logo-name-container{
+        display: inherit;
+        align-items: inherit;
+        margin-left: auto;
+        .projects-name {
+          font-size: 26px;
+          color: $logoNameColor;
+        }
+        .projects-logo {
+          height: 45px;
+        }
       }
     }
 
