@@ -1,17 +1,11 @@
 $breakpoint-tablet: 481px; 
 $breakpoint-pc: 1023px;
-$primary-color: #001c24;
 $btnHover: #00B3E6;
-$homeHover: #FB8B5D;
-$navBorder: #FB8B5D;
-$navBgColor: #001318;
-$projectsScrollBtn: #FB8B5D;
-$contactBgColor: #02332b;
 $fontColor: #FCFBFF;
 $logoNameColor: #36362e;
-$portfolioBgColor: #0E2532;
-$portfolioOverlapColor: #0B1D27;
-$portfolioFontColor: #FFEB9B;
+$atentionColor: #f1d45e;
+$backgroundColor: #0b1d27;
+$test : 1px solid red;
 
 @import "/src/styles/Navbar.scss";
 @import "/src/styles/Welcome.scss";
@@ -41,6 +35,10 @@ body{
     box-sizing: border-box;
     // background-color: $primary-color;
     color: $fontColor;
+    //hide scroll bar
+    &::-webkit-scrollbar{
+        display: none;
+    }
     .mainFont{
         font-family: 'Garet';
     }

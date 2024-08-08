@@ -1,35 +1,47 @@
 import React from "react";
-import Me from "/src/assets/me.png";
+import { Link } from "react-router-dom";
+import profileImgBig from "../assets/shapedProfile.png";
 const AboutMe = () => {
   return (
-    <div className="about-wrapper">
-      <h1 className="about-header">About Me:</h1>
-      <section className="about-main">
-        <p className="text 1">
-          Hola! I'm Santiago Hernandez, a '90s kid from the vibrant landscapes
-          of Argentina. My tech journey started as a gamer, evolving into a
-          full-blown tech enthusiast who loves to tinker, customize, and explore
-          anything tech-related. Web development, with its intriguing blend of
-          creativity and functionality, became a passion I pursued through
-          online free courses like FreeCodeCamp. Enrolling in Argentina Programa
-          marked a significant step, where I completed two courses in front-end
-          web development. <br />
-        </p>
-        <p className="text 2">
-          Beyond coding, you'll find me embracing the beauty of the outdoors.
-          Hiking and camping are not just hobbies; they're a way of life. It's
-          in these natural spaces that I find inspiration and balance,
-          contributing to a well-rounded perspective on creativity. <br />
-        </p>
-        <p className="text 3">
-          For me, web development is akin to navigating a dynamic canvas where
-          imagination and functionality converge. Let's connect and explore the
-          endless possibilities that web development offers—a realm where every
-          line of code is a brushstroke on the canvas of the digital world.
-        </p>
-      </section>
-      <img src={Me} alt="my profile picture" className="about-img" />
+    <section className="aboutMe-section" id={"aboutMe-section"}>
+    <div className="title-wrapper">
+      <h2 className="about-header pageTitleFont">About Me</h2>
+      <p className="about-header-faded pageTitleFont">About Me</p>
     </div>
+    <div className="content-wrapper">
+      <p className="aboutMe-text t1 pageTitleFont">
+        Hi! I'm Santiago Hernandez, a web developer from Argentina. Since
+        2022, I've been immersing myself in the world of coding, constantly
+        learning and growing with each project.
+      </p>
+      <div className="t2-container">
+      <p className="aboutMe-text t2 pageTitleFont ">
+        Web development, for me, is the perfect blend of creativity and
+        logic. I enjoy bringing ideas to life and solving complex problems,
+        creating seamless user experiences.
+      </p>
+
+      </div>
+      <p className="aboutMe-text t3 pageTitleFont">
+        I'm dedicated to exploring new technologies and staying current with
+        industry trends. I'm always eager to take on new challenges and push
+        my boundaries.
+      </p>
+      <div className="aboutImg-wrapper">
+        <img
+          src={profileImgBig}
+          alt="my profile picture"
+          className="about-img"
+        />
+      </div>
+    </div>
+    <div className="aboutMe-actionCall ">
+      <h2 className="pageTitleFont">Have any <br/> Questions?</h2>
+      <Link className="aboutMe-btn pageTitleFont" to="/SH-CV/contact">
+        Get in Touch
+      </Link>
+    </div>
+  </section>
   );
 };
 

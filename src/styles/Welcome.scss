@@ -1,124 +1,111 @@
-.welcome-wrapper::before {
-  background-image: url("../assets/bg.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  filter: blur(5px);
-  z-index: -1;
-  position: absolute; /* Position it absolutely */
-  width: 100%; /* Full width */
-  min-width: 1000px;
-  height: 100%; /* Full height */
-  content: "";
-}
-.welcome-wrapper {
-  overflow: hidden;
-  min-width: 1000px;
+//page wrapper
+.page-wrapper {
+  background-color: black;
+  //hero starts here
   .welcome-section {
-    box-shadow: 15px 15px 28px rgba(0, 0, 0, 0.9);
-    background-size: 100% 100%; /* Maintain aspect ratio */
-    background-image: url("../assets/bg.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    margin: 0 auto; /* Center the content horizontally */
-    width: 70%; /* Adjust width as needed */
-    height: 70vh; /* Adjust height as needed */
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    z-index: 0;
-    margin-top: 15vh;
-    margin-bottom: 15vh;
-    position: relative; /* Ensure the pseudo-element is positioned correctly */
+    background-image: url("../assets/portfolio-bg.jpg");
+    background-size: cover;
+    padding-top: 3vh;
+    //vw en "alto" para que se mueva todo parejo
+    height: 100dvh;
 
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
+    .blur-background {
+      width: 100vw;
       height: 100%;
-      background-image: inherit;
-      background-size: inherit;
-      background-position: inherit;
-      background-repeat: inherit;
-      filter: brightness(85%);
-      z-index: -1; 
-      
-    }
-    
-    .greetings-wrapper {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 7vh;
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+
       .logo-wrapper {
-        display: inherit;
-        align-items: center;
-        
-        padding: 0px 10px;
-        border-radius: 0 5px 5px 0; /* Optional: rounded corners */
-        background-color: rgba(
-          128,
-          128,
-          128,
-          0.65
-          ); /* Gray background with 65% opacity */
-        .logo-name {
-          margin-left: 4vw;
-          font-size: 2rem;
-          
-          align-content: center;
-          color: $logoNameColor;
-        }
-        .logo-img {
-          height: 8vh;
-        }
-       
-      }
-      .contact-wrapper {
         display: flex;
+        flex-direction: column;
         align-items: center;
-        margin-right: 5vw;
-        img{
-          transition: all 0.3s ease;
-          &:hover{
-            transform: scale(1.5);
-            
+
+        .logo-img {
+          width: 35vw;
+        }
+        .logo-name {
+          color: $logoNameColor;
+          font-size: 8vw;
+        }
+      }
+      .description-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-image: url("../assets/portfolio-bg.jpg");
+        background-size: cover;
+        border-radius: 5px;
+        width: 80vw;
+        height: 120vw;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 7vh;
+
+        box-shadow: 0px 0px 28px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 0px 28px 0px rgba(0, 0, 0, 0.75);
+
+        .description-title {
+          margin-top: 5vw;
+          font-size: 8.5vw;
+          color: $logoNameColor;
+          line-height: 11vw;
+        }
+        .icon-wrapper {
+          margin-top: 6vw;
+          display: block;
+          align-items: center;
+          justify-content: center;
+          img {
+            width: 55vw;
           }
         }
-        .socialBtn1 {
-          height: 5vh;
-          
-        }
-        .socialBtn2 {
-          height: 2vh;
-          padding: 1vh;
-        }
-        .socialBtn3 {
-          height: 4vh;
-        }
-        .socialBtn4 {
-          height: 5vh;
+        .nav-div {
+          display: flex;
+          width: 100%;
+          align-items: center;
+          justify-content: center;
+          margin-top: 15%;
+          .middleBtn {
+            p {
+              position: absolute;
+              top: -20px;
+            }
+          }
+          .btnHero {
+            position: relative;
+            display: flex;
+            height: 100%;
+            width: 25%;
+            gap: 5px;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            color: white;
+            background: none;
+            border: none;
+            text-decoration: none;
+
+            img {
+              width: 25vw;
+            }
+            p {
+              width: 110%;
+            }
+          }
         }
       }
-    }
-    .description-wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-
-      height: 30vh;
-      justify-content: space-around;
-      margin-right: 5vw;
-
-      font-size: 1.5rem;
-      text-align: right;
-      line-height: 5vh;
-
-      .thinFont {
-        font-weight: 600;
+      .hero-shade {
+        background: linear-gradient(
+          to bottom,
+          rgba(11, 29, 39, 0) 0%,
+          #0b1d27 100%
+        );
+        height: 20%;
+        position: absolute;
+        width: 100%;
+        bottom: 0;
       }
     }
   }
+  
 }

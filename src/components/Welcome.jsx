@@ -1,66 +1,81 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "./Navbar";
-import { Link } from "react-router-dom";
-import MyProjectsBtn from "./MyProjectsBtn";
-import Contact from "./Contact";
-import logo from "/src/assets/logo.png";
+import { Link, useNavigate } from "react-router-dom";
 
-// import fbIcon from "/src/assets/icons/fbIcon.png";
-// import linkedinIcon from "/src/assets/icons/linkedin-icon.png";
-// import igIcon from "/src/assets/icons/ig-icon.png";
-// import mailIcon from "/src/assets/icons/mail-icon.png";
+import logo from "/src/assets/logo.png";
+import tecIcons from "../assets/icons/tecIcons.png";
+import contactImg from "../assets/contact img.png";
+import profileImg from "../assets/about me img.png";
+import portfolioImg from "../assets/projects img.png";
+import profileImgBig from "../assets/shapedProfile.png";
+
+import AboutMe from "../components/AboutMe";
+import Myprojects from "./Myprojects";
 
 const Welcome = () => {
   const deviceWidth = window.innerWidth;
   const tabletWidth = 768;
+  const navigate = useNavigate();
   //a state and effect that on load changes the state once, from false to true, and since this happens when the page loads, this state basically tells if the page finished loading
   const [pageLoaded, setPageLoaded] = useState(false);
   useEffect(() => {
     setPageLoaded(true);
+    const hash = window.location.hash;
+    if (hash) {
+      const element = document.querySelector(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
   }, []);
 
+  const handleScroll = (id) => {
+    const element = document.getElementById(id);
+    if (pageLoaded && element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      navigate(`#${id}`);
+
+    } 
+  };
+
   return (
-    <div className="welcome-wrapper">
-      {deviceWidth < tabletWidth ? (
-        <section className={`welcome-section `}>
-          <h1 className={`welcome-greetings }`}>Front End Dev.</h1>
-          <p className={`welcome-description `}>USER-CENTRIC DESIGN</p>
-          <p className={`welcome-instruction `}>
-            Please navigate to the desired section from the{" "}
-            <strong>menu</strong>.
-          </p>
-        </section>
-      ) : (
-        <section className={`welcome-section `}>
-          <div className="greetings-wrapper">
-            <div className="logo-wrapper">
-              <h1 className={`logo-name mainFont boldFont`}>S. HERNANDEZ</h1>
-              <img className="logo-img" src={logo} alt="Logo" />
-            </div>
-            <Contact />
-            {/* <div className="social-wrapper">
-              <img className="socialBtn1" src={fbIcon} alt="Facebook" />
-              <img className="socialBtn2" src={linkedinIcon} alt="LinkedIn" />
-              <img className="socialBtn3" src={igIcon} alt="Instagram" />
-              <img className="socialBtn4" src={mailIcon} alt="Email" />
-            </div> */}
+    <div className="page-wrapper">
+      <section className={`welcome-section `} id="welcome-section">
+        <div className="blur-background">
+          <div className="logo-wrapper">
+            <img className="logo-img" src={logo} alt="Logo" />
+            <h1 className={`logo-name pageTitleFont `}>S. HERNANDEZ</h1>
           </div>
-
           <div className="description-wrapper">
-            <p className={` mainFont thinFont`}>Front End Dev.</p>
-            <p className="mainFont boldFont">
-              USER-CENTRIC DESIGN
-              <br />
-              INTERACTIVE WEB SOLUTIONS
-              <br />
-              COLLABORATIVE APROACH
+            <p className={`description-title mainFont `}>
+              <em>FRONT END </em> <br />
+              <strong>DEVELOPER</strong>
             </p>
-            <MyProjectsBtn />
+            <div className="icon-wrapper">
+              <img src={tecIcons} alt="tecnology icon" />
+            </div>
+            <div className={`nav-div`}>
+              <Link className="btnHero" onClick={() => handleScroll("aboutMe-section")} >
+                <img src={contactImg} alt="" />
+                <p className="pageTitleFont">Contact</p>
+              </Link>
+              <Link className="btnHero middleBtn" onClick={() => handleScroll("aboutMe-section")}>
+                <p className="pageTitleFont">About Me</p>
+                <img src={profileImg} alt="" />
+              </Link>
+              <Link className="btnHero" onClick={() => handleScroll("aboutMe-section")}>
+                <img src={portfolioImg} alt="" />
+                <p className="pageTitleFont"> Portfolio</p>
+              </Link>
+            </div>
           </div>
+          <div className="hero-shade"></div>
+        </div>
+      </section>
 
-          <Navbar />
-        </section>
-      )}
+     
+
+      <AboutMe/>
+      <Myprojects pageLoaded={pageLoaded} />
     </div>
   );
 };
