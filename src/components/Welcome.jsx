@@ -62,7 +62,7 @@ const Welcome = () => {
                 <p className="pageTitleFont">About Me</p>
                 <img src={profileImg} alt="" />
               </Link>
-              <Link className="btnHero" onClick={() => handleScroll("aboutMe-section")}>
+              <Link className="btnHero" onClick={() => handleScroll("myProjects-section")}>
                 <img src={portfolioImg} alt="" />
                 <p className="pageTitleFont"> Portfolio</p>
               </Link>
