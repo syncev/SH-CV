@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import profileImgBig from "../assets/shapedProfile.png";
-const AboutMe = () => {
+const AboutMe = ({handleScroll}) => {
   return (
     <section className="aboutMe-section" id={"aboutMe-section"}>
     <div className="title-wrapper">
@@ -37,7 +37,7 @@ const AboutMe = () => {
     </div>
     <div className="aboutMe-actionCall ">
       <h2 className="pageTitleFont">Have any <br/> Questions?</h2>
-      <Link className="aboutMe-btn pageTitleFont" to="/SH-CV/contact">
+      <Link className="aboutMe-btn pageTitleFont" onClick={() => handleScroll("contact-section")}>
         Get in Touch
       </Link>
     </div>
