@@ -3,9 +3,9 @@ import { Link, useNavigate } from "react-router-dom";
 
 import logo from "/src/assets/logo.png";
 import tecIcons from "../assets/icons/tecIcons.png";
-import contactImg from "../assets/contact img.png";
-import profileImg from "../assets/about me img.png";
-import portfolioImg from "../assets/projects img.png";
+import contactImg from "../assets/pinecone.png";
+import profileImg from "../assets/me expanded.png";
+import portfolioImg from "../assets/forest.png";
 import profileImgBig from "../assets/shapedProfile.png";
 
 import AboutMe from "../components/AboutMe";
@@ -27,13 +27,14 @@ const Welcome = () => {
         element.scrollIntoView({ behavior: "smooth" });
       }
     }
-  }, []);
+  }, [deviceWidth]);
 
   const handleScroll = (id) => {
     const element = document.getElementById(id);
     if (pageLoaded && element) {
       const currentPosition = window.scrollY;
-      const elementPosition = element.getBoundingClientRect().top + currentPosition;
+      const elementPosition =
+        element.getBoundingClientRect().top + currentPosition;
       window.scrollTo({ top: elementPosition, behavior: "smooth" });
       element.scrollIntoView({ behavior: "smooth" });
       navigate(`#${id}`);
@@ -49,35 +50,56 @@ const Welcome = () => {
             <h1 className={`logo-name pageTitleFont `}>S. HERNANDEZ</h1>
           </div>
           <div className="description-wrapper">
-            <p className={`description-title mainFont `}>
-              <em>FRONT END </em> <br />
-              <strong>DEVELOPER</strong>
-            </p>
-            <div className="icon-wrapper">
-              <img src={tecIcons} alt="tecnology icon" />
-            </div>
+            {deviceWidth < tabletWidth ? (
+              <div className="title-text-wrapper">
+                <p className={`description-title mainFont `}>
+                  <em>FRONT END </em>
+                  <strong>DEVELOPER</strong>
+                </p>
+              </div>
+            ) : (
+              <div className="title-text-wrapper">
+                <p className={`description-title mainFont `}>
+                  FRONT END <br />
+                  <strong>DEVELOPER</strong>
+                </p>
+                <div className="description-text pageTitleFont">
+                  <p>USER-CENTRIC DESIGN</p>
+                  <p>INTERACTIVE WEB SOLUTIONS</p>
+                  <p>COLLABORATIVE APPROACH</p>
+                </div>
+              </div>
+            )}
+
             <div className={`nav-div`}>
-              <Link
-                className="btnHero"
-                onClick={() => handleScroll("contact-section")}
-              >
-                <img src={contactImg} alt="" />
+              <div className="btn-wrapper contactBtn-wrapper">
                 <p className="pageTitleFont">Contact</p>
-              </Link>
-              <Link
-                className="btnHero middleBtn"
-                onClick={() => handleScroll("aboutMe-section")}
-              >
-                <p className="pageTitleFont">About Me</p>
-                <img src={profileImg} alt="" />
-              </Link>
-              <Link
-                className="btnHero"
-                onClick={() => handleScroll("myProjects-section")}
-              >
-                <img src={portfolioImg} alt="" />
+                <Link
+                  className="btnHero contactBtn"
+                  onClick={() => handleScroll("contact-section")}
+                >
+                  <img src={contactImg} alt="" />
+                </Link>
+              </div>
+              <div className="btn-wrapper projectsBtn-wrapper">
+                <Link
+                  className="btnHero projectsBtn"
+                  onClick={() => handleScroll("myProjects-section")}
+                >
+                  <img src={portfolioImg} alt="" />
+                </Link>
                 <p className="pageTitleFont"> Portfolio</p>
-              </Link>
+              </div>
+              <div className="btn-wrapper aboutMeBtn-wrapper">
+                <p className="pageTitleFont">About Me</p>
+                <Link
+                  className="btnHero aboutMeBtn"
+                  onClick={() => handleScroll("aboutMe-section")}
+                >
+                  <img src={profileImg} alt="" />
+                </Link>
+              </div>
+             
             </div>
           </div>
           <div className="hero-shade"></div>
@@ -94,22 +116,46 @@ const Welcome = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img className="img1" src="/src/assets/icons/github.png" alt="Github" />
+            <img
+              className="img1"
+              src="/src/assets/icons/github.png"
+              alt="Github"
+            />
           </a>
           <a
             href="https://www.linkedin.com/in/san-hernandez/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img className="img2" src="/src/assets/icons/linkedinNewNB.png" alt="Linkedin" />
+            <img
+              className="img2"
+              src="/src/assets/icons/linkedinNewNB.png"
+              alt="Linkedin"
+            />
           </a>
-
-         
         </div>
         <ul className="footerNav-wrapper">
-          <li className="footer-link pageTitleFont"><a onClick={() => handleScroll("welcome-section")}> Main </a></li>
-          <li><a className="footer-link pageTitleFont" onClick={() => handleScroll("aboutMe-section")}> About Me </a></li>
-          <li><a className="footer-link pageTitleFont" onClick={() => handleScroll("myProjects-section")}> Portfolio </a></li>
+          <li className="footer-link pageTitleFont">
+            <a onClick={() => handleScroll("welcome-section")}> Main </a>
+          </li>
+          <li>
+            <a
+              className="footer-link pageTitleFont"
+              onClick={() => handleScroll("aboutMe-section")}
+            >
+              {" "}
+              About Me{" "}
+            </a>
+          </li>
+          <li>
+            <a
+              className="footer-link pageTitleFont"
+              onClick={() => handleScroll("myProjects-section")}
+            >
+              {" "}
+              Portfolio{" "}
+            </a>
+          </li>
         </ul>
         <p className="footer-text">Made by S. Hernandez.</p>
       </footer>

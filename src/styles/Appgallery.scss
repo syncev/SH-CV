@@ -4,7 +4,7 @@
   .projects-wrapper {
     .titleAndLatestProject-wrapper {
       height: 70dvh;
-      background-image: url("../assets/forest.jpg");
+      background-image: url("../assets/forest.png");
       background-size: cover;
       background-position: center;
       padding-top: 5dvh;
@@ -21,21 +21,21 @@
         top: 0;
       }
       .title-wrapper {
-        height: 16vw;
+        height: 8dvh;
 
         position: relative;
         display: flex;
         justify-content: center;
         .portfolio-header {
-          font-size: 8vw;
+          font-size: 4dvh;
           color: $atentionColor;
           position: absolute;
           top: 0;
         }
         .portfolio-header-faded {
-          font-size: 12vw;
+          font-size: 6dvh;
           color: $atentionColor;
-          opacity: 60%;
+          opacity: 45%;
           position: absolute;
           bottom: 0;
         }
@@ -81,7 +81,7 @@
             position: absolute;
             bottom: 10%;
             left: 5%;
-            font-size: 6dvw;
+            font-size: 3dvh;
           }
         }
         .latestProject-Bottom {
@@ -113,6 +113,7 @@
             left: 50%;
             transform: translate(-50%, 30%);
             margin: 0 auto;
+            font-size: 2dvh;
           }
           .latestProject-goBtn {
             position: absolute;
@@ -167,88 +168,156 @@
       background-color: $backgroundColor;
       .singleProject-wrapper {
         padding: 3dvh 3dvw 0 3dvw;
-        &:last-child{
+        &:last-child {
           padding-bottom: 6dvh;
         }
-        
-        .singleProject-container{
+
+        .singleProject-container {
           height: 15dvh;
-          width: 100%;
+          width: 98%;
           display: flex;
           justify-content: center;
           align-items: center;
           gap: 2%;
           position: relative;
 
-        .iframe-container{
-          width: 38%;
-          height: 100%;
-          position: absolute;
-          img {
-            -webkit-mask-image: url(../assets/mask.png);
-            mask-image: url(../assets/mask.png);
-            width: 100%;
+          .iframe-container {
+            width: 38%;
             height: 100%;
-            
-            -webkit-mask-position: center;
-            mask-position: center;
-            -webkit-mask-repeat: no-repeat;
-            mask-repeat: no-repeat;
-            mask-size: contain;
-            -webkit-mask-size: 100% 100%;
-          }
-        }
-        .leftIframe { 
-          float: left;
-          left: 0;
-        }
-        .rightIframe{
-          float: right;
-          right: 0;
+            position: absolute;
+            img {
+              -webkit-mask-image: url(../assets/mask.png);
+              mask-image: url(../assets/mask.png);
+              width: fit-content;
+              max-width: 100%;
+              height: 100%;
 
-        }
-        .info-container{
-          width: 62%;
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-around;
-          position: absolute;
-          
-          .project-arrow{
-            font-size: 3.5dvw;
-            color: $atentionColor;
+              -webkit-mask-position: center;
+              mask-position: center;
+              -webkit-mask-repeat: no-repeat;
+              mask-repeat: no-repeat;
+              mask-size: contain;
+              -webkit-mask-size: 100% 100%;
+            }
           }
-          
-          .projectTitle{
-            font-size: 4.5dvw;
-            color: $atentionColor;
+          .leftIframe {
+            float: left;
+            left: 0;
           }
-          .projectInfo{
-            font-size: 3dvw;
-            color: $fontColor;
+          .rightIframe {
+            float: right;
+            right: 0;
           }
-          .goBtn{
-            width: fit-content;
-            text-decoration: none;
-            color: $fontColor;
-            border: 1px solid silver;
-            padding: 8px 15px;
-            border-radius: 6px;
+          .info-container {
+            width: 62%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            position: absolute;
+
+            .project-arrow {
+              font-size: 2dvh;
+              color: $atentionColor;
+            }
+
+            .projectTitle {
+              font-size: 3dvh;
+              color: $atentionColor;
+            }
+            .projectInfo {
+              font-size: 1.5dvh;
+              color: $fontColor;
+            }
+            .goBtn {
+              width: fit-content;
+              text-decoration: none;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              color: $fontColor;
+              border: 1px solid silver;
+              padding: 8px 15px;
+              border-radius: 6px;
+            }
           }
-        }
-        .leftProject{
-          left: 70%;
-          transform: translateX(-50%);
-        }
-        .rightProject{
-          left: 30%;
-          transform: translateX(-50%);
-          text-align: end;
-          align-items: end;
-        }
+          .leftProject {
+            left: 70%;
+            transform: translateX(-50%);
+          }
+          .rightProject {
+            left: 30%;
+            transform: translateX(-50%);
+            text-align: end;
+            align-items: end;
+          }
         }
       }
+    }
+  }
+  @media (min-width: $breakpoint-pc) {
+    width: 60dvw;
+    margin-right: auto;
+    margin-left: auto;
+    .projects-wrapper{
+      
+      .titleAndLatestProject-wrapper{
+        height: 85dvh;
+        .title-wrapper{
+          height: 4.5rem;
+          width: 100%;
+          justify-content: center;
+          .portfolio-header{
+              font-size: 2.3rem;
+            }
+            .portfolio-header-faded {
+              font-size: 3.3rem;
+            }
+          }
+        
+        .latestProject-wrapper{
+          width: 60%;
+          .latestProject-Top{
+            .project-shade{
+              height: 80%;
+            }
+            .latestProject-title{
+              font-size: 2rem;
+              left: 10%;
+          }
+        }
+          .latestProject-Bottom{
+            .latestProject-description{
+              font-size: 1.4rem;
+            }
+          }
+        }
+      }
+      .otherProjects-wrapper{
+        .singleProject-wrapper{
+          padding-top: 10dvh;
+          &:last-child{
+            padding-bottom: 10dvh;
+          }
+          .singleProject-container{
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            .iframe-container{
+              height: 140%;              
+            }
+            .info-container{
+              gap: 1dvh;
+              .projectTitle{
+                font-size: 1.6rem;
+              }
+              .projectInfo{
+                font-size: 1.2rem;
+              }
+            }
+          }
+      }
+    }
   }
 }
 }

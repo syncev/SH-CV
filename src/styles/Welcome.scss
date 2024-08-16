@@ -1,147 +1,289 @@
 //page wrapper
 .page-wrapper {
   background-color: black;
+
   //hero starts here
   .welcome-section {
     background-image: url("../assets/portfolio-bg.jpg");
     background-size: cover;
     padding-top: 3vh;
-    //vw en "alto" para que se mueva todo parejo
     height: 100dvh;
-
+    width: 100dvw;
     .blur-background {
-      width: 100vw;
+      width: 100%;
       height: 100%;
       backdrop-filter: blur(5px);
-      -webkit-backdrop-filter: blur(5px);
+    }
+  }
+  .logo-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-      .logo-wrapper {
+    .logo-img {
+      width: 144px;
+    }
+    .logo-name {
+      color: $logoNameColor;
+      font-size: 2rem;
+    }
+  }
+  .description-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-image: url("../assets/portfolio-bg.jpg");
+    background-size: cover;
+    border-radius: 5px;
+    width: 80%;
+    height: 60%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 7vh;
+    position: relative;
+    box-shadow: 0px 0px 28px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 28px 0px rgba(0, 0, 0, 0.75);
+
+    .nav-div {
+      display: flex;
+      width: 100%;
+      height: 40%;
+      justify-content: center;
+      position: relative;
+      margin-top: 5dvh;
+
+      .btn-wrapper {
         display: flex;
         flex-direction: column;
+        width: 33%;
+        gap: 1dvh;
         align-items: center;
-
-        .logo-img {
-          width: 35vw;
-        }
-        .logo-name {
-          color: $logoNameColor;
-          font-size: 8vw;
-        }
       }
-      .description-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-image: url("../assets/portfolio-bg.jpg");
-        background-size: cover;
-        border-radius: 5px;
-        width: 80vw;
-        height: 120vw;
-        margin-right: auto;
-        margin-left: auto;
-        margin-top: 7vh;
-
-        box-shadow: 0px 0px 28px 0px rgba(0, 0, 0, 0.75);
-        -moz-box-shadow: 0px 0px 28px 0px rgba(0, 0, 0, 0.75);
-
-        .description-title {
-          margin-top: 5vw;
-          font-size: 8.5vw;
-          color: $logoNameColor;
-          line-height: 11vw;
-        }
-        .icon-wrapper {
-          margin-top: 6vw;
-          display: block;
-          align-items: center;
-          justify-content: center;
-          img {
-            width: 55vw;
-          }
-        }
-        .nav-div {
-          display: flex;
-          width: 100%;
-          align-items: center;
-          justify-content: center;
-          margin-top: 15%;
-          .middleBtn {
-            p {
-              position: absolute;
-              top: -20px;
-            }
-          }
-          .btnHero {
-            position: relative;
-            display: flex;
-            height: 100%;
-            width: 25%;
-            gap: 5px;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            color: white;
-            background: none;
-            border: none;
-            text-decoration: none;
-
-            img {
-              width: 25vw;
-            }
-            p {
-              width: 110%;
-            }
-          }
-        }
-      }
-      .hero-shade {
-        background: linear-gradient(
-          to bottom,
-          rgba(11, 29, 39, 0) 0%,
-          #0b1d27 100%
-        );
-        height: 20%;
+      .contactBtn-wrapper {
         position: absolute;
-        width: 100%;
+        left: 10%;
+        height: fit-content;
+
+        .contactBtn {
+          // width: 35dvw;
+          // height: 11dvh;
+          width: 150px;
+          height: 103px;
+          z-index: 10;
+          clip-path: polygon(90% 0%, 10% 0%, 50% 100%);
+
+          left: 10px;
+          bottom: 40px;
+          background-color: silver;
+
+          img {
+            // -webkit-mask-image: url(../assets/triangleMask1.png);
+            // mask-image: url(../assets/triangleMask1.png);
+            // -webkit-mask-position: center;
+            // mask-position: center;
+            // -webkit-mask-repeat: no-repeat;
+            // mask-repeat: no-repeat;
+            // mask-size: cover;
+            // -webkit-mask-size: 100% 100%;
+            clip-path: polygon(90% 0%, 10% 0%, 50% 100%);
+
+            scale: 0.95;
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+      .projectsBtn-wrapper {
+        position: absolute;
         bottom: 0;
+        height: fit-content;
+        .projectsBtn {
+          // width: 50dvw;
+          // height: 16dvh;
+          width: 215px;
+          height: 150px;
+          z-index: 10;
+          clip-path: polygon(50% 0%, 10% 99%, 90% 99%);
+          background-color: $atentionColor;
+          position: relative;
+
+          img {
+            // -webkit-mask-image: url(../assets/triangleMask2.png);
+            // mask-image: url(../assets/triangleMask2.png);
+            // -webkit-mask-position: center;
+            // mask-position: center;
+            // -webkit-mask-repeat: no-repeat;
+            // mask-repeat: no-repeat;
+            // mask-size: cover;
+            // -webkit-mask-size: 100% 100%;
+            clip-path: polygon(50% 0%, 10% 100%, 90% 100%);
+            scale: 0.95;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+          }
+        }
+      }
+
+      .aboutMeBtn-wrapper {
+        position: absolute;
+        right: 10%;
+        .aboutMeBtn {
+          width: 150px;
+          height: 103px;
+
+          z-index: 10;
+          clip-path: polygon(90% 0%, 10% 0%, 50% 100%);
+          // clip-path: polygon(80% 10%, 20% 10%, 52% 88%);
+          background-color: silver;
+          right: 10px;
+          bottom: 40px;
+
+          img {
+            clip-path: polygon(90% 0%, 10% 0%, 50% 100%);
+            scale: 0.95;
+            width: 100%;
+            height: 100%;
+          }
+        }
       }
     }
   }
-  footer{
+  .description-title {
+    margin-top: 3dvh;
+    font-size: 5dvh;
+    color: $logoNameColor;
+    line-height: 7dvh;
+    text-align: center;
+  }
+
+  .hero-shade {
+    background: linear-gradient(
+      to bottom,
+      rgba(11, 29, 39, 0) 0%,
+      #0b1d27 100%
+    );
+    height: 20%;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+  }
+  footer {
     background-color: $backgroundColor;
-    .footer-socialIcons{
+    .footer-socialIcons {
       display: flex;
       justify-content: center;
-      gap: 50px;
-      padding: 10px;
-      a{
+      gap: 6dvw;
+      padding: 1dvh 1dvw;
+      a {
         background-color: transparent;
       }
-      img{
+      img {
         background-color: transparent;
-        width: 15vw;
-        background-color: tra;
+        width: 10dvw;
       }
-      
     }
-    .footerNav-wrapper{
+    .footerNav-wrapper {
       display: flex;
       justify-content: space-evenly;
       font-size: 1.2rem;
       gap: 10px;
       margin-top: 10px;
       padding-bottom: 25px;
-      .footer-link{
-        
-      }
-      
     }
-    p{
+    p {
       text-align: end;
       padding-bottom: 20px;
       padding-right: 20px;
       font-size: 0.8rem;
+      opacity: 80%;
     }
   }
-  
+
+  @media (min-width: $breakpoint-pc) {
+    background-color: $sidesBackgroundColor;
+    display: flex;
+    flex-direction: column;
+    .welcome-section {
+      width: 60dvw;
+      margin-right: auto;
+      margin-left: auto;
+      .blur-background {
+        .description-wrapper {
+          height: 50%;
+          flex-direction: row;
+          background-position-y: 40%;
+          .title-text-wrapper {
+            width: 45%;
+            height: 100%;
+            .description-title {
+              text-align: center;
+              margin-top: 12dvh;
+              width: 100%;
+              font-size: 2.5rem;
+              line-height: 3rem;
+            }
+            .description-text {
+              text-align: center;
+              width: 100%;
+              font-size: 1.2rem;
+              color: $logoNameColor;
+              line-height: 3dvh;
+              margin-top: 4dvh;
+            }
+          }
+          .nav-div {
+            width: 55%;
+            margin-top: 0;
+            height: 100%;
+            .btn-wrapper {
+              top: 20%;
+            }
+            .contactBtn,
+            .aboutMeBtn {
+              width: 175.5px;
+              height: 120px;
+            }
+            .projectsBtn-wrapper {
+              top: 30%;
+              .projectsBtn {
+                width: 279.5px;
+                height: 195px;
+              }
+            }
+          }
+        }
+      }
+    }
+    footer {
+      width: 60dvw;
+      margin-right: auto;
+      margin-left: auto;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      position: relative;
+      padding-top: 1dvh;
+      padding-bottom: 5dvh;
+      .footer-socialIcons {
+        width: 40%;
+        img {
+          width: 3dvw;
+        }
+      }
+      .footerNav-wrapper {
+        justify-content: space-around;
+        width: 60%;
+        margin-top: 0;
+        padding-bottom: 0;
+      }
+      p {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        font-size: 1rem;
+      }
+    }
+  }
 }

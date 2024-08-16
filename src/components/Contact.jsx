@@ -4,7 +4,7 @@ import emailjs from "emailjs-com";
 
 const Contact = () => {
   emailjs.init("xYIALu7-EhiHlbKuf");
-  document.getElementById('contact-form');
+  document.getElementById("contact-form");
 
   const [formData, setFormData] = useState({
     name: "",
@@ -26,24 +26,26 @@ const Contact = () => {
     });
   };
 
+  const isFormValid = () => {
+    return (
+      formData.name &&
+      formData.email &&
+      formData.message &&
+      formData.email.includes("@")
+    );
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(formData)
-    emailjs
-      .sendForm(
-        "service_8w6kq0j",
-        "template_vvwq3rc",
-        event.target
-      )
-      .then(
-        (result) => {
-          alert("Message sent successfully!");
-          console.log(result.text);
-        },
-        (error) => {
-          console.error(error.text);
-        }
-      );
+    emailjs.sendForm("service_8w6kq0j", "template_vvwq3rc", event.target).then(
+      (result) => {
+        alert("Message sent successfully!");
+        console.log(result.text);
+      },
+      (error) => {
+        console.error(error.text);
+      }
+    );
 
     setFormData({
       name: "",
@@ -62,7 +64,12 @@ const Contact = () => {
       </div>
       <div className="contactForm-wrapper">
         <div className="contactForm-shade"></div>
-        <form action="" className="contact-form" id="contact-form" onSubmit={handleSubmit}>
+        <form
+          action=""
+          className="contact-form"
+          id="contact-form"
+          onSubmit={handleSubmit}
+        >
           <input
             type="text"
             placeholder="Name"
@@ -92,8 +99,14 @@ const Contact = () => {
             required
           />
           <button type="submit">
-            <img src="src/assets/icons/send-icon.png" alt="" />
-          </button>
+              <img 
+              src={
+                isFormValid() 
+                ? "src/assets/icons/send-icon-ready.png" 
+                : "src/assets/icons/send-icon.png" 
+              }
+              alt="" />
+            </button>
         </form>
       </div>
       {/* <div className="socials-wrapper">
@@ -112,29 +125,6 @@ const Contact = () => {
     </div>
   );
 };
-{
-  /* <ul className="contact-wrapper">
-  <li className="contact-item linkedin">
-    <a href="https://www.linkedin.com/in/san-hernandez">
-    <img className="socialBtn1" src={linkedinIcon} alt="LinkedIn" />
-    </a>
-  </li>
-  <li className="contact-item email">
-    <a href="mailto: santiago.n.hernandez@gmail.com">
-    <img className="socialBtn2" src={mailIcon} alt="Email" />
-    </a>
-  </li>
-  <li className="contact-item facebook">
-    <a href="https://www.facebook.com/santiago.n.hernandez/">
-    <img className="socialBtn3" src={fbIcon} alt="Facebook" />
-    </a>
-  </li>
-  <li className="contact-item instagram">
-    <a href="http://instagram.com/saintyago_hernandez">
-    <img className="socialBtn4" src={igIcon} alt="Instagram" />
-    </a>
-  </li>
-</ul> */
-}
+
 
 export default Contact;

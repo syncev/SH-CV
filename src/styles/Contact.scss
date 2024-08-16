@@ -1,6 +1,6 @@
 .contact-section {
   height: 70dvh;
-  background-image: url("../assets/pinecone.jpg");
+  background-image: url("../assets/pinecone.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -15,23 +15,23 @@
     top: 0;
   }
   .title-wrapper {
-    height: 16vw;
+    height: 8dvh;
 
     position: relative;
     display: flex;
     justify-content: center;
-z-index: 10;
+    z-index: 10;
 
     .contact-header {
-      font-size: 8vw;
+      font-size: 4dvh;
       color: $atentionColor;
       position: absolute;
       top: 0;
     }
     .contact-header-faded {
-      font-size: 12vw;
+      font-size: 6dvh;
       color: $atentionColor;
-      opacity: 60%;
+      opacity: 45%;
       position: absolute;
       bottom: 0;
     }
@@ -47,7 +47,7 @@ z-index: 10;
     z-index: 15;
     border: 1px solid silver;
     border-radius: 15px;
-    
+
     .contactForm-shade {
       background: linear-gradient(-25deg, rgba(11, 29, 39, 0) 0%, #0b1d27 100%);
       height: 100%;
@@ -68,7 +68,7 @@ z-index: 10;
       .input {
         z-index: 15;
         width: 60vw;
-        height: 5vw;
+        height: 5dvh;
         border: none;
         background-color: transparent;
         border-bottom: 3px solid silver;
@@ -84,7 +84,7 @@ z-index: 10;
       }
       .message {
         width: 60vw;
-        height: 50vw;
+        height: 25dvh;
         margin-bottom: 5dvh;
       }
       button {
@@ -94,43 +94,57 @@ z-index: 10;
         background-color: transparent;
         position: absolute;
         bottom: -2dvh;
-        img{
+        img {
           width: 15dvw;
         }
       }
     }
   }
-  // .socials-wrapper {
-  //   position: relative;
-  //   display: flex;
-  //   flex-direction: row;
-  //   justify-content: space-around;
-  //   align-items: center;
-  //   width: 60dvw;
-  //   height: 10dvh;
-  //   margin-left: auto;
-  //   margin-right: auto;
-  //   border-radius: 15px;
-  //   background: linear-gradient(-25deg, rgba(11, 29, 39, 0) 0%, #0b1d27 100%);
-  //   border: 1px solid silver;
-  //   z-index: 20;
-  //   a {
-  //     width: 33%;
-  //     display: flex;
-  //     justify-content: center;
-  //     align-items: center;
-  //     z-index: inherit;
-  //     img{
-        
-  //     }
-  //   }
-  // }
+
   .bottom-shade {
-    background: linear-gradient(to bottom, rgba(11, 29, 39, 0) 0%, #0b1d27 100%);
+    background: linear-gradient(
+      to bottom,
+      rgba(11, 29, 39, 0) 0%,
+      #0b1d27 100%
+    );
     height: 20%;
     position: absolute;
     width: 100%;
     bottom: 0;
     z-index: 10;
+  }
+  @media (min-width: $breakpoint-pc) {
+    width: 60dvw;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 7dvh;
+    padding-bottom: 10dvh;
+    .title-wrapper {
+      height: 4.5rem;
+      .contact-header{
+          font-size: 2.3rem;
+        }
+        .contact-header-faded {
+          font-size: 3.3rem;
+        }
+    }
+    .contactForm-wrapper{
+      .contact-form{
+        width: 80%;
+        .input{
+          width: 100%;
+        }
+        .message{
+          width: 100%;
+          resize: none;
+        }
+        button{
+          bottom: -5dvh;
+          img{
+            width: 100px;
+          }
+        }
+      }
+    }
   }
 }
