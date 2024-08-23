@@ -32,7 +32,7 @@
     grid-template-rows: 1fr 1fr 1fr 1fr;
     //position: relative;
     .aboutMe-text {
-      font-size: 2dvh;
+      font-size: 0.9rem;
       display: flex;
     }
     .t1 {
@@ -56,7 +56,7 @@
         // position: absolute;
         // left: 8%;
         // border: $test;
-        width: 72%;
+        width: 70%;
         height: 100%;
         text-align: center;
         align-items: center;
@@ -69,21 +69,31 @@
       text-align: center;
       padding: 0 20%;
       height: 100%;
-      align-items: start;
+      align-items: center;
     }
     .aboutImg-wrapper {
       grid-column: 2;
       grid-row: 2/4;
-      height: 100%;
-      width: fit-content;
-
+      justify-self: center;
+      overflow: hidden;
+      width: 80%;
       position: relative;
-      display: flex;
-      justify-content: start;
-      img {
-        width: 90%;
+
+      -webkit-mask-image: url(../assets/profileMask.png);
+      mask-image: url(../assets/profileMask.png);
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      mask-size: 100% 100%;
+      // mask-position: left;
+      img{
+        position: absolute;
         height: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
       }
+
+      
     }
   }
   .aboutMe-actionCall {
@@ -117,11 +127,12 @@
     width: 60dvw;
     margin-right: auto;
     margin-left: auto;
-    padding-top: 7dvh;
+    padding-top: 3dvh;
     .title-wrapper {
       height: 4.5rem;
-      width: 50%;
-      justify-content: flex-end;
+      width: 100%;
+      justify-content:center;
+
       .about-header {
         font-size: 2.3rem;
       }
@@ -133,49 +144,41 @@
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr 1fr;
       height: 50dvh;
+      margin-top: 5dvh;
       .aboutMe-text {
         grid-column: 1;
         align-items: center;
         text-align: end;
-        padding: 0;
-        width: 60%;
-        padding-left: 40%;
+        padding: 0 10%;
         font-size: 1rem;
-        
+        text-align: center;
+        font-family: "OpenSans";
       }
-      .t1{
+      .t1 {
         grid-row: 1;
+        width: 100%;
         
       }
       .t2-container {
         grid-row: 2;
+        width: 120%;
         .t2 {
           width: 100%;
-          align-items: center;
         }
       }
-      .t3{
-        
+      .t3 {
+        width: 100%;
         grid-row: 3;
       }
-      .aboutImg-wrapper{
-        grid-column: 2;
-        grid-row: 1/4;
-        width: 100%;
-        justify-content: center;
-        // width: fit-content;
-        margin-top: -10%;
-        
-        img{
-          width: 80%;
-          height: fit-content;
-        }
+      .aboutImg-wrapper {
+        grid-row: 1/-1;
+        height: 110%;
+        width: 70%;
+        align-self: center;
       }
     }
     .aboutMe-actionCall {
-      position: absolute;
-      padding-left: 17%;
-      
+
       h2 {
         font-size: 2rem;
       }

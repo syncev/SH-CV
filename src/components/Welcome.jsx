@@ -152,8 +152,7 @@ const Welcome = () => {
               className="footer-link pageTitleFont"
               onClick={() => handleScroll("myProjects-section")}
             >
-              {" "}
-              Portfolio{" "}
+              Portfolio
             </a>
           </li>
         </ul>

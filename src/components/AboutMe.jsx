@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import profileImgBig from "../assets/shapedProfile.png";
+import profileImgBig from "../assets/me expanded.png";
 const AboutMe = ({handleScroll}) => {
   return (
     <section className="aboutMe-section" id={"aboutMe-section"}>
@@ -10,22 +10,17 @@ const AboutMe = ({handleScroll}) => {
     </div>
     <div className="content-wrapper">
       <p className="aboutMe-text t1 pageTitleFont">
-        Hi! I'm Santiago Hernandez, a web developer from Argentina. Since
-        2022, I've been immersing myself in the world of coding, constantly
-        learning and growing with each project.
+      Hi, my name is Santiago Hernandez, I've been actively learning web development since 2021 and graduated as Frontend Developer Jr from the Argentina Programa 4.0 Front End Development course in 2023  .
       </p>
       <div className="t2-container">
       <p className="aboutMe-text t2 pageTitleFont ">
-        Web development, for me, is the perfect blend of creativity and
-        logic. I enjoy bringing ideas to life and solving complex problems,
-        creating seamless user experiences.
+      I am a proactive and organized individual with strong interpersonal skills. I enjoy taking on challenges, acquiring new skills, and collaborating in teams. My journey in web development includes hands-on experience with React, where I've developed a portfolio of projects that showcase the technologies I’ve learned so far.
       </p>
 
       </div>
       <p className="aboutMe-text t3 pageTitleFont">
-        I'm dedicated to exploring new technologies and staying current with
-        industry trends. I'm always eager to take on new challenges and push
-        my boundaries.
+      As a native Spanish speaker and fluent in English (C1 level), I am well-equipped to work in diverse environments. I am committed to always finding a way to achieve effective solutions while prioritizing the project’s goals. I look forward to applying my skills to meaningful projects. You will find my work in the section below :) .
+      
       </p>
       <div className="aboutImg-wrapper">
         <img
