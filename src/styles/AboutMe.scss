@@ -1,39 +1,191 @@
-.about-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 90vw;
-  height: auto;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 15vh;
+.aboutMe-section {
+  height: 100dvh;
+  background-color: $backgroundColor;
+  padding-top: 1vh;
 
-  //----------animation
-  animation: fadeIn 0.5s forwards;
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
+  .title-wrapper {
+    height: 8dvh;
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 3dvh;
+    .about-header {
+      font-size: 4dvh;
+      color: $atentionColor;
+      position: absolute;
+      top: 0;
     }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  .about-header {
-    font-size: 2rem;
-  }
-  .about-main{
-
-    .text {
-      font-size: 1.4rem;
-      text-align: center;
-      margin-top: 2vh;
-      font-style: italic;
+    .about-header-faded {
+      font-size: 6dvh;
+      color: $atentionColor;
+      opacity: 45%;
+      position: absolute;
+      bottom: 0;
     }
   }
-  .about-img {
+  .content-wrapper {
     margin-top: 2vh;
-    border-radius: 155px;
+    height: 65dvh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    //position: relative;
+    .aboutMe-text {
+      font-size: 0.9rem;
+      display: flex;
+    }
+    .t1 {
+      align-items: end;
+      grid-column: 1/-1;
+      grid-row: 1;
+      // position: absolute;
+      // top: 0;
+      text-align: center;
+      padding: 0 20%;
+      height: 100%;
+    }
+    .t2-container {
+      position: relative;
+      // border: $test;
+      grid-column: 1/2;
+      grid-row: 2/4;
+      display: flex;
+      justify-content: end;
+      .t2 {
+        // position: absolute;
+        // left: 8%;
+        // border: $test;
+        width: 70%;
+        height: 100%;
+        text-align: center;
+        align-items: center;
+      }
+    }
+    .t3 {
+      grid-column: 1/-1;
+      grid-row: 4;
+
+      text-align: center;
+      padding: 0 20%;
+      height: 100%;
+      align-items: center;
+    }
+    .aboutImg-wrapper {
+      grid-column: 2;
+      grid-row: 2/4;
+      justify-self: center;
+      overflow: hidden;
+      width: 80%;
+      position: relative;
+
+      -webkit-mask-image: url(../assets/profileMask.png);
+      mask-image: url(../assets/profileMask.png);
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      mask-size: 100% 100%;
+      // mask-position: left;
+      img{
+        position: absolute;
+        height: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+      }
+
+      
+    }
+  }
+  .aboutMe-actionCall {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      margin-top: 1dvh;
+      font-size: 3dvh;
+      color: $atentionColor;
+    }
+    .aboutMe-btn {
+      border: 2px solid $atentionColor;
+      border-radius: 15px;
+      padding: 5% 8%;
+      margin-top: 3dvh;
+      text-decoration: none;
+      color: $fontColor;
+      width: fit-content;
+      align-self: center;
+      background: rgb(255, 255, 255);
+      background: linear-gradient(
+        162deg,
+        rgba(255, 255, 255, 0.3),
+        rgba(11, 28, 38, 1) 100%
+      );
+    }
+  }
+  @media (min-width: $breakpoint-pc) {
+    width: 60dvw;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 3dvh;
+    .title-wrapper {
+      height: 4.5rem;
+      width: 100%;
+      justify-content:center;
+
+      .about-header {
+        font-size: 2.3rem;
+      }
+      .about-header-faded {
+        font-size: 3.3rem;
+      }
+    }
+    .content-wrapper {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      height: 50dvh;
+      margin-top: 5dvh;
+      .aboutMe-text {
+        grid-column: 1;
+        align-items: center;
+        text-align: end;
+        padding: 0 10%;
+        font-size: 1rem;
+        text-align: center;
+        font-family: "OpenSans";
+      }
+      .t1 {
+        grid-row: 1;
+        width: 100%;
+        
+      }
+      .t2-container {
+        grid-row: 2;
+        width: 120%;
+        .t2 {
+          width: 100%;
+        }
+      }
+      .t3 {
+        width: 100%;
+        grid-row: 3;
+      }
+      .aboutImg-wrapper {
+        grid-row: 1/-1;
+        height: 110%;
+        width: 70%;
+        align-self: center;
+      }
+    }
+    .aboutMe-actionCall {
+
+      h2 {
+        font-size: 2rem;
+      }
+      .aboutMe-btn {
+        font-size: 1.1rem;
+        padding: 20px 20px;
+      }
+    }
   }
 }

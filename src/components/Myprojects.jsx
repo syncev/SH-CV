@@ -1,17 +1,21 @@
-import { useEffect } from "preact/hooks";
-import React, { useState } from "react";
-import {useNavigate } from "react-router-dom";
+import { useEffect, useState, useRef } from "preact/hooks";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import logo from "/src/assets/logo.png";
 import arrow from "/src/assets/icons/backarrow-nb.png";
 import goBtn from "/src/assets/icons/go-no-bg.png";
-// import Myprojects from "./Myprojects";
 
-const MyProjects = () => {
+const Myprojects = ({ pageLoaded }) => {
   const [reposByDate, setReposByDate] = useState([]);
   const [reposByUpdate, setReposByUpdate] = useState([]);
+  const [covers, setCovers] = useState([]);
   const [atTop, setAtTop] = useState(true);
-  const navigate = useNavigate()
+  const [offset, setOffset] = useState(0);
+  const navigate = useNavigate();
   const username = "syncev";
+  const firstRepo = reposByDate[0]; //to ensure i find the first repo for the latest repo part
+
+  const fetchCoverCalledRef = useRef(false);
 
   useEffect(() => {
     const fetchRepos = async () => {
@@ -31,7 +35,6 @@ const MyProjects = () => {
 
       //filter so the most recent project created is not on the list and sort by date updated
       const filteredReposByUpdate = filteredReposByDate
-
         .filter(
           (repo, index) =>
             repo.homepage &&
@@ -48,142 +51,177 @@ const MyProjects = () => {
 
     const handleScroll = () => {
       setAtTop(window.scrollY <= 12);
-    }
-    window.addEventListener('scroll',handleScroll)
+    };
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-    
-  }, [username]);
-  const handleBackBtn= () => {
-    if(!atTop){
-      window.scrollTo({
-        top: 0,
-      behavior: "smooth"})
-    } else {
-      navigate('/SH-CV/')
-    }
-  }
-  
-  const firstRepo = reposByDate[0]; //to ensure i find the first repo for the latest repo part
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
-  
+  useEffect(() => {
+    const fetchCover = async () => {
+      const coversArray = await Promise.allSettled(
+        reposByUpdate.map(async ({ name }) => {
+          try {
+            const response = await fetch(
+              `https://api.github.com/repos/syncev/${name}/contents/cover.png`
+            );
+            const cover = await response.json();
+            return cover.download_url;
+          } catch (err) {
+            console.error(`Error fetching cover for ${name}:`, err);
+            return null;
+          }
+        })
+      );
+      const succesfulCovers = coversArray
+        .filter((result) => result.status === "fulfilled")
+        .map((result) => result.value);
+      setCovers(succesfulCovers);
+    };
+    if (
+      pageLoaded &&
+      reposByUpdate.length > 0 &&
+      !fetchCoverCalledRef.current
+    ) {
+      fetchCoverCalledRef.current = true;
+      fetchCover();
+    }
+  }, [pageLoaded, reposByUpdate]);
+  // const handleBackBtn = () => {
+  //   if (!atTop) {
+  //     window.scrollTo({
+  //       top: 0,
+  //       behavior: "smooth",
+  //     });
+  //   } else {
+  //     navigate("/SH-CV/");
+  //   }
+  // };
+
   return (
-    <div className="repo-wrapper">
-      <div className="hero">
-        <div className="hero-shade"></div>
-        <div className="projects-nav">
-          <button className="projects-back-btn" onClick={handleBackBtn} >
-            <img src={arrow} alt="" />
-          </button>
-          <div className="logo-name-container">
-            <h1 className="projects-name mainFont boldFont">S. HERNANDEZ</h1>
-            <img className="projects-logo" src={logo} alt="" />
+    <section id="myProjects-section">
+      <div className="projects-wrapper">
+        <div className="titleAndLatestProject-wrapper">
+          <div className="hero-shade"></div>
+          <div className="title-wrapper">
+            <h2 className="portfolio-header pageTitleFont">
+              <span className="header-highlight">My</span> Portfolio
+            </h2>
+            <p className="portfolio-header-faded pageTitleFont">My Portfolio</p>
           </div>
-        </div>
-
-        <h2 className="projects-header pageTitleFont">PORTFOLIO</h2>
-        {firstRepo ? (
-          <div className="latest-repo">
-            <div key={firstRepo.id} className="projectWrapper">
-              <div className="iframe-container">
-                <div className="latest-repo-gradient">
-                  <h3 className="projectTitlesFont">
-                    {firstRepo.name || "Nada"}
-                  </h3>
-                </div>
-                <div className="latest-project-tag pageTitleFont">
-                  LATEST PROJECT
-                </div>
+          {firstRepo ? (
+            <div key={firstRepo.id} className="latestProject-wrapper">
+              <div className="latestProject-Top">
                 <iframe src={firstRepo.homepage} title={firstRepo.name} />
+                <div className="project-shade"></div>
+                <h3 className="latestProject-title mainFont">
+                  {firstRepo.name || "Nada"}
+                </h3>
               </div>
-              <div className="info-container">
-                <p className="projectInfo">
+
+              <div className="latestProject-Bottom">
+                <div className="description-shade"></div>
+                <p className="latestProject-description mainFont">
                   {firstRepo.description || "No description provided"}
                 </p>
                 <a
-                  className="goBtn"
+                  className="latestProject-goBtn"
                   href={firstRepo.homepage}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <img src={goBtn} alt="" />
-                </a>
-              </div>
-            </div>
-          </div>
-        ) : (
-          <p>Loading...</p>
-        )}
-      </div>
-
-      <div className="repo">
-        {reposByUpdate.map((repo, index) =>
-          repo !== firstRepo ? (
-            <div key={repo.id} className={` projectWrapper`}>
-              <a
-                href={repo.homepage}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`${
-                  index % 2 === 0
-                    ? index + " leftIframe"
-                    : index + " rightIframe"
-                } iframe-container `}
-              >
-                <iframe src={repo.homepage} title={repo.name} />
-              </a>
-              <div
-                className={`${
-                  index % 2 === 0
-                    ? index + " leftProject"
-                    : index + " rightProject"
-                } info-container`}
-              >
-                <h3 className="projectTitle projectTitlesFont">
-                  {repo.name || "Nada"}
-                </h3>
-                <p className="projectInfo ">
-                  {repo.description || "No description provided"}
-                </p>
-                <a
-                  className="goBtn projectInfo"
-                  href={repo.homepage}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View Project <span className="project-arrow">&#8594;</span>
+                  <div className="imgBg"></div>
                 </a>
               </div>
             </div>
           ) : (
-            <div></div>
-          )
-        )}
+            <p>Loading...</p>
+          )}
+          <div className="hero-shade-bottom"></div>
+        </div>
+
+        {/* <div className="otherProjects-wrapper">
+          {covers.map((cover, index) => (
+            <div key={index}>
+              <img src={cover} alt={`cover ${index}`} />
+              <h2>this is the cover {index} </h2>
+            </div>
+          ))}
+        </div> */}
+
+        <div className="otherProjects-wrapper">
+          {reposByUpdate.map((repo, index) => (
+            <div key={repo.id} className={` singleProject-wrapper`}>
+              {index % 2 === 0 ? (
+                <div className="singleProject-container">
+                  <a
+                    href={repo.homepage}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`leftIframe iframe-container `}
+                  >
+                    <img src={covers[index]} alt={`cover ${index}`} />
+                  </a>
+                  <div className={`leftProject info-container mainFont`}>
+                    <h3 className="projectTitle projectTitlesFont">
+                      {repo.name || "Nada"}
+                    </h3>
+                    <p className="projectInfo ">
+                      {repo.description || "No description provided"}
+                    </p>
+                    <a
+                      className="goBtn "
+                      href={repo.homepage}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      View {" "}
+                      <span className="project-arrow">&#8594;</span>
+                    </a>
+                  </div>
+                </div>
+              ) : (
+                <div className="singleProject-container">
+                  <div className={`rightProject info-container mainFont`}>
+                    <h3 className="projectTitle projectTitlesFont">
+                      {repo.name || "Nada"}
+                    </h3>
+                    <p className="projectInfo ">
+                      {repo.description || "No description provided"}
+                    </p>
+                    <a
+                      className="goBtn "
+                      href={repo.homepage}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      View {" "}
+                      <span className="project-arrow">&#8594;</span>
+                    </a>
+                  </div>
+                  <a
+                    href={repo.homepage}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`rightIframe iframe-container `}
+                  >
+                    <img src={covers[index]} alt={`cover ${index}`} />
+                  </a>
+                </div>
+              )}
+              <div className="pagination">
+          
+          </div>
+            </div>
+          ))}
+
+          
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
-{
-}
-
-{
-  /* {repos.map((repo, index) => (
-    <div key={repo.id} className={index === 0 ? "repo latestProject" : "repo"}>
-    <div className="iframe-container ">
-    <iframe
-    src={repo.homepage}
-    title={repo.name}
-            />
-          </div>
-          
-            <h2>{repo.name || 'Nada'}</h2>
-            <p>{repo.description || 'No description provided'}</p>
-            <a href={repo.homepage} target="_blank" rel="noopener noreferrer"> View Project</a>
-          </div>
-        ))
-      } */
-}
-
-export default MyProjects;
+export default Myprojects;

@@ -1,35 +1,42 @@
 import React from "react";
-import Me from "/src/assets/me.png";
-const AboutMe = () => {
+import { Link } from "react-router-dom";
+import profileImgBig from "../assets/me expanded.png";
+const AboutMe = ({handleScroll}) => {
   return (
-    <div className="about-wrapper">
-      <h1 className="about-header">About Me:</h1>
-      <section className="about-main">
-        <p className="text 1">
-          Hola! I'm Santiago Hernandez, a '90s kid from the vibrant landscapes
-          of Argentina. My tech journey started as a gamer, evolving into a
-          full-blown tech enthusiast who loves to tinker, customize, and explore
-          anything tech-related. Web development, with its intriguing blend of
-          creativity and functionality, became a passion I pursued through
-          online free courses like FreeCodeCamp. Enrolling in Argentina Programa
-          marked a significant step, where I completed two courses in front-end
-          web development. <br />
-        </p>
-        <p className="text 2">
-          Beyond coding, you'll find me embracing the beauty of the outdoors.
-          Hiking and camping are not just hobbies; they're a way of life. It's
-          in these natural spaces that I find inspiration and balance,
-          contributing to a well-rounded perspective on creativity. <br />
-        </p>
-        <p className="text 3">
-          For me, web development is akin to navigating a dynamic canvas where
-          imagination and functionality converge. Let's connect and explore the
-          endless possibilities that web development offers—a realm where every
-          line of code is a brushstroke on the canvas of the digital world.
-        </p>
-      </section>
-      <img src={Me} alt="my profile picture" className="about-img" />
+    <section className="aboutMe-section" id={"aboutMe-section"}>
+    <div className="title-wrapper">
+      <h2 className="about-header pageTitleFont"><span className="header-highlight"> About </span> Me</h2>
+      <p className="about-header-faded pageTitleFont">About Me</p>
     </div>
+    <div className="content-wrapper">
+      <p className="aboutMe-text t1 pageTitleFont">
+      Hi, my name is Santiago Hernandez, I've been actively learning web development since 2021 and graduated as Frontend Developer Jr from the Argentina Programa 4.0 Front End Development course in 2023  .
+      </p>
+      <div className="t2-container">
+      <p className="aboutMe-text t2 pageTitleFont ">
+      I am a proactive and organized individual with strong interpersonal skills. I enjoy taking on challenges, acquiring new skills, and collaborating in teams. My journey in web development includes hands-on experience with React, where I've developed a portfolio of projects that showcase the technologies I’ve learned so far.
+      </p>
+
+      </div>
+      <p className="aboutMe-text t3 pageTitleFont">
+      As a native Spanish speaker and fluent in English (C1 level), I am well-equipped to work in diverse environments. I am committed to always finding a way to achieve effective solutions while prioritizing the project’s goals. I look forward to applying my skills to meaningful projects. You will find my work in the section below :) .
+      
+      </p>
+      <div className="aboutImg-wrapper">
+        <img
+          src={profileImgBig}
+          alt="my profile picture"
+          className="about-img"
+        />
+      </div>
+    </div>
+    <div className="aboutMe-actionCall ">
+      <h2 className="pageTitleFont">Have any <br/> Questions?</h2>
+      <Link className="aboutMe-btn pageTitleFont" onClick={() => handleScroll("contact-section")}>
+        Get in Touch
+      </Link>
+    </div>
+  </section>
   );
 };
 
