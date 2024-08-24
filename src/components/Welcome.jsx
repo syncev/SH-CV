@@ -9,8 +9,8 @@ import portfolioImg from "../assets/forest.png";
 import AboutMe from "../components/AboutMe";
 import Myprojects from "./Myprojects";
 import Contact from "./Contact";
-import GitImg from "/src/assets/icons/github.png";
-import LinkedinImg from "/src/assets/icons/linkedinNewNB.png"
+import GitImg from "../assets/icons/github.png";
+import LinkedinImg from "../assets/icons/linkedinNewNB.png"
 
 const Welcome = () => {
   const deviceWidth = window.innerWidth;
