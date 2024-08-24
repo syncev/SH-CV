@@ -2,15 +2,15 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import logo from "/src/assets/logo.png";
-import tecIcons from "../assets/icons/tecIcons.png";
 import contactImg from "../assets/pinecone.png";
 import profileImg from "../assets/me expanded.png";
 import portfolioImg from "../assets/forest.png";
-import profileImgBig from "../assets/shapedProfile.png";
 
 import AboutMe from "../components/AboutMe";
 import Myprojects from "./Myprojects";
 import Contact from "./Contact";
+import GitImg from "/src/assets/icons/github.png";
+import LinkedinImg from "/src/assets/icons/linkedinNewNB.png"
 
 const Welcome = () => {
   const deviceWidth = window.innerWidth;
@@ -118,7 +118,7 @@ const Welcome = () => {
           >
             <img
               className="img1"
-              src="/src/assets/icons/github.png"
+              src={GitImg}
               alt="Github"
             />
           </a>
@@ -129,7 +129,7 @@ const Welcome = () => {
           >
             <img
               className="img2"
-              src="/src/assets/icons/linkedinNewNB.png"
+              src={LinkedinImg}
               alt="Linkedin"
             />
           </a>

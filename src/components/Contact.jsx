@@ -1,6 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import emailjs from "emailjs-com";
+import sendReady from "src/assets/icons/send-icon-ready.png";
+import sendPending from "src/assets/icons/send-icon.png";
 
 const Contact = () => {
   emailjs.init("xYIALu7-EhiHlbKuf");
@@ -102,8 +104,8 @@ const Contact = () => {
               <img 
               src={
                 isFormValid() 
-                ? "src/assets/icons/send-icon-ready.png" 
-                : "src/assets/icons/send-icon.png" 
+                ? {sendReady} 
+                : {sendPending} 
               }
               alt="" />
             </button>
