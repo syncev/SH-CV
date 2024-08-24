@@ -6,7 +6,7 @@ import sendPending from "../assets/icons/send-icon.png";
 
 const Contact = () => {
   emailjs.init("xYIALu7-EhiHlbKuf");
-  document.getElementById("contact-form");
+  // document.getElementById("contact-form");
 
   const [formData, setFormData] = useState({
     name: "",
@@ -14,11 +14,7 @@ const Contact = () => {
     message: "",
   });
 
-  const [formErrors, setFormErrors] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+ 
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -104,8 +100,8 @@ const Contact = () => {
               <img 
               src={
                 isFormValid() 
-                ? {sendReady} 
-                : {sendPending} 
+                ? sendReady 
+                : sendPending
               }
               alt="" />
             </button>
