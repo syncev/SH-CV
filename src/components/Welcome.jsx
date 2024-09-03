@@ -9,6 +9,8 @@ import portfolioImg from "../assets/forest.png";
 import AboutMe from "../components/AboutMe";
 import Myprojects from "./Myprojects";
 import Contact from "./Contact";
+import GitImg from "../assets/icons/github.png";
+import LinkedinImg from "../assets/icons/linkedinNewNB.png"
 
 
 
@@ -118,7 +120,7 @@ const Welcome = () => {
           >
             <img
               className="img1"
-              src="/src/assets/icons/github.png"
+              src={GitImg}
               alt="Github"
             />
           </a>
@@ -129,7 +131,7 @@ const Welcome = () => {
           >
             <img
               className="img2"
-              src="/src/assets/icons/linkedinNewNB.png"
+              src={LinkedinImg}
               alt="Linkedin"
             />
           </a>

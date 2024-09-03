@@ -1,17 +1,18 @@
 import React from "react";
 import { useState } from "react";
 import emailjs from "emailjs-com";
+import sendReady from "../assets/icons/send-icon-ready.png";
+import sendPending from "../assets/icons/send-icon.png";
 
 const Contact = () => {
   emailjs.init("xYIALu7-EhiHlbKuf");
-  document.getElementById("contact-form");
+  // document.getElementById("contact-form");
 
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
-
 
 
   const handleChange = (event) => {
@@ -98,8 +99,8 @@ const Contact = () => {
               <img 
               src={
                 isFormValid() 
-                ? "src/assets/icons/send-icon-ready.png" 
-                : "src/assets/icons/send-icon.png" 
+                ? sendReady 
+                : sendPending
               }
               alt="" />
             </button>
