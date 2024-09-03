@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, lazy } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import logo from "/src/assets/logo.png";
-import tecIcons from "../assets/icons/tecIcons.png";
 import contactImg from "../assets/pinecone.png";
 import profileImg from "../assets/me expanded.png";
 import portfolioImg from "../assets/forest.png";
-import profileImgBig from "../assets/shapedProfile.png";
 
 import AboutMe from "../components/AboutMe";
 import Myprojects from "./Myprojects";
 import Contact from "./Contact";
+
+
 
 const Welcome = () => {
   const deviceWidth = window.innerWidth;
