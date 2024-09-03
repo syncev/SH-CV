@@ -14,7 +14,6 @@ const Contact = () => {
     message: "",
   });
 
- 
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -107,18 +106,7 @@ const Contact = () => {
             </button>
         </form>
       </div>
-      {/* <div className="socials-wrapper">
-        <a href="http://github.com/syncev">
-          <img src={githubIcon} alt="Github" />
-        </a>
-
-        <a href="http://instagram.com/saintyago_hernandez">
-          <img src={igIcon} alt="Instagram" />
-        </a>
-        <a href="https://www.linkedin.com/in/san-hernandez">
-          <img src={linkedinIcon} alt="LinkedIn" />
-        </a>
-      </div> */}
+    
       <div className="bottom-shade"></div>
     </div>
   );

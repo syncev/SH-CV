@@ -1,8 +1,5 @@
 import { useEffect, useState, useRef } from "preact/hooks";
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import logo from "/src/assets/logo.png";
-import arrow from "/src/assets/icons/backarrow-nb.png";
 import goBtn from "/src/assets/icons/go-no-bg.png";
 
 const Myprojects = ({ pageLoaded }) => {
@@ -10,8 +7,6 @@ const Myprojects = ({ pageLoaded }) => {
   const [reposByUpdate, setReposByUpdate] = useState([]);
   const [covers, setCovers] = useState([]);
   const [atTop, setAtTop] = useState(true);
-  const [offset, setOffset] = useState(0);
-  const navigate = useNavigate();
   const username = "syncev";
   const firstRepo = reposByDate[0]; //to ensure i find the first repo for the latest repo part
 
@@ -88,16 +83,7 @@ const Myprojects = ({ pageLoaded }) => {
       fetchCover();
     }
   }, [pageLoaded, reposByUpdate]);
-  // const handleBackBtn = () => {
-  //   if (!atTop) {
-  //     window.scrollTo({
-  //       top: 0,
-  //       behavior: "smooth",
-  //     });
-  //   } else {
-  //     navigate("/SH-CV/");
-  //   }
-  // };
+
 
   return (
     <section id="myProjects-section">
@@ -225,3 +211,4 @@ const Myprojects = ({ pageLoaded }) => {
 };
 
 export default Myprojects;
+

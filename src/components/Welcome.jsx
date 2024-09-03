@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, lazy } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import logo from "/src/assets/logo.png";
@@ -11,6 +11,8 @@ import Myprojects from "./Myprojects";
 import Contact from "./Contact";
 import GitImg from "../assets/icons/github.png";
 import LinkedinImg from "../assets/icons/linkedinNewNB.png"
+
+
 
 const Welcome = () => {
   const deviceWidth = window.innerWidth;
