@@ -9,6 +9,8 @@ import portfolioImg from "../assets/forest.png";
 import AboutMe from "../components/AboutMe";
 import Myprojects from "./Myprojects";
 import Contact from "./Contact";
+import Loading from "./Loading";
+
 import GitImg from "../assets/icons/github.png";
 import LinkedinImg from "../assets/icons/linkedinNewNB.png"
 
@@ -45,6 +47,7 @@ const Welcome = () => {
 
   return (
     <div className="page-wrapper">
+      <Loading />
       <section className={`welcome-section `} id="welcome-section">
         <div className="blur-background">
           <div className="logo-wrapper">
