@@ -5,7 +5,7 @@ import sendReady from "../assets/icons/send-icon-ready.png";
 import sendPending from "../assets/icons/send-icon.png";
 
 const Contact = () => {
-  emailjs.init("xYIALu7-EhiHlbKuf");
+  emailjs.init("aNe1Hqh99TCBtRhXj");
   // document.getElementById("contact-form");
 
   const [formData, setFormData] = useState({
@@ -34,12 +34,13 @@ const Contact = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    emailjs.sendForm("service_8w6kq0j", "template_vvwq3rc", event.target).then(
+    emailjs.sendForm("service_cbysvhk", "template_gf4qh56", event.target).then(
       (result) => {
         alert("Message sent successfully!");
         console.log(result.text);
       },
       (error) => {
+        alert("Something went wrong. Please contact me directly at santiago.n.hernandez@gmail.com.");
         console.error(error.text);
       }
     );
