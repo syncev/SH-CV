@@ -23,7 +23,7 @@ const Navbar = () => {
 
   }, [window.innerWidth]);
   useEffect(() => {
-    document.querySelector(".navLink.active").classList.remove("active");
+   if(document.querySelector(".navLink.active")) document.querySelector(".navLink.active").classList.remove("active");
     document.getElementById(activeBtn).classList.add("active");
   }, [activeBtn]);
 
