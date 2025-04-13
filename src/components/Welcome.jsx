@@ -30,7 +30,6 @@ const Welcome = () => {
   return (
     <div className="page-wrapper">
       <Navbar />
-      <Myprojects />
     </div>
   );
 };
