@@ -5,19 +5,14 @@ const Loading = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoaded(true);
-    }, 3000);
-    return () => clearTimeout(timer);
-  }, []);
+    document.isLoaded ? setIsLoaded(true) : setIsLoaded(false);
+  }, [document.isLoaded]);
+  
 
   return (
-    <div className={`loader-wrapper ${isLoaded ? "hidden" : ""}`}>
-      <div className="loader">
-      <SkewLoader color="#f1d45e" size={50} />
+    
       <h1 className="titleFont">Loading...</h1>
-      </div>
-    </div>
+
   );
 };
 

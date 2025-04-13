@@ -1,68 +1,20 @@
-$breakpoint-tablet: 481px; 
-$breakpoint-pc: 1023px;
+$breakpoint-tablet: 768px;
 $btnHover: #00B3E6;
-$fontColor: #FCFBFF;
+$primaryColor: #F5C169;
 $logoNameColor: #36362e;
 $atentionColor: #f1d45e;
-$backgroundColor: #0b1d27;
+$backgroundColor: #221F1F;
 $sidesBackgroundColor: #07131a;
 $test : 1px solid red;
+$secondaryFont: 'sansation';
 
-@import "/src/styles/Navbar.scss";
-@import "/src/styles/Welcome.scss";
-@import "/src/styles/Appgallery.scss";
-@import "/src/styles/AboutMe.scss";
-@import "/src/styles/Contact.scss";
-@import "/src/styles/Loading.scss";
+
 @font-face {
-    font-family: 'Garet';
-    src: url('./assets/fonts/Garet\ Book\ 300.ttf');
-}
-@font-face {
-    font-family: 'Garet Heavy';
-    src: url('./assets/fonts/Garet\ Heavy\ 850.ttf');
-}
-@font-face {
-    font-family: 'OpenSans';
-    src: url('./assets/fonts/OpenSans-Bold.ttf');
-}
-@font-face {
-    font-family: 'Anton';
-    src: url('./assets/fonts/Anton-Regular.ttf');
+    font-family: 'sansation';
+    src: url('./fonts/Sansation_Regular.ttf') format('woff2');
 }
 
 body{
+    background-color: $backgroundColor;
     
-    box-sizing: border-box;
-    // background-color: $primary-color;
-    color: $fontColor;
-    //hide scroll bar
-    &::-webkit-scrollbar{
-        display: none;
-    }
-    .mainFont{
-        font-family: 'Garet';
-    }
-    .pageTitleFont{
-        font-family: 'OpenSans';
-    }
-    .titleFont{
-        font-family: 'Garet Heavy';
-    }
-    .projectTitlesFont{
-        font-family: 'Anton';
-    }
-    .boldFont{
-        font-weight: 600;
-      }
-    strong{
-        font-weight:bold;
-    }
-    em{
-        font-style: italic;
-    }
-
-    .header-highlight{
-        color: $fontColor;
-    }
 }
