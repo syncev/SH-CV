@@ -1,0 +1,104 @@
+@use "../app.scss" as *;
+
+.greeting-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: clamp(0%, 100%, 340px);
+  margin: 0 auto;
+  .text-btn-wrapper {
+    .greeting-title-wrapper {
+      margin-top: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      .greeting-title-hi,
+      .greeting-title-dev {
+        color: $secondaryColor;
+        font-size: 1.5rem;
+        font-family: $secondaryFont;
+      }
+      .greeting-title-name {
+        color: $primaryColor;
+        font-size: 2rem;
+        font-family: $primaryColor;
+      }
+    }
+    .btn-wrapper {
+      margin-top: 40px;
+      display: flex;
+      justify-content: space-around;
+      gap: clamp(46px, 46px, 58px);
+      width: 100%;
+      .single-button-wrapper {
+        width: clamp(120px, 140px, 176px);
+        height: 51px;
+        border: $atentionColor 1px solid;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 2px 2px 9.2px 0px #f5c169;
+        .certificate-btn,
+        .projects-btn {
+          text-decoration: none;
+          color: $atentionColor;
+          font-family: $secondaryFont;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  .me-wrapper {
+    margin-top: 60px;
+    background-color: $atentionColor;
+    border-radius: 16px;
+    height: 142px;
+    img {
+      margin-top: -40px;
+      height: 189px;
+      border-radius: 16px;
+    }
+  }
+}
+@media (min-width: $breakpoint-tablet) {
+  .greeting-wrapper {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+    .text-btn-wrapper {
+      .greeting-title-wrapper {
+        .greeting-title-hi,
+        .greeting-title-dev {
+          font-size: 1.5rem;
+        }
+        .greeting-title-name {
+          font-size: 2.5rem;
+        }
+      }
+      .btn-wrapper {
+        .single-button-wrapper{
+          border: $atentionColor 3px solid;
+          height: 47px;
+          width: 147px;
+          .certificate-btn,
+        .projects-btn {
+          font-size: 1.25rem;
+        }
+        }
+      }
+    }
+    .me-wrapper {
+      height: 250px;
+      margin-top: 140px;
+      img {
+        height: auto;
+        width: 300px;
+        margin-top: -90px;
+      }
+    }
+  }
+}

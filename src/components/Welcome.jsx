@@ -6,7 +6,6 @@ import contactImg from "../assets/pinecone.png";
 import profileImg from "../assets/me expanded.png";
 import portfolioImg from "../assets/forest.png";
 
-import AboutMe from "../components/AboutMe";
 import Myprojects from "./Myprojects";
 import Contact from "./Contact";
 import Loading from "./Loading";
@@ -14,6 +13,8 @@ import Loading from "./Loading";
 import GitImg from "../assets/icons/github.png";
 import LinkedinImg from "../assets/icons/linkedinNewNB.png"
 import Navbar from "./Navbar";
+import Greeting from "./Greeting";
+import AboutMe from "./AboutMe";
 
 
 
@@ -30,6 +31,8 @@ const Welcome = () => {
   return (
     <div className="page-wrapper">
       <Navbar />
+      <Greeting />
+      <AboutMe/>
     </div>
   );
 };
