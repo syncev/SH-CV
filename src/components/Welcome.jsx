@@ -10,8 +10,7 @@ import Myprojects from "./Myprojects";
 import Contact from "./Contact";
 import Loading from "./Loading";
 
-import GitImg from "../assets/icons/github.png";
-import LinkedinImg from "../assets/icons/linkedinNewNB.png"
+import Certificates from "./Certificates";
 import Navbar from "./Navbar";
 import Greeting from "./Greeting";
 import AboutMe from "./AboutMe";
@@ -33,6 +32,7 @@ const Welcome = () => {
       <Navbar />
       <Greeting />
       <AboutMe/>
+      <Certificates/>
     </div>
   );
 };

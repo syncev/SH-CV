@@ -2,13 +2,14 @@ $breakpoint-tablet: 768px;
 $btnHover: #00B3E6;
 $primaryColor: #F5C169;
 $secondaryColor: #C8C8C8;
-$logoNameColor: #36362e;
+$tagColor: #626262;
 $atentionColor: #F5C169;
 $backgroundColor: #221F1F;
 $sidesBackgroundColor: #07131a;
 $test : 1px solid red;
 $secondaryFont: 'sansation';
 $primaryFont: 'DMSerifText';
+$secondaryFontItalic: 'sansationItalic';
 
 
 @font-face {
@@ -18,7 +19,7 @@ $primaryFont: 'DMSerifText';
     
 }
 @font-face {
-    font-family: 'sansation';
+    font-family: 'sansationItalic';
     src: url('./fonts/Sansation_italic.ttf') format('woff2');
     font-weight: italic;
     
@@ -34,7 +35,7 @@ body{
     min-width: 325px;
     padding: 0 1.5rem;
 }
-h2, p, span{
+h2,h3, p, span{
     color: $secondaryColor;
 }
 
