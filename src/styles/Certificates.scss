@@ -4,93 +4,253 @@
   margin-top: 64px;
   display: flex;
   flex-direction: column;
+  @include for-desktop{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    justify-content: space-evenly;
+  }
 
-  .title-wrapper {
-    display: flex;
-    flex-direction: column;
-    .certificates-header {
+  .certificates-wrapper {
+    @include for-desktop{
+      grid-column: 1;
+      grid-row: 1 / span 2;
+      width: 100%;
+    }
+    .title-wrapper {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      @include for-desktop{
+        justify-content: start;
+        display: flex;
+        width: 100%;
+      }
+      .certificates-header {
+        margin: 0 auto;
+        font-size: 1.75rem;
+        color: $secondaryColor;
+        @include for-desktop{
+          font-size: 2rem;
+          width: 100%;
+        }
+      }
+    }
+    .timeline {
+      display: flex;
+      flex-direction: column;
       margin: 0 auto;
-      font-size: 1.75rem;
-      color: $secondaryColor;
+      margin-top: 54px;
+      width: clamp(0%, 80dvw, 600px);
+      @include for-desktop{
+        width: 100%;
+      }
+
+      .year-content-wrapper {
+        display: flex;
+        margin: 0 auto;
+        padding-bottom: 30px;
+        width: 100%;
+        max-width: 450px;
+        // border: $test;
+        .year-tag-wrapper {
+          // height: inherit;
+          // border: $test;
+
+          .year-tag {
+            position: relative;
+
+            .year {
+              font-family: $primaryFont;
+              position: absolute;
+              top: 45%;
+              left: 45%;
+              transform: translate(-50%, -50%);
+            }
+          }
+          .vertical-line {
+            margin: 15px 40px 0 40px;
+            // border: $test;
+            height: 100%;
+            min-height: 55px;
+            max-height: 75%;
+            border-left: $secondaryColor 1px solid;
+          }
+        }
+        .certificates-container {
+          display: flex;
+          flex-direction: column;
+          width: fit-content;
+          gap: 10px;
+          .individual-certificate-wrapper {
+            display: flex;
+            gap: 15px;
+            padding-left: 10px;
+            // border: $test;
+            .dot {
+              display: flex;
+              // justify-content: start;
+
+              .golden-circle {
+                width: 14px;
+                height: 14px;
+                background: #f5c169;
+                border-radius: 50%;
+                -webkit-box-shadow: 0 0 16.5px 0.5px #f5c169;
+                -moz-box-shadow: 0 0 16.5px 0.5px #f5c169;
+                box-shadow: 0 0 16.5px 0.5px #f5c169;
+                margin-top: 3px;
+              }
+            }
+            .certificate-title-description-wrapper {
+              font-family: $secondaryFont;
+              // width: clamp(0%, 70dvw, 600px);
+
+              h3 {
+                font-size: 1.125rem;
+                @include for-desktop{
+                  font-size: 1.25rem;
+                }
+              }
+              p {
+                margin-top: 5px;
+                font-size: 0.875rem;
+                @include for-desktop{
+                  font-size: 1rem;
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
-  .timeline {
+  .more-container {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
     margin-top: 54px;
-    width: clamp(0%, 80dvw, 600px);
-    
-    .year-content-wrapper {
-      display: flex;
-      margin: 0 auto;
-      padding-bottom: 30px;
-      width: 100%;
-      max-width: 450px;
-      // border: $test;
-      .year-tag-wrapper {
-        // height: inherit;
-        // border: $test;
-        
-        .year-tag {
-          position: relative;
-
-          .year {
-            font-family: $primaryFont;
-            position: absolute;
-            top: 45%;
-            left: 45%;
-            transform: translate(-50%, -50%);
-          }
-        }
-        .vertical-line {
-          margin: 15px 40px 0 40px;
-          // border: $test;
-          height: 100%;
-          min-height: 55px;
-          max-height: 75%;
-          border-left: $secondaryColor 1px solid;
-        }
-      }
-      .certificates-container {
+    width: clamp(0%, 80dvw, 300px);
+    @include for-desktop{
+      grid-column: 2;
+      grid-row: 1;
+      margin-top: 0;
+    }
+    .more-title-wrapper {
+      font-family: $primaryFont;
+      font-size: 1.75rem;
+      text-align: center;
+      color: $secondaryColor;
+      @include for-desktop{
+        justify-content: start;
         display: flex;
-        flex-direction: column;
-        width: fit-content;
-        gap: 10px;
+        width: 100%;
+        font-size: 2rem;
+      }
+      
+    }
+    .more-content-wrapper {
+      margin-top: 44px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      border-left: $secondaryColor 1px solid;
+      border-right: $secondaryColor 1px solid;
+      .certificate-item-container {
+        display: flex;
+        padding: 0 20px;
+        gap: 25px;
+        width: 80%;
+        margin: 0 auto;
+        .square {
+          width: 16px;
+          height: 16px;
+          background: #f5c169;
+          border-radius: 5%;
+          -webkit-box-shadow: 0 0 16.5px 0.5px #f5c169;
+          -moz-box-shadow: 0 0 16.5px 0.5px #f5c169;
+          box-shadow: 0 0 16.5px 0.5px #f5c169;
+          margin-top: 3px;
+        }
         .individual-certificate-wrapper {
-          display: flex;
-          gap: 15px;
-          padding-left: 10px;
-          // border: $test;
-          .dot {
-            display: flex;
-            justify-content: start;
+          font-family: $secondaryFont;
 
-            .golden-circle {
-              width: 14px;
-              height: 14px;
-              background: #f5c169;
-              border-radius: 50%;
-              -webkit-box-shadow: 0 0 16.5px 0.5px #f5c169;
-              -moz-box-shadow: 0 0 16.5px 0.5px #f5c169;
-              box-shadow: 0 0 16.5px 0.5px #f5c169;
-              margin-top: 3px;
+         
+  
+          
+          h3 {
+            font-size: 1.125rem;
+            @include for-desktop{
+              font-size: 1.25rem;
             }
           }
-          .certificate-title-description-wrapper {
-            font-family: $secondaryFont;
-            // width: clamp(0%, 70dvw, 600px);
-
-            h3 {
-              font-size: 1.125rem;
-            }
-            p {
-              margin-top: 5px;
-              font-size: 0.875rem;
+          p {
+            margin-top: 5px;
+            font-size: 0.875rem;
+            @include for-desktop{
+              font-size: 1rem;
             }
           }
         }
       }
     }
   }
+  .skills-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 auto;
+    margin-top: 55px;
+    align-items: end;
+    @include for-desktop{
+      grid-column: 2;
+      grid-row: 2;
+    }
+    .skills-title-wrapper {
+      grid-column: -1 /1;
+      margin: 0 auto;
+      margin-bottom: 44px;
+      font-size: 1.75rem;
+      @include for-desktop{
+        justify-content: start;
+        display: flex;
+        width: 100%;
+        font-size: 2rem;
+      }
+    }
+    .skill-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
+      
+      .skill-img-wrapper {
+        background-color: $secondaryColor;
+        border-radius: 10px;
+        border: black 1px solid;
+        padding: 5px;
+
+        img {
+          width: 75px;
+        }
+      }
+      .dual-img {
+        display: flex;
+        gap: 10px;
+        img {
+          width: 55px;
+        }
+      }
+      p {
+        font-family: $secondaryFont;
+        font-size: 1rem;
+      }
+    }
+  }
+  @media (min-width: 500px) {
+    .skills-container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
 }
+

@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "preact/hooks";
 import React from "react";
-import goBtn from "/src/assets/icons/go-no-bg.png";
+import goBtn from "/src/assets/icons/js.png";
 
 const Myprojects = ({ pageLoaded }) => {
   const [reposByDate, setReposByDate] = useState([]);

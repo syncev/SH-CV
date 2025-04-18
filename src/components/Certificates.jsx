@@ -6,6 +6,10 @@ import html from "../assets/icons/html.png";
 import css from "../assets/icons/css.png";
 import figma from "../assets/icons/figma.png";
 import git from "../assets/icons/git.png";
+import react from "../assets/icons/react.png";
+import vite from "../assets/icons/vite.png";
+import api from "../assets/icons/api.png";
+
 import tag from "../assets/icons/tag.png";
 import goldenCircle from "../assets/icons/goldenCircle.png";
 
@@ -150,11 +154,11 @@ const Certificates = () => {
           </div>
         </div>
       </div>
-      <div className="more-wrapper">
-        <div className="tittle-wrapper ">
+      <div className="more-container">
+        <div className="more-title-wrapper ">
           <h2 className="more-header primaryFont">More About Me</h2>
         </div>
-        <div className="more-container">
+        <div className="more-content-wrapper">
           <div className="certificate-item-container">
             <div className="square"></div>
             <div className="individual-certificate-wrapper">
@@ -170,28 +174,49 @@ const Certificates = () => {
           </div>
         </div>
       </div>
-      <div className="skills-wrapper">
-        <div className="skill-container">
-          <div className="skill-img-container">
+      <div className="skills-container">
+        <div className="skills-title-wrapper primaryFont">
+          <h3>Skills</h3>
+        </div>
+        <div className="skill-wrapper">
+          <div className="skill-img-wrapper">
             <img src={JS} alt="" />
           </div>
           <p>JavaScript</p>
         </div>
-        <div className="skill-container">
-          <div className="skill-img-container">
+        <div className="skill-wrapper">
+          <div className="skill-img-wrapper dual-img">
             <img src={html} alt="" />
             <img src={css} alt="" />
           </div>
           <p>Html & CSS</p>
         </div>
-        <div className="skill-container">
-          <div className="skill-img-container">
+        <div className="skill-wrapper">
+          <div className="skill-img-wrapper">
             <img src={figma} alt="" />
           </div>
           <p>Figma</p>
         </div>
-        <div className="skill-container">
-          <div className="skill-img-container">
+        <div className="skill-wrapper">
+          <div className="skill-img-wrapper">
+            <img src={react} alt="" />
+          </div>
+          <p>React</p>
+        </div>
+        <div className="skill-wrapper">
+          <div className="skill-img-wrapper">
+            <img src={vite} alt="" />
+          </div>
+          <p>Vite</p>
+        </div>
+        <div className="skill-wrapper">
+          <div className="skill-img-wrapper">
+            <img src={api} alt="" />
+          </div>
+          <p>API</p>
+        </div>
+        <div className="skill-wrapper">
+          <div className="skill-img-wrapper">
             <img src={git} alt="" />
           </div>
           <p>Git Source Control</p>

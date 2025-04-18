@@ -6,6 +6,9 @@
     color: $secondaryColor;
     font-size: 1rem;
     font-family: $secondaryFont;
+    @include for-desktop{
+      font-size: 1.25rem;
+    }
   }
   .title-wrapper {
     position: relative;
@@ -13,6 +16,11 @@
     justify-content: start;
     .about-header {
       font-size: 1.75rem;
+      
+        @include for-desktop{
+            font-size: 2rem;
+          }
+    
     }
   }
   .p1-container {
@@ -34,6 +42,7 @@
       font-size: 1.5rem;
       font-family: $secondaryFontItalic;
       font-weight: italic;
+    
     }
   }
 }

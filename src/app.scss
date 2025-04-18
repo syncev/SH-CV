@@ -39,9 +39,16 @@ h2,h3, p, span{
     color: $secondaryColor;
 }
 
+
 .primaryFont{
     font-family: $primaryFont;
   }
   span {
     color: $atentionColor;
   }
+  @mixin for-desktop{
+    @media (min-width: $breakpoint-tablet) {
+      @content;
+    }
+  }
+  

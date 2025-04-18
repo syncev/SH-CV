@@ -1,8 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import emailjs from "emailjs-com";
-import sendReady from "../assets/icons/send-icon-ready.png";
-import sendPending from "../assets/icons/send-icon.png";
+import sendReady from "../assets/icons/js.png";
+import sendPending from "../assets/icons/js.png";
 
 const Contact = () => {
   emailjs.init("aNe1Hqh99TCBtRhXj");
