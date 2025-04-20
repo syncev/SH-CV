@@ -4,7 +4,7 @@ const AboutMe = ({ handleScroll }) => {
   return (
     <section className="aboutMe-section" id={"aboutMe-section"}>
       <div className="title-wrapper">
-        <h2 className="about-header primaryFont"> About Me </h2>
+        <h2 className="about-header "> About Me </h2>
       </div>
       <div className="p1-container">
         <span className="underscore">______</span>

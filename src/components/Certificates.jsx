@@ -33,7 +33,7 @@ const Certificates = () => {
     <section className="certificates-section" id="certificates-section">
       <div className="certificates-wrapper">
         <div className="title-wrapper ">
-          <h2 className="certificates-header primaryFont">Certificates</h2>
+          <h2 className="certificates-header ">Certificates</h2>
         </div>
         <div class="timeline">
           <div className="year-content-wrapper">
@@ -156,7 +156,7 @@ const Certificates = () => {
       </div>
       <div className="more-container">
         <div className="more-title-wrapper ">
-          <h2 className="more-header primaryFont">More About Me</h2>
+          <h2 className="more-header ">More About Me</h2>
         </div>
         <div className="more-content-wrapper">
           <div className="certificate-item-container">
@@ -175,8 +175,8 @@ const Certificates = () => {
         </div>
       </div>
       <div className="skills-container">
-        <div className="skills-title-wrapper primaryFont">
-          <h3>Skills</h3>
+        <div className="skills-title-wrapper ">
+          <h2>Skills</h2>
         </div>
         <div className="skill-wrapper">
           <div className="skill-img-wrapper">

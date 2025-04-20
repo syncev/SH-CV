@@ -33,6 +33,7 @@ const Welcome = () => {
       <Greeting />
       <AboutMe/>
       <Certificates/>
+      <Myprojects />
     </div>
   );
 };

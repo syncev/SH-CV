@@ -1,0 +1,52 @@
+@use "../app.scss" as *;
+
+.myProjects-section {
+  display: flex;
+  flex-direction: column;
+  margin-top: 64px;
+  margin-bottom: 64px;
+  .title-wrapper {
+    margin: 0 auto;
+    .projects-header {
+      font-size: 1.75rem;
+    }
+  }
+  .projects-container {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    margin: 0 auto;
+    margin-top: 54px;
+    gap: 15px;
+    @include for-desktop {
+      grid-template-columns: max-content max-content max-content;
+    }
+  }
+  .view-more-btn-container {
+    display: flex;
+    margin: 0 auto;
+    margin-top: 41px;
+    .view-more-btn {
+      border: none;
+      border-radius: 5px;
+      background-color: $atentionColor;
+      height: 37px;
+      width: 140px;
+      font-size: 1.25rem;
+      font-family: $secondaryFont;
+    }
+  }
+}
+.project-wrapper {
+  a {
+    img {
+      width: 141px;
+      height: 147px;
+      object-fit: cover;
+      border: 0.5px solid #1a1a1afd;
+      @include for-desktop {
+        width: 246px;
+        height: 252px;
+      }
+    }
+  }
+}
