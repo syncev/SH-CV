@@ -7,13 +7,13 @@ import profileImg from "../assets/me expanded.png";
 import portfolioImg from "../assets/forest.png";
 
 import Myprojects from "./Myprojects";
-import Contact from "./Contact";
 import Loading from "./Loading";
 
 import Certificates from "./Certificates";
 import Navbar from "./Navbar";
 import Greeting from "./Greeting";
 import AboutMe from "./AboutMe";
+import Contact from "./Contact";
 
 
 
@@ -34,6 +34,7 @@ const Welcome = () => {
       <AboutMe/>
       <Certificates/>
       <Myprojects />
+      <Contact/>
     </div>
   );
 };

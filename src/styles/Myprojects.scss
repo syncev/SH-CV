@@ -9,6 +9,9 @@
     margin: 0 auto;
     .projects-header {
       font-size: 1.75rem;
+      @include for-desktop{
+        font-size: 2rem;
+      }
     }
   }
   .projects-container {

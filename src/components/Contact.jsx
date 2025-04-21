@@ -1,117 +1,39 @@
 import React from "react";
-import { useState } from "react";
-import emailjs from "emailjs-com";
-import sendReady from "../assets/icons/js.png";
-import sendPending from "../assets/icons/js.png";
+
+import "../styles/Contact.scss";
+
+import email from "../assets/icons/email.png";
+import whatsapp from "../assets/icons/whatsapp.png";
+import linkedin from "../assets/icons/linkedin.png";
 
 const Contact = () => {
-  emailjs.init("aNe1Hqh99TCBtRhXj");
-  // document.getElementById("contact-form");
-
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const isFormValid = () => {
-    return (
-      formData.name &&
-      formData.email &&
-      formData.message &&
-      formData.email.includes("@")
-    );
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    emailjs.sendForm("service_cbysvhk", "template_gf4qh56", event.target).then(
-      (result) => {
-        alert("Message sent successfully!");
-        console.log(result.text);
-      },
-      (error) => {
-        alert("Something went wrong. Please contact me directly at santiago.n.hernandez@gmail.com.");
-        console.error(error.text);
-      }
-    );
-
-    setFormData({
-      name: "",
-      email: "",
-      message: "",
-    });
-  };
   return (
-    <div id="contact-section" className="contact-section">
-      <div className="hero-shade"></div>
-      <div className="title-wrapper">
-        <h2 className="contact-header pageTitleFont">
-          <span className="header-highlight">Get</span> in Touch
-        </h2>
-        <p className="contact-header-faded pageTitleFont">Get in Touch</p>
+    <section className="contact-section" id="contact-section">
+      <div className="contact-title-wrapper">
+        <div className="left-line"></div>
+        <h2 className="contact-title">Contact Me</h2>
+        <div className="right-line"></div>
       </div>
-      <div className="contactForm-wrapper">
-        <div className="contactForm-shade"></div>
-        <form
-          action=""
-          className="contact-form"
-          id="contact-form"
-          onSubmit={handleSubmit}
-        >
-          <input
-            type="text"
-            placeholder="Name"
-            className="input"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="email"
-            placeholder="Email"
-            className="input"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            autoComplete="on"
-          />
-          <textarea
-            type="text-area"
-            placeholder="Message"
-            className="input message "
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            required
-          />
-          <button type="submit">
-              <img 
-              src={
-                isFormValid() 
-                ? sendReady 
-                : sendPending
-              }
-              alt="" />
-            </button>
-        </form>
+      <div className="contact-links-container">
+        <a className="contact-link" href="mailto:santiago.n.hernandez@gmail.com">
+          <img src={email} alt="email icon" />
+          <p>santiago.n.hernandez@gmail.com</p>
+        </a>
+        <a className="contact-link" href="https://wa.me/5492615524840">
+          <img src={whatsapp} alt="whatsapp icon" />
+          <p>+54 9 (261) 552-4840</p>
+        </a>
+        <a className="contact-link" href="https://www.linkedin.com/in/san-hernandez/">
+          <img src={linkedin} alt="linkedin icon" id="linkedin" />
+          <p>linkedin.com/in/san-hernandez/</p>
+        </a>
       </div>
-    
-      <div className="bottom-shade"></div>
-    </div>
+
+      <div className="contact-bottom-phrase-wrapper">
+        <p>{`< Thanks for scrolling />`}</p>
+      </div>
+    </section>
   );
 };
-
 
 export default Contact;
