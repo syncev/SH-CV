@@ -5,7 +5,7 @@
   width: 100%;
   margin-top: 20px;
   position: relative;
-  
+
   //   overflow: hidden;
   .logo-wrapper {
     margin-left: clamp(0%, 0%, 40px);
@@ -79,7 +79,7 @@
         text-decoration: none;
         color: white;
         transition: all 0.3s ease-in-out;
-        &.active{
+        &.active {
           color: $atentionColor;
         }
       }
@@ -114,32 +114,45 @@
       color: white;
     }
   }
-}
-@media (min-width: $breakpoint-tablet) {
-  .navbar{
-justify-content: space-between;
-.ul-wrapper{
-  position: inherit;
-  height: fit-content;
-  margin-top: 15px;
-  .nav-ul{
-    padding-top: 0px;
-  }
-  li{
-    margin-top: 0px;
+  .arrow-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+  .arrow-anchor{
+    .arrow{
+      transition: all 0.3s ease-in-out;
+    }
+    .up-arrow{
+      transform: rotate(1620deg);
+    }
+  }  
   }
   
 }
+@media (min-width: $breakpoint-tablet) {
+  .navbar {
+    justify-content: space-between;
+    .ul-wrapper {
+      position: inherit;
+      height: fit-content;
+      margin-top: 15px;
+      .nav-ul {
+        padding-top: 0px;
+      }
+      li {
+        margin-top: 0px;
+      }
+    }
     .language-wrapper {
       position: inherit;
       transform: translateX(0);
       left: auto;
       right: clamp(0%, 5%, 40px);
-      div{
-        img{
+      div {
+        img {
           width: 33px;
         }
-        p{
+        p {
           font-size: 1.2rem;
         }
       }

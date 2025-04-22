@@ -11,7 +11,6 @@ import vite from "../assets/icons/vite.png";
 import api from "../assets/icons/api.png";
 
 import tag from "../assets/icons/tag.png";
-import goldenCircle from "../assets/icons/goldenCircle.png";
 
 const Certificates = () => {
   const verticalLine = useRef(null);

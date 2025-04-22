@@ -1,17 +1,19 @@
 import React , { useState, useEffect} from "react";
-import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 import englogo from "../assets/eng lang.png";
 import esplogo from "../assets/esp lang.png";
-import menuIcon from "../assets/menu.png";
+import arrow from "../assets/icons/arrow.png";
 
 import "../styles/Navbar.scss";
 const Navbar = () => {
   // const deviceWidth = window.innerWidth;
   const tabletWidth = 768;
   const [deviceWidth, setCurrentDeviceWidth] = useState(window.innerWidth);
-  const [activeBtn, setActiveBtn] = useState("about");
+  const [activeBtn, setActiveBtn] = useState("aboutMe");
   //makes the mobile menu appear/disappear depending the current screen size
+  const [arrowClass, setArrowClass] = useState("");
+
+
   useEffect(() => {
     const handleResize = () => {
       setCurrentDeviceWidth(window.innerWidth);
@@ -22,6 +24,7 @@ const Navbar = () => {
     };
 
   }, [window.innerWidth]);
+
   useEffect(() => {
    if(document.querySelector(".navLink.active")) document.querySelector(".navLink.active").classList.remove("active");
     document.getElementById(activeBtn).classList.add("active");
@@ -32,8 +35,18 @@ const Navbar = () => {
     // document.getElementById("menu-img").classList.toggle("active");
   }
 
+  document.addEventListener("scroll", (e) => {
+    
+    if (window.scrollY > 0) {
+      setArrowClass("up-arrow");
+    }
+    if(window.scrollY < 10){
+    setArrowClass("");
+    }
+  })
+
   return (
-    <header className="navbar">
+    <header className="navbar" id="navbar">
       <div className="logo-wrapper">
         <div className="logo-container">
           <img src={logo} alt="" />
@@ -104,13 +117,13 @@ const Navbar = () => {
           }`}
         >
           <li className="navBtnLi">
-            <a href="#about" id="about" className="navLink" onClick={() => setActiveBtn("about")}>About</a>
+            <a href="#aboutMe-section" id="aboutMe" className="navLink" onClick={() => setActiveBtn("about")}>About</a>
           </li>
           <li className="navBtnLi">
             <a href="#myProjects-section" className="navLink" id="portfolio" onClick={() => setActiveBtn("portfolio")}>Portfolio</a>
           </li>
           <li className="navBtnLi">
-            <a href="#contact" id="contact" className="navLink" onClick={() => setActiveBtn("contact")}>Contact</a>
+            <a href="#contact-section" id="contact" className="navLink" onClick={() => setActiveBtn("contact")}>Contact</a>
           </li>
         </ul>
       </div>
@@ -124,6 +137,11 @@ const Navbar = () => {
           <p>ES</p>
           <img src={esplogo} alt="" />
         </div>
+      </div>
+      <div className="arrow-container">
+        <a href="#" className="arrow-anchor">
+          <img src={arrow} alt="arrow" className={`arrow ${arrowClass}`} />
+        </a>
       </div>
     </header>
   );

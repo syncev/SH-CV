@@ -7,7 +7,6 @@ import profileImg from "../assets/me expanded.png";
 import portfolioImg from "../assets/forest.png";
 
 import Myprojects from "./Myprojects";
-import Loading from "./Loading";
 
 import Certificates from "./Certificates";
 import Navbar from "./Navbar";

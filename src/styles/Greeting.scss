@@ -6,6 +6,8 @@
   align-items: center;
   width: clamp(0%, 100%, 340px);
   margin: 0 auto;
+  justify-content: space-evenly;
+  
   .text-btn-wrapper {
     .greeting-title-wrapper {
       margin-top: 100px;
@@ -32,6 +34,7 @@
       justify-content: space-around;
       gap: clamp(46px, 46px, 58px);
       width: 100%;
+      
       .single-button-wrapper {
         width: clamp(120px, 140px, 176px);
         height: 51px;
@@ -80,10 +83,11 @@
         }
       }
       .btn-wrapper {
+        
         .single-button-wrapper{
           border: $atentionColor 3px solid;
           height: 47px;
-          width: 147px;
+          width: 167px;
           .certificate-btn,
         .projects-btn {
           font-size: 1.25rem;

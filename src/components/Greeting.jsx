@@ -15,12 +15,12 @@ const Greeting = () => {
         </h1>
         <div className="btn-wrapper">
           <div className="single-button-wrapper">
-            <a className="certificate-btn" href="#certificates">
+            <a className="certificate-btn" href="#certificates-section">
               Certificates
             </a>
           </div>
           <div className="single-button-wrapper">
-            <a className="projects-btn" href="#projects">
+            <a className="projects-btn" href="#myProjects-section">
               Projects
             </a>
           </div>

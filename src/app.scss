@@ -29,7 +29,9 @@ $secondaryFontItalic: 'sansationItalic';
     src: url('./fonts/DMSerifText-Regular.ttf') format('woff2');
     font-weight: bold;
 }
-
+html{
+  scroll-behavior: smooth;
+}
 body{
     background-color: $backgroundColor;
     min-width: 325px;
