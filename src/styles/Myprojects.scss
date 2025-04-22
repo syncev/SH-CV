@@ -45,7 +45,8 @@
       width: 141px;
       height: 147px;
       object-fit: cover;
-      border: 0.5px solid #1a1a1afd;
+      border: 1px solid #1a1a1afd;
+      border-radius: 3px;
       @include for-desktop {
         width: 246px;
         height: 252px;
