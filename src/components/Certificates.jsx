@@ -12,6 +12,10 @@ import api from "../assets/icons/api.png";
 
 import tag from "../assets/icons/tag.png";
 
+import grasshoperCertif from "../../public/certificates/ReactNativeGrassHopper.png";
+// import frontEndWebDeveloper from "../../public/certificates/FEDEducado.pdf";
+
+
 const Certificates = () => {
   const verticalLine = useRef(null);
   const verticalLineParent = useRef(null);
@@ -48,12 +52,14 @@ const Certificates = () => {
                 <div className="dot">
                   <div className="golden-circle"></div>
                 </div>
-                <div className="certificate-title-description-wrapper">
+                <a className="certificate-title-description-wrapper" href={`${import.meta.env.BASE_URL}certificates/ReactNativeGrassHopper.png`}
+                target="_blank"
+                rel="noopener noreferrer">
                   <h3 className="certificate-title">Coding Fundamentals</h3>
                   <p className="certificate-description">
                     Grass Hopper (Google)
                   </p>
-                </div>
+                </a>
               </div>
             </div>
           </div>
@@ -70,23 +76,29 @@ const Certificates = () => {
                 <div className="dot">
                   <div className="golden-circle"></div>
                 </div>
-                <div className="certificate-title-description-wrapper">
+                <a className="certificate-title-description-wrapper"
+                href={`${import.meta.env.BASE_URL}certificates/FEDEducado.png`}
+                target="_blank"
+                rel="noopener noreferrer">
                   <h3 className="certificate-title">Front End Web Developer</h3>
                   <p className="certificate-description">
                     Educado en Argentina (A.P. 4.0)
                   </p>
-                </div>
+                </a>
               </div>
               <div className="individual-certificate-wrapper">
                 <div className="dot">
                   <div className="golden-circle"></div>
                 </div>
-                <div className="certificate-title-description-wrapper">
+                <a className="certificate-title-description-wrapper"
+                 href={`${import.meta.env.BASE_URL}certificates/FEDUBA.png`}
+                 target="_blank"
+                 rel="noopener noreferrer">
                   <h3 className="certificate-title">Frontend JS Developer</h3>
                   <p className="certificate-description">
                     UBA Economicas (A.P. 4.0)
                   </p>
-                </div>
+                </a>
               </div>
             </div>
           </div>
@@ -105,49 +117,61 @@ const Certificates = () => {
                   {/* <div className="golden-circle"></div> */}
                   <div className="golden-circle"></div>
                 </div>
-                <div className="certificate-title-description-wrapper">
+                <a className="certificate-title-description-wrapper"
+                href={`${import.meta.env.BASE_URL}certificates/PwJSFundacionTelefonica.png`}
+                target="_blank"
+                rel="noopener noreferrer">
                   <h3 className="certificate-title">
                     Programming with JavaScript
                   </h3>
                   <p className="certificate-description">
                     Fundacion Telefonica Movistar
                   </p>
-                </div>
+                </a>
               </div>
               <div className="individual-certificate-wrapper">
                 <div className="dot">
                   <div className="golden-circle"></div>
                 </div>
-                <div className="certificate-title-description-wrapper">
+                <a className="certificate-title-description-wrapper"
+                href={`${import.meta.env.BASE_URL}certificates/AIPSantander.png`}
+                target="_blank"
+                rel="noopener noreferrer">
                   <h3 className="certificate-title">AI and Productivity</h3>
                   <p className="certificate-description">
                     Santander Open Academy - Google
                   </p>
-                </div>
+                </a>
               </div>
               <div className="individual-certificate-wrapper">
                 <div className="dot">
                   <div className="golden-circle"></div>
                 </div>
-                <div className="certificate-title-description-wrapper">
+                <a className="certificate-title-description-wrapper"
+                 href={`${import.meta.env.BASE_URL}certificates/AGILESantander.png`}
+                 target="_blank"
+                 rel="noopener noreferrer">
                   <h3 className="certificate-title">
                     AGILE Methodologies and Project Management
                   </h3>
                   <p className="certificate-description">
                     Santander Open Academy - Google
                   </p>
-                </div>
+                </a>
               </div>
               <div className="individual-certificate-wrapper">
                 <div className="dot">
                   <div className="golden-circle"></div>
                 </div>
-                <div className="certificate-title-description-wrapper">
+                <a className="certificate-title-description-wrapper"
+                href={`${import.meta.env.BASE_URL}certificates/GenAISololearn.png`}
+                target="_blank"
+                rel="noopener noreferrer">
                   <h3 className="certificate-title">
                     Generative AI in Practice
                   </h3>
                   <p className="certificate-description">Sololearn</p>
-                </div>
+                </a>
               </div>
             </div>
           </div>
