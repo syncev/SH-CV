@@ -1,4 +1,4 @@
-import React , { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import logo from "../assets/logo.png";
 import englogo from "../assets/eng lang.png";
 import esplogo from "../assets/esp lang.png";
@@ -9,10 +9,9 @@ const Navbar = () => {
   // const deviceWidth = window.innerWidth;
   const tabletWidth = 768;
   const [deviceWidth, setCurrentDeviceWidth] = useState(window.innerWidth);
-  const [activeBtn, setActiveBtn] = useState("aboutMe");
   //makes the mobile menu appear/disappear depending the current screen size
   const [arrowClass, setArrowClass] = useState("");
-
+  const [menuFrame, setMenuFrame] = useState("");
 
   useEffect(() => {
     const handleResize = () => {
@@ -22,50 +21,38 @@ const Navbar = () => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-
   }, [window.innerWidth]);
 
-  useEffect(() => {
-   if(document.querySelector(".navLink.active")) document.querySelector(".navLink.active").classList.remove("active");
-    document.getElementById(activeBtn).classList.add("active");
-  }, [activeBtn]);
+ 
 
   function menuHandler() {
     document.getElementById("nav-ul").classList.toggle("active");
     // document.getElementById("menu-img").classList.toggle("active");
   }
 
-  // document.addEventListener("scroll", (e) => {
-    
-  //   if (window.scrollY > 0) {
-  //     setArrowClass("up-arrow");
-  //   }
-  //   if(window.scrollY < 10){
-  //   setArrowClass("");
-  //   }
-  // })
+
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 10) {
         setArrowClass("up-arrow");
+        setMenuFrame("frame");
       } else {
         setArrowClass("");
+        setMenuFrame("");
       }
     };
-  
+
     window.addEventListener("scroll", handleScroll);
-  
+
     // Run it once on mount in case the page is already scrolled
-  
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
-  function alertFunction() {
-    console.log("clicked");
-  }
+
   return (
     <header className="navbar" id="navbar">
       <div className="logo-wrapper">
@@ -75,8 +62,7 @@ const Navbar = () => {
       </div>
       <div className="ul-wrapper">
         {deviceWidth < tabletWidth && (
-          <div id="menu-icon" className="menu-icon" onClick={menuHandler}>
-            {/* <img src={menuIcon} alt="" id="menu-img" /> */}
+          <div id="menu-icon" className={`menu-icon ${menuFrame}`}  onClick={menuHandler}>
             <svg
               class="hb"
               xmlns="http://www.w3.org/2000/svg"
@@ -138,13 +124,31 @@ const Navbar = () => {
           }`}
         >
           <li className="navBtnLi">
-            <a href="#aboutMe-section" id="aboutMe" className="navLink" onClick={() => setActiveBtn("about")}>About</a>
+            <a
+              href="#aboutMe-section"
+              id="aboutMe"
+              className="navLink"
+            >
+              About
+            </a>
           </li>
           <li className="navBtnLi">
-            <a href="#myProjects-section" className="navLink" id="portfolio" onClick={() => setActiveBtn("portfolio")}>Portfolio</a>
+            <a
+              href="#myProjects-section"
+              className="navLink"
+              id="portfolio"
+            >
+              Portfolio
+            </a>
           </li>
           <li className="navBtnLi">
-            <a href="#contact-section" id="contact" className="navLink" onClick={() => setActiveBtn("contact")}>Contact</a>
+            <a
+              href="#contact-section"
+              id="contact"
+              className="navLink"
+            >
+              Contact
+            </a>
           </li>
         </ul>
       </div>
@@ -160,7 +164,7 @@ const Navbar = () => {
         </div>
       </div>
       <div className="arrow-container">
-        <a href="#" className="arrow-anchor" onClick={alertFunction}>
+        <a href="#" className="arrow-anchor" >
           <img src={arrow} alt="arrow" className={`arrow ${arrowClass} `} />
         </a>
       </div>

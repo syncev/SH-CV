@@ -1,5 +1,5 @@
 @use "../app.scss" as *;
-@import 'animate.css';
+@import "animate.css";
 .navbar {
   display: flex;
   width: 100%;
@@ -29,26 +29,31 @@
     right: 0;
     z-index: 500;
     pointer-events: none;
+    @include for-desktop {
+      pointer-events: all;
+    }
     .menu-icon {
       margin-top: 0px;
       position: inherit;
       right: clamp(0%, 8%, 50px);
       display: flex;
       z-index: 100;
-      pointer-events:all;
-      // img{
-      //   width: 40px;
-      //   height: auto;
-      //   transition: all 0.3s ease-in-out;
-      //   &.active{
-      //     transform: rotate(90deg);
-      //   }
-      // }
+      pointer-events: all;
+      transition: all 0.3s ease-in-out;
+
+      border: 1px solid $backgroundColor;
+      border-radius: 5px;
+      background-color: $backgroundColor;
       .hb {
         width: 50px;
         margin: 0 auto;
         display: block;
       }
+    }
+    .menu-icon.frame {
+      border: 1px solid $atentionColor;
+      border-radius: 5px;
+      background-color: $backgroundColor;
     }
     .nav-ul {
       display: flex;
@@ -66,7 +71,7 @@
       transform: translatex(100%);
       margin-top: -20px;
       transition: all 0.3s ease-in-out;
-      
+      pointer-events: all;
       &.active {
         // z-index: 90;
         right: 0px;
@@ -123,23 +128,20 @@
     z-index: 5000;
     bottom: 20px;
     right: 20px;
-  .arrow-anchor{
-    .arrow{
-      pointer-events: none;
-      opacity: 0.5;
-      transition: all 0.3s ease-in-out;
-     z-index: 0;
-
-
+    .arrow-anchor {
+      .arrow {
+        pointer-events: none;
+        opacity: 0.5;
+        transition: all 0.3s ease-in-out;
+        z-index: 0;
+      }
+      .up-arrow {
+        pointer-events: auto;
+        opacity: 1;
+        transform: rotate(1620deg);
+      }
     }
-    .up-arrow{
-      pointer-events: auto;
-      opacity: 1;
-      transform: rotate(1620deg);
-    }
-  }  
   }
-  
 }
 @media (min-width: $breakpoint-tablet) {
   .navbar {
