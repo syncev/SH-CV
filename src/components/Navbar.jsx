@@ -35,16 +35,37 @@ const Navbar = () => {
     // document.getElementById("menu-img").classList.toggle("active");
   }
 
-  document.addEventListener("scroll", (e) => {
+  // document.addEventListener("scroll", (e) => {
     
-    if (window.scrollY > 0) {
-      setArrowClass("up-arrow");
-    }
-    if(window.scrollY < 10){
-    setArrowClass("");
-    }
-  })
+  //   if (window.scrollY > 0) {
+  //     setArrowClass("up-arrow");
+  //   }
+  //   if(window.scrollY < 10){
+  //   setArrowClass("");
+  //   }
+  // })
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setArrowClass("up-arrow");
+      } else {
+        setArrowClass("");
+      }
+    };
+  
+    window.addEventListener("scroll", handleScroll);
+  
+    // Run it once on mount in case the page is already scrolled
+  
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  function alertFunction() {
+    console.log("clicked");
+  }
   return (
     <header className="navbar" id="navbar">
       <div className="logo-wrapper">
@@ -139,8 +160,8 @@ const Navbar = () => {
         </div>
       </div>
       <div className="arrow-container">
-        <a href="#" className="arrow-anchor">
-          <img src={arrow} alt="arrow" className={`arrow ${arrowClass}`} />
+        <a href="#" className="arrow-anchor" onClick={alertFunction}>
+          <img src={arrow} alt="arrow" className={`arrow ${arrowClass} `} />
         </a>
       </div>
     </header>

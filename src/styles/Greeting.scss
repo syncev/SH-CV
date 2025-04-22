@@ -7,8 +7,8 @@
   width: clamp(0%, 100%, 340px);
   margin: 0 auto;
   justify-content: space-evenly;
-  
   .text-btn-wrapper {
+    z-index: 8000;
     .greeting-title-wrapper {
       margin-top: 100px;
       display: flex;
@@ -16,6 +16,7 @@
       justify-content: center;
       gap: 10px;
       width: 100%;
+      zin
       .greeting-title-hi,
       .greeting-title-dev {
         color: $secondaryColor;
