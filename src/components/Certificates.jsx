@@ -184,10 +184,13 @@ const Certificates = () => {
         <div className="more-content-wrapper">
           <div className="certificate-item-container">
             <div className="square"></div>
-            <div className="individual-certificate-wrapper">
+            <a className="individual-certificate-wrapper"
+             href={`${import.meta.env.BASE_URL}certificates/EF SET Certificate.png`}
+             target="_blank"
+             rel="noopener noreferrer">
               <h3 className="certificate-title">C2 English</h3>
               <p className="certificate-description">EF SET</p>
-            </div>
+            </a>
           </div>
           <div className="certificate-item-container">
             <div className="square"></div>
