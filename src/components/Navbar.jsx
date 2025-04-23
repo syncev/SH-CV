@@ -3,8 +3,10 @@ import logo from "../assets/logo.png";
 import englogo from "../assets/eng lang.png";
 import esplogo from "../assets/esp lang.png";
 import arrow from "../assets/icons/arrow.png";
+import {contentLanguage} from "./Content.jsx";
 import { useContext } from "react";
 import { LanguageContext } from "./Welcome";
+
 
 import "../styles/Navbar.scss";
 const Navbar = () => {
@@ -131,17 +133,17 @@ const Navbar = () => {
         >
           <li className="navBtnLi">
             <a href="#aboutMe-section" id="aboutMe" className="navLink">
-              About
+            {contentLanguage[languageValue].navbar.about}
             </a>
           </li>
           <li className="navBtnLi">
             <a href="#myProjects-section" className="navLink" id="portfolio">
-              Portfolio
+            {contentLanguage[languageValue].navbar.portfolio}
             </a>
           </li>
           <li className="navBtnLi">
             <a href="#contact-section" id="contact" className="navLink">
-              Contact
+            {contentLanguage[languageValue].navbar.contact}
             </a>
           </li>
         </ul>

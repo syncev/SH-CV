@@ -22,6 +22,11 @@ export const contentLanguage = {
             dev : "un Desarrollador Front-End",
             btnCertif : "Certificados",
             btnProjects : "Proyectos"
+        },
+        navbar : {
+            about : "Sobre Mi",
+            portfolio : "Portafolio",
+            contact : "Contacto"
         }
     },
     "en": {
@@ -45,6 +50,11 @@ export const contentLanguage = {
             dev : "a Front-End Developer",
             btnCertif : "Certificates",
             btnProjects : "Projects"
+        },
+        navbar : {
+            about : "About Me",
+            portfolio : "Portfolio",
+            contact : "Contact"
         }
     }
 }
