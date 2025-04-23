@@ -15,6 +15,13 @@ export const contentLanguage = {
             p3c : ", pero naci con la voluntad de ",
             p3d : "aprender",
            
+        },
+        greeting : {
+            hi : "Hola, soy",
+            name : "Santiago Hernández",
+            dev : "un Desarrollador Front-End",
+            btnCertif : "Certificados",
+            btnProjects : "Proyectos"
         }
     },
     "en": {
@@ -31,6 +38,13 @@ export const contentLanguage = {
             p3b : "knowing",
             p3c : ", but I was born willing to",
             p3d : "learn",
+        },
+        greeting : {
+            hi : "Hi, I'm",
+            name : "Santiago Hernandez",
+            dev : "a Front-End Developer",
+            btnCertif : "Certificates",
+            btnProjects : "Projects"
         }
     }
 }
