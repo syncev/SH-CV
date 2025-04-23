@@ -10,13 +10,13 @@ import Greeting from "./Greeting";
 import AboutMe from "./AboutMe";
 import Contact from "./Contact";
 
-export const TestContext = createContext("en")
+export const LanguageContext = createContext("en")
 
 
 
 const Welcome = () => {
   
-  const [testValue, setTestValue] = useState('en');
+  const [languageValue, setLanguageValue] = useState('en');
   
   // useEffect(() => {
   //   console.log(testValue)
@@ -24,9 +24,9 @@ const Welcome = () => {
   
 
   return (
-    <TestContext.Provider value={{
-      testValue, 
-      setTestValue
+    <LanguageContext.Provider value={{
+      languageValue, 
+      setLanguageValue
       }}>
     <div className="page-wrapper">
       <Navbar />
@@ -36,7 +36,7 @@ const Welcome = () => {
       <Myprojects />
       <Contact/>
     </div>
-    </TestContext.Provider>
+    </LanguageContext.Provider>
   );
 };
 

@@ -4,7 +4,7 @@ import englogo from "../assets/eng lang.png";
 import esplogo from "../assets/esp lang.png";
 import arrow from "../assets/icons/arrow.png";
 import { useContext } from "react";
-import { TestContext } from "./Welcome";
+import { LanguageContext } from "./Welcome";
 
 import "../styles/Navbar.scss";
 const Navbar = () => {
@@ -15,7 +15,7 @@ const Navbar = () => {
   const [arrowClass, setArrowClass] = useState("");
   const [menuFrame, setMenuFrame] = useState("");
 
-  const {testValue, setTestValue} = useContext(TestContext);
+  const {languageValue, setLanguageValue} = useContext(LanguageContext);
 
   useEffect(() => {
     const handleResize = () => {
@@ -32,7 +32,7 @@ const Navbar = () => {
     // document.getElementById("menu-img").classList.toggle("active");
   }
   function languageHandler(lang) {
-    setTestValue(lang);
+    setLanguageValue(lang);
   }
 
   useEffect(() => {
