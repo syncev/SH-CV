@@ -12,8 +12,7 @@ import api from "../assets/icons/api.png";
 
 import tag from "../assets/icons/tag.png";
 
-import grasshoperCertif from "../../public/certificates/ReactNativeGrassHopper.png";
-// import frontEndWebDeveloper from "../../public/certificates/FEDEducado.pdf";
+
 
 
 const Certificates = () => {

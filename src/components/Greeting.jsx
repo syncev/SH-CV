@@ -14,16 +14,16 @@ const Greeting = () => {
           <span className="greeting-title-dev">a Front-End Developer</span>
         </h1>
         <div className="btn-wrapper">
-          <div className="single-button-wrapper">
-            <a className="certificate-btn" href="#certificates-section">
+          <a className="single-button-wrapper"  href="#certificates-section">
+            <p className="certificate-btn">
               Certificates
-            </a>
-          </div>
-          <div className="single-button-wrapper">
-            <a className="projects-btn" href="#myProjects-section">
+            </p>
+          </a>
+          <a className="single-button-wrapper" href="#myProjects-section">
+            <p className="projects-btn" >
               Projects
-            </a>
-          </div>
+            </p>
+          </a>
         </div>
       </div>
 
