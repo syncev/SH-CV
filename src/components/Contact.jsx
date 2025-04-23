@@ -6,12 +6,18 @@ import email from "../assets/icons/email.png";
 import whatsapp from "../assets/icons/whatsapp.png";
 import linkedin from "../assets/icons/linkedin.png";
 
+import {contentLanguage} from "./Content.jsx";
+import { useContext } from "react";
+import { LanguageContext } from "./Welcome";
+
 const Contact = () => {
+  const {languageValue, setLanguageValue} = useContext(LanguageContext);
+
   return (
     <section className="contact-section" id="contact-section">
       <div className="contact-title-wrapper">
         <div className="left-line"></div>
-        <h2 className="contact-title">Contact Me</h2>
+        <h2 className="contact-title">{contentLanguage[languageValue].contact.title}</h2>
         <div className="right-line"></div>
       </div>
       <div className="contact-links-container">
@@ -30,7 +36,7 @@ const Contact = () => {
       </div>
 
       <div className="contact-bottom-phrase-wrapper">
-        <p>{`< Thanks for scrolling />`}</p>
+        <p>{contentLanguage[languageValue].contact.bye}</p>
       </div>
     </section>
   );

@@ -32,6 +32,10 @@ export const contentLanguage = {
             title : "Certificados",
             more : "Mas Sobre Mi" ,
             skills : "Habilidades",
+        },
+        contact : {
+            title : "Contactame",
+            bye : "< Gracias por llegar hasta acá />"
         }
     },
     "en": {
@@ -65,6 +69,10 @@ export const contentLanguage = {
             title : "Certificates",
             more : "More About Me" ,
             skills : "Skills",
+        },
+        contact : {
+            title : "Contact Me",
+            bye : "< Thanks for scrolling />"
         }
     }
 }
