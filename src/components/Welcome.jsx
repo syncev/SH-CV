@@ -1,5 +1,4 @@
 import React, { useState, useEffect, lazy, createContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
 
 
 
@@ -11,19 +10,24 @@ import Greeting from "./Greeting";
 import AboutMe from "./AboutMe";
 import Contact from "./Contact";
 
+export const TestContext = createContext("en")
+
 
 
 const Welcome = () => {
-  // const deviceWidth = window.innerWidth;
-  // const tabletWidth = 768;
-  // const navigate = useNavigate();
-  //a state and effect that on load changes the state once, from false to true, and since this happens when the page loads, this state basically tells if the page finished loading
   
-
+  const [testValue, setTestValue] = useState('en');
   
+  // useEffect(() => {
+  //   console.log(testValue)
+  // }, [testValue])
   
 
   return (
+    <TestContext.Provider value={{
+      testValue, 
+      setTestValue
+      }}>
     <div className="page-wrapper">
       <Navbar />
       <Greeting />
@@ -32,6 +36,7 @@ const Welcome = () => {
       <Myprojects />
       <Contact/>
     </div>
+    </TestContext.Provider>
   );
 };
 

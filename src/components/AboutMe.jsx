@@ -1,33 +1,32 @@
 import React from "react";
 import "../styles/AboutMe.scss";
-const AboutMe = ({ handleScroll }) => {
+import {contentLanguage} from "./Content.jsx";
+import { useContext } from "react";
+import { TestContext } from "./Welcome";
+const AboutMe = () => {
+  const {testValue, setTestValue} = useContext(TestContext);
   return (
     <section className="aboutMe-section" id={"aboutMe-section"}>
       <div className="title-wrapper">
-        <h2 className="about-header "> About Me </h2>
+        <h2 className="about-header "> {contentLanguage[testValue].about.title} </h2>
       </div>
       <div className="p1-container">
         <span className="underscore">______</span>
         <div className="p2-container">
           <p className="aboutMe-text p1">
-            Hi, my name is Santiago Hernandez, I've been actively learning web
-            development since 2021 and graduated as <span>Frontend Developer</span> from the
-            Argentina Programa 4.0 Front End Development course in 2023. Since
-            then, I've been continuously expanding my knowledge by taking
-            various online courses and building personal projects to sharpen my
-            skills and explore new technologies.
+          {contentLanguage[testValue].about.p1a} <span>{contentLanguage[testValue].about.p1b}</span> {contentLanguage[testValue].about.p1c} 
           </p>
           <p className="aboutMe-text p2">
-            I'm currently aiming to become a <span>Software Developer</span>, and I’m
-            committed to growing both technically and professionally to reach
-            that goal.
+          {contentLanguage[testValue].about.p2a} 
+          <span>{contentLanguage[testValue].about.p2b}</span>
+          {contentLanguage[testValue].about.p2c}
           </p>
         </div>
       </div>
 
       <div className="quote-container">
         <p className="quote">
-          "I wasn't born <span>knowing</span>, but I was born willing to <span>learn</span>."{" "}
+          "{contentLanguage[testValue].about.p3a} <span>{contentLanguage[testValue].about.p3b}</span>{contentLanguage[testValue].about.p3c} <span>{contentLanguage[testValue].about.p3d}</span>."{" "}
         </p>
       </div>
     </section>

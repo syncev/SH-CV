@@ -3,6 +3,8 @@ import logo from "../assets/logo.png";
 import englogo from "../assets/eng lang.png";
 import esplogo from "../assets/esp lang.png";
 import arrow from "../assets/icons/arrow.png";
+import { useContext } from "react";
+import { TestContext } from "./Welcome";
 
 import "../styles/Navbar.scss";
 const Navbar = () => {
@@ -12,6 +14,8 @@ const Navbar = () => {
   //makes the mobile menu appear/disappear depending the current screen size
   const [arrowClass, setArrowClass] = useState("");
   const [menuFrame, setMenuFrame] = useState("");
+
+  const {testValue, setTestValue} = useContext(TestContext);
 
   useEffect(() => {
     const handleResize = () => {
@@ -23,14 +27,13 @@ const Navbar = () => {
     };
   }, [window.innerWidth]);
 
- 
-
   function menuHandler() {
     document.getElementById("nav-ul").classList.toggle("active");
     // document.getElementById("menu-img").classList.toggle("active");
   }
-
-
+  function languageHandler(lang) {
+    setTestValue(lang);
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,7 +55,6 @@ const Navbar = () => {
     };
   }, []);
 
-
   return (
     <header className="navbar" id="navbar">
       <div className="logo-wrapper">
@@ -62,7 +64,11 @@ const Navbar = () => {
       </div>
       <div className="ul-wrapper">
         {deviceWidth < tabletWidth && (
-          <div id="menu-icon" className={`menu-icon ${menuFrame}`}  onClick={menuHandler}>
+          <div
+            id="menu-icon"
+            className={`menu-icon ${menuFrame}`}
+            onClick={menuHandler}
+          >
             <svg
               class="hb"
               xmlns="http://www.w3.org/2000/svg"
@@ -124,47 +130,35 @@ const Navbar = () => {
           }`}
         >
           <li className="navBtnLi">
-            <a
-              href="#aboutMe-section"
-              id="aboutMe"
-              className="navLink"
-            >
+            <a href="#aboutMe-section" id="aboutMe" className="navLink">
               About
             </a>
           </li>
           <li className="navBtnLi">
-            <a
-              href="#myProjects-section"
-              className="navLink"
-              id="portfolio"
-            >
+            <a href="#myProjects-section" className="navLink" id="portfolio">
               Portfolio
             </a>
           </li>
           <li className="navBtnLi">
-            <a
-              href="#contact-section"
-              id="contact"
-              className="navLink"
-            >
+            <a href="#contact-section" id="contact" className="navLink">
               Contact
             </a>
           </li>
         </ul>
       </div>
       <div className="language-wrapper">
-        <div>
+        <div onClick={() => languageHandler("en")}>
           <img src={englogo} alt="" />
           <p>EN</p>
         </div>
         <p> - </p>
-        <div>
+        <div onClick={() => languageHandler("es")}>
           <p>ES</p>
           <img src={esplogo} alt="" />
         </div>
       </div>
       <div className="arrow-container">
-        <a href="#" className="arrow-anchor" >
+        <a href="#" className="arrow-anchor">
           <img src={arrow} alt="arrow" className={`arrow ${arrowClass} `} />
         </a>
       </div>
