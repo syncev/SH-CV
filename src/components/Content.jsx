@@ -27,6 +27,11 @@ export const contentLanguage = {
             about : "Sobre Mi",
             portfolio : "Portafolio",
             contact : "Contacto"
+        },
+        certificates : {
+            title : "Certificados",
+            more : "Mas Sobre Mi" ,
+            skills : "Habilidades",
         }
     },
     "en": {
@@ -55,6 +60,11 @@ export const contentLanguage = {
             about : "About Me",
             portfolio : "Portfolio",
             contact : "Contact"
+        },
+        certificates : {
+            title : "Certificates",
+            more : "More About Me" ,
+            skills : "Skills",
         }
     }
 }

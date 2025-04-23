@@ -12,10 +12,14 @@ import api from "../assets/icons/api.png";
 
 import tag from "../assets/icons/tag.png";
 
-
+import {contentLanguage} from "./Content.jsx";
+import { useContext } from "react";
+import { LanguageContext } from "./Welcome"
 
 
 const Certificates = () => {
+  const {languageValue, setLanguageValue} = useContext(LanguageContext);
+
   const verticalLine = useRef(null);
   const verticalLineParent = useRef(null);
 
@@ -35,7 +39,7 @@ const Certificates = () => {
     <section className="certificates-section" id="certificates-section">
       <div className="certificates-wrapper">
         <div className="title-wrapper ">
-          <h2 className="certificates-header ">Certificates</h2>
+          <h2 className="certificates-header ">{contentLanguage[languageValue].certificates.title} </h2>
         </div>
         <div class="timeline">
           <div className="year-content-wrapper">
@@ -178,7 +182,7 @@ const Certificates = () => {
       </div>
       <div className="more-container">
         <div className="more-title-wrapper ">
-          <h2 className="more-header ">More About Me</h2>
+          <h2 className="more-header ">{contentLanguage[languageValue].certificates.more}</h2>
         </div>
         <div className="more-content-wrapper">
           <div className="certificate-item-container">
@@ -201,7 +205,7 @@ const Certificates = () => {
       </div>
       <div className="skills-container">
         <div className="skills-title-wrapper ">
-          <h2>Skills</h2>
+          <h2>{contentLanguage[languageValue].certificates.skills}</h2>
         </div>
         <div className="skill-wrapper">
           <div className="skill-img-wrapper">
