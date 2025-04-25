@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.5.0",
-    "gh-pages": "^6.0.0",
+    "gh-pages": "^6.3.0",
     "sass": "^1.69.5",
     "tailwindcss": "^3.3.5",
     "vite": "^4.4.5"
