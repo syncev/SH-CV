@@ -32,7 +32,7 @@ const Myprojects = () => {
       title: "Kitty Cutie Corner",
       description: {
         en: "A simple website that allows users to see random cat images, add them to a favorite list, delete them and add their own to the API.",
-        es: "Un sitio web simple que permite a los usuarios ver imágenes aleatorias de gatos, agregarlas a una lista de favoritos, eliminarlas y agregar las propias a la API.",
+        es: "Web simple que permite ver imágenes aleatorias de gatos, agregarlas a una lista de favoritos, eliminarlas y agregar las propias a la API.",
       },
       img: kittyCutieCorner,
       link: `${githubPages}Kitty-Cutie-Corner/`,
